@@ -10,7 +10,7 @@ export const Confirmar = () => {
     const [mensaje, setMensaje] = useState({})
     const verifyToken = async () => {
         try {
-            const url = `${import.meta.env.VITE_BACKEND_URL}/admin/confirmar/${token}`
+            const url = `${import.meta.env.VITE_BACKEND_URL}admin/confirmar/${token}`
             const respuesta = await axios.get(url)
             setMensaje({ respuesta: respuesta.data.msg, tipo: true })
         } catch (error) {
