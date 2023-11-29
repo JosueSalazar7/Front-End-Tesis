@@ -14,9 +14,9 @@ export const Register = () => {
     } = useForm();
 
     const [form, setForm] = useState({
-        adminName: '',
-        adminLastName: '',
-        email: '',
+        adminNombre: '',
+        adminApellido: '',
+        correo: '',
         password: '',
         phone: ''
     });
@@ -59,13 +59,13 @@ export const Register = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-3">
                             <label
-                                htmlFor="nombre"
+                                htmlFor="adminNombre"
                                 className="mb-2 block text-sm font-semibold"
                             >
                                 Nombre:
                             </label>
                             <Controller
-                                name="adminName"
+                                name="adminNombre"
                                 control={control}
                                 defaultValue=""
                                 rules={{
@@ -82,11 +82,11 @@ export const Register = () => {
                                             type="text"
                                             placeholder="Ingrese su nombre"
                                             maxLength={20}
-                                            className={`block w-full rounded-md border ${errors.adminName ? 'border-red-500' : 'border-gray-300'
+                                            className={`block w-full rounded-md border ${errors.adminNombre ? 'border-red-500' : 'border-gray-300'
                                                 } focus:border-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-700 py-1 px-1.5 text-gray-500`}
                                             required
                                         />
-                                        {errors.adminName && <p className="text-red-500 text-sm">{errors.adminName.message}</p>}
+                                        {errors.adminNombre && <p className="text-red-500 text-sm">{errors.adminNombre.message}</p>}
                                     </div>
                                 )}
                             />
@@ -95,12 +95,12 @@ export const Register = () => {
                         <div className="mb-3">
                             <label
                                 className="mb-2 block text-sm font-semibold"
-                                htmlFor="adminLastName"
+                                htmlFor="adminApellido"
                             >
                                 Apellido:
                             </label>
                             <Controller
-                                name="adminLastName"
+                                name="adminApellido"
                                 control={control}
                                 defaultValue=""
                                 rules={{
@@ -117,12 +117,12 @@ export const Register = () => {
                                             type="text"
                                             placeholder="Ingrese su apellido"
                                             maxLength={20}
-                                            className={`block w-full rounded-md border ${errors.adminLastName ? "border-red-500" : "border-gray-300"
+                                            className={`block w-full rounded-md border ${errors.adminApellido ? "border-red-500" : "border-gray-300"
                                                 } focus:border-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-700 py-1 px-1.5 text-gray-500`}
                                             required
                                         />
-                                        {errors.adminLastName && (
-                                            <p className="text-red-500 text-sm">{errors.adminLastName.message}</p>
+                                        {errors.adminApellido && (
+                                            <p className="text-red-500 text-sm">{errors.adminApellido.message}</p>
                                         )}
                                     </div>
                                 )}
@@ -132,12 +132,12 @@ export const Register = () => {
                         <div className="mb-3">
                             <label
                                 className="mb-2 block text-sm font-semibold"
-                                htmlFor="email"
+                                htmlFor="correo"
                             >
                                 Email:
                             </label>
                             <Controller
-                                name="email"
+                                name="correo"
                                 control={control}
                                 defaultValue=""
                                 rules={{
@@ -154,12 +154,12 @@ export const Register = () => {
                                             type="text"
                                             placeholder="Ingrese su correo"
                                             maxLength={150}
-                                            className={`block w-full rounded-md border ${errors.email ? "border-red-500" : "border-gray-300"
+                                            className={`block w-full rounded-md border ${errors.correo ? "border-red-500" : "border-gray-300"
                                                 } focus:border-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-700 py-1 px-1.5 text-gray-500`}
                                             required
                                         />
-                                        {errors.email && (
-                                            <p className="text-red-500 text-sm">{errors.email.message}</p>
+                                        {errors.correo && (
+                                            <p className="text-red-500 text-sm">{errors.correo.message}</p>
                                         )}
                                     </div>
                                 )}
