@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import Mensaje from '../componets/Alertas/Mensaje';
 
-export const Register = () => {
+export const RegisterAdmin = () => {
     const navigate = useNavigate();
     // Inicializa useForm para gestionar el formulario
     const {

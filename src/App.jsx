@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Auth from "./layout/Auth";
 import Login from "./paginas/Login";
 import { LandinPage } from "./paginas/LandinPage";
-import { Register } from "./paginas/Register";
+import { RegisterAdmin } from "./paginas/RegisterAdmin";
 import { Forgot } from "./paginas/Forgot";
 import { NotFound } from "./paginas/NotFound";
 import Dashboard from "./layout/Dashboard";
@@ -12,7 +12,8 @@ import Visualizar from "./paginas/Visualizar";
 import Crear from "./paginas/Crear";
 import Actualizar from "./paginas/Actualizar";
 import Perfil from "./paginas/Perfil";
-import { Confirmar } from "./paginas/Confirmar";
+import { ConfirmarAdmin } from "./paginas/ConfirmarAdmin";
+import { ConfirmarChofer } from "./paginas/ConfirmarChofer";
 import Restablecer from "./paginas/Restablecer";
 import { AuthProvider } from "./context/AuthProvider";
 import { PrivateRoute } from "./routes/PrivateRoute";
@@ -27,9 +28,9 @@ function App() {
 
             <Route path="/" element={<Auth />}>
               <Route path="login" element={<Login />} />
-              <Route path="register" element={<Register />} />
+              <Route path="register" element={<RegisterAdmin />} />
               <Route path="forgot/:id" element={<Forgot />} />
-              <Route path="confirmar/:token" element={<Confirmar />} />
+              <Route path="admin/confirmar/:token" element={<ConfirmarAdmin />} />
               <Route
                 path="recuperar-password/:token"
                 element={<Restablecer />}

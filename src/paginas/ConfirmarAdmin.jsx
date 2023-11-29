@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Mensaje from '../componets/Alertas/Mensaje';
 
-export const Confirmar = () => {
+export const ConfirmarAdmin = () => {
     const { token } = useParams();
     const [mensaje, setMensaje] = useState({})
     const verifyToken = async () => {
