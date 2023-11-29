@@ -32,7 +32,7 @@ export const Register = () => {
 
     const onSubmit = async (data) => {
         try {
-            const url = `${import.meta.env.VITE_BACKEND_URL}/admin/registro`;
+            const url = `${import.meta.env.VITE_BACKEND_URL}/admin/register`;
             const respuesta = await axios.post(url, data);
             setMensaje({ respuesta: respuesta.data.msg, tipo: true });
             setForm({});
