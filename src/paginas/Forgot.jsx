@@ -43,7 +43,7 @@ export const Forgot = () => {
                 Correo electrónico
               </label>
               <Controller
-                name="email"
+                name="correo"
                 control={control}
                 defaultValue=""
                 rules={{
