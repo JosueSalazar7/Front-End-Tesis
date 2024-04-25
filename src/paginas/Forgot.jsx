@@ -14,7 +14,7 @@ export const Forgot = () => {
 
   const onSubmit = async (data) => {
     try {
-      const url = `${import.meta.env.VITE_BACKEND_URL}/recuperar-password`;
+      const url = `${import.meta.env.VITE_BACKEND_URL}/admin/recuperar-password`;
       const respuesta = await axios.post(url, data);
       setMensaje({ respuesta: respuesta.data.msg, tipo: true });
     } catch (error) {
@@ -60,13 +60,13 @@ export const Forgot = () => {
                     placeholder="Introduce tu correo electrónico"
                     maxLength={122}
                     className={`block w-full rounded-md border ${
-                      errors.email ? "border-red-500" : "border-gray-300"
+                      errors.correo ? "border-red-500" : "border-gray-300"
                     } focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500`}
                   />
                 )}
               />
-              {errors.email && (
-                <p className="text-red-500 text-sm">{errors.email.message}</p>
+              {errors.correo && (
+                <p className="text-red-500 text-sm">{errors.correo.message}</p>
               )}
             </div>
 
