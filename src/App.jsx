@@ -31,7 +31,7 @@ function App() {
               <Route path="register" element={<RegisterAdmin />} />
               <Route path="forgot/:id" element={<Forgot />} />
               <Route path="admin/confirmar/:token" element={<ConfirmarAdmin />} />
-              <Route path="restablecer" element= {<Restablecer/>} 
+              <Route path="admin/restablecer/:token" element= {<Restablecer/>} 
               />
               <Route path="*" element={<NotFound />} />
             </Route>
