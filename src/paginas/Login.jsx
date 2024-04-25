@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import AuthContext from '../context/AuthProvider'
 import axios from 'axios';
-
+import Mensaje from '../componets/Alertas/Mensaje';
 
 const Login = () => {
 

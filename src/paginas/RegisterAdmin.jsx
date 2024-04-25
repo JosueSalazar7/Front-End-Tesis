@@ -104,7 +104,7 @@ export const RegisterAdmin = () => {
                                 control={control}
                                 defaultValue=""
                                 rules={{
-                                    required: "Obligatory field",
+                                    required: "Campo  Obligatorio",
                                     pattern: {
                                         value: /^[A-Za-z\s]+$/,
                                         message: 'Solo se acpetan letras',
