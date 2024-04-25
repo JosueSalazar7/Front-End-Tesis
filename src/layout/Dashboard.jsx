@@ -7,7 +7,7 @@ const Dashboard = () => {
     const location = useLocation()
     const urlActual = location.pathname
     const { auth} = useContext(AuthContext)
-	const autenticado = localStorage.getItem('token')
+	const autenticado = localStorage.getItem('token');
     return (
         <div className='md:flex md:min-h-screen'>
 
@@ -53,9 +53,6 @@ const Dashboard = () => {
                 </div>
                 <div className='overflow-y-scroll p-8'>
                     {autenticado ? <Outlet /> : <Navigate to="/login" />}
-                </div>
-                <div className='bg-gray-800 h-12'>
-                    <p className='text-center  text-slate-100 leading-[2.9rem] underline'>Todos los derechos reservados | Este sitio fue creado por SOFTWARO</p>
                 </div>
 
             </div>

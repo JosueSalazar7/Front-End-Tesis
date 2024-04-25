@@ -20,7 +20,7 @@ const Login = () => {
 
     const onSubmit = async (data) => {
         try {
-            const url = `${import.meta.env.VITE_BACKEND_URL}/admin/login`;
+            const url = `${import.meta.env.VITE_BACKEND_URL}/login`;
             const respuesta = await axios.post(url, data);
             localStorage.setItem('token', respuesta.data.token);
             setAuth(respuesta.data);
@@ -97,21 +97,6 @@ const Login = () => {
                         </div>
                     </form>
 
-                    <div className="mt-6 grid grid-cols-3 items-center text-gray-400">
-                        <hr className="border-gray-400" />
-                        <p className="text-center text-sm">O</p>
-                        <hr className="border-gray-400" />
-                    </div>
-
-                    <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-black hover:text-white">
-                        <img className="w-5 mr-2" src="https://cdn-icons-png.flaticon.com/512/281/281764.png" />
-                        Inicia sesión con Google
-                    </button>
-
-                    <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-blue-600 hover:text-white">
-                        <img className="w-5 mr-2" src="https://cdn-icons-png.flaticon.com/512/733/733547.png" />
-                        Inicia sesión con Facebook
-                    </button>
 
                     <div className="mt-5 text-xs border-b-2 py-4 ">
                         <Link to="/forgot/id" className="underline text-sm text-gray-400 hover:text-gray-900">¿Olvidaste tu contraseña?</Link>
