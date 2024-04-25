@@ -14,7 +14,7 @@ const Login = () => {
     const { handleSubmit, control, formState: { errors } } = useForm();
 
     const [form, setform] = useState({
-        email: "",
+        correo: "",
         password: ""
     })
 
