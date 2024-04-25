@@ -32,7 +32,7 @@ function App() {
               <Route path="forgot/:id" element={<Forgot />} />
               <Route path="admin/confirmar/:token" element={<ConfirmarAdmin />} />
               <Route path="*" element={<NotFound />} />
-              <Route path="admin/restablecer/:token" element={<Restablecer/>} />
+              <Route path="recuperar-password/:token" element={<Restablecer/>} />
             </Route>
 
             <Route
