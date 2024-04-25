@@ -29,9 +29,8 @@ function App() {
             <Route path="/" element={<Auth />}>
               <Route path="login" element={<Login />} />
               <Route path="register" element={<RegisterAdmin />} />
-              <Route path="forgot/:id" element={<Forgot />} />
               <Route path="admin/confirmar/:token" element={<ConfirmarAdmin />} />
-              <Route path="recuperar-password/:token" element={<Forgot />}
+              <Route path="recuperar-password" element={<Forgot />}
               />
               <Route path="*" element={<NotFound />} />
             </Route>
