@@ -30,8 +30,8 @@ function App() {
               <Route path="login" element={<Login />} />
               <Route path="register" element={<RegisterAdmin />} />
               <Route path="forgot/:id" element={<Forgot />} />
-              <Route path="admin/confirmar/:token" element={<ConfirmarAdmin />} 
-             
+              <Route path="admin/confirmar/:token" element={<ConfirmarAdmin />} />
+              <Route path="restablecer" element= {<Restablecer/>} 
               />
               <Route path="*" element={<NotFound />} />
             </Route>
