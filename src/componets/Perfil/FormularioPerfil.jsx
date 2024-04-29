@@ -98,7 +98,7 @@ const FormularioPerfil = () => {
                             <input
                                 {...field}
                                 type="text"
-                                placeholder="Enter your last name"
+                                placeholder="Ingrese su apellido"
                                 maxLength={20}
                                 className={`block w-full rounded-md border ${errors.adminApellido ? "border-red-500" : "border-gray-300"
                                     } focus:border-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-700 py-1 px-1.5 text-gray-500`}
@@ -135,7 +135,7 @@ const FormularioPerfil = () => {
                             <input
                                 {...field}
                                 type="text"
-                                placeholder="Enter your phone"
+                                placeholder="Ingrese su celular"
                                 className={`block w-full rounded-md border ${errors.phone ? "border-red-500" : "border-gray-300"
                                     } focus:border-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-700 py-1 px-1.5 text-gray-500`}
                                 required
