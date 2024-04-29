@@ -10,8 +10,8 @@ const FormularioPerfil = () => {
     const { handleSubmit, control, formState: { errors } } = useForm({
         defaultValues: {
             id: auth._id,
-            nombre: auth.nombre || "",
-            apellido: auth.apellido || "",
+            nombre: auth.adminNombre || "",
+            apellido: auth.adminApellido || "",
             direccion: auth.direccion || "",
             telefono: auth.telefono || "",
             email: auth.email || ""
