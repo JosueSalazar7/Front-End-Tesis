@@ -70,8 +70,17 @@ const Restablecer = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <button className="bg-gray-600 text-slate-300 border py-2 w-full rounded-xl mt-5 hover:scale-105 duration-300 hover:bg-gray-900 hover:text-white">Send
+                        <button className="bg-gray-600 text-slate-300 border py-2 w-full rounded-xl mt-5 hover:scale-105 duration-300 hover:bg-gray-900 hover:text-white">Enviar
                         </button>
+                    </div>
+                    <div className="mt-3 text-sm flex justify-between items-center">
+                        <p>Una vez validado ya puedes inicar sesión</p>
+                        <Link
+                            to="/login"
+                            className="py-2 px-5 bg-gray-600 text-slate-300 border rounded-xl hover:scale-110 duration-300 hover:bg-gray-900 hover:text-white"
+                        >
+                            iniciar sesión
+                        </Link>
                     </div>
                 </form>
             }
