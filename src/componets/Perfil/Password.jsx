@@ -39,9 +39,9 @@ const Password = () => {
     return (
         <>
             <div className='mt-5'>
-                <h1 className='font-black text-4xl text-gray-500'>Password</h1>
+                <h1 className='font-black text-4xl text-gray-500'>Contraseña</h1>
                 <hr className='my-4' />
-                <p className='mb-2'>Este módulo te permite actualizar el password del usuario</p>
+                <p className='mb-2'>Acutalizar contraseña</p>
             </div>
             <form onSubmit={handleSubmit}>
                 {Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}

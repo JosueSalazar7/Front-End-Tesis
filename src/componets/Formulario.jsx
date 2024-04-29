@@ -171,8 +171,8 @@ export const Formulario = ({ conductor }) => {
                                     } focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-2 text-gray-500`}
                                 required
                             />
-                            {errors.password && (
-                                <p className="text-red-500 text-sm">{errors.password.message}</p>
+                            {fieldState.error && (
+                                <p className="text-red-500 text-sm">{fieldState.error.message}</p>
                             )}
                         </div>
                     )}

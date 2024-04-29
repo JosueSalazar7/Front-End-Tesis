@@ -12,9 +12,8 @@ const FormularioPerfil = () => {
             id: auth._id,
             nombre: auth.adminNombre || "",
             apellido: auth.adminApellido || "",
-            direccion: auth.direccion || "",
-            telefono: auth.telefono || "",
-            email: auth.email || ""
+            telefono: auth.phone || "",
+            email: auth.correo || ""
         }
     });
 
@@ -43,20 +42,20 @@ const FormularioPerfil = () => {
 
             <div>
                 <label
-                    htmlFor="nombre"
+                    htmlFor="adminNombre"
                     className="text-gray-700 uppercase font-bold text-sm"
                 >
                     Full name:
                 </label>
                 <Controller
-                    name="nombre"
+                    name="adminNombre"
                     control={control}
                     defaultValue=""
                     rules={{
                         required: 'Campo Obligatorio',
                         pattern: {
                             value: /^[A-Za-z\s]+$/,
-                            message: 'Only letters are accepted',
+                            message: 'Solo se acpetan letras',
                         },
                     }}
                     render={({ field }) => (
@@ -64,13 +63,13 @@ const FormularioPerfil = () => {
                             <input
                                 {...field}
                                 type="text"
-                                placeholder="Enter your name"
+                                placeholder="Ingrese su nombre"
                                 maxLength={20}
-                                className={`block w-full rounded-md border ${errors.nombre ? 'border-red-500' : 'border-gray-300'
+                                className={`block w-full rounded-md border ${errors.adminNombreombre ? 'border-red-500' : 'border-gray-300'
                                     } focus:border-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-700 py-1 px-1.5 text-gray-500`}
                                 required
                             />
-                            {errors.nombre && <p className="text-red-500 text-sm">{errors.nombre.message}</p>}
+                            {errors.adminNombre && <p className="text-red-500 text-sm">{errors.adminNombre.message}</p>}
                         </div>
                     )}
                 />
@@ -78,20 +77,20 @@ const FormularioPerfil = () => {
 
             <div>
                 <label
-                    htmlFor="apellido"
+                    htmlFor="adminApellido"
                     className="text-gray-700 uppercase font-bold text-sm"
                 >
                     Last name:
                 </label>
                 <Controller
-                    name="apellido"
+                    name="adminApellido"
                     control={control}
                     defaultValue=""
                     rules={{
                         required: "Campo Obligatorio",
                         pattern: {
                             value: /^[A-Za-z\s]+$/,
-                            message: 'Only letters are accepted',
+                            message: 'Solo se aceptan letras',
                         },
                     }}
                     render={({ field }) => (
@@ -101,12 +100,12 @@ const FormularioPerfil = () => {
                                 type="text"
                                 placeholder="Enter your last name"
                                 maxLength={20}
-                                className={`block w-full rounded-md border ${errors.apellido ? "border-red-500" : "border-gray-300"
+                                className={`block w-full rounded-md border ${errors.adminApellido ? "border-red-500" : "border-gray-300"
                                     } focus:border-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-700 py-1 px-1.5 text-gray-500`}
                                 required
                             />
-                            {errors.apellido && (
-                                <p className="text-red-500 text-sm">{errors.apellido.message}</p>
+                            {errors.adminApellido && (
+                                <p className="text-red-500 text-sm">{errors.adminApellido.message}</p>
                             )}
                         </div>
                     )}
@@ -115,56 +114,20 @@ const FormularioPerfil = () => {
 
             <div>
                 <label
-                    htmlFor="direccion"
+                    htmlFor="phone"
                     className="text-gray-700 uppercase font-bold text-sm"
                 >
-                    Address:
+                    Celular:
                 </label>
                 <Controller
-                    name="direccion"
-                    control={control}
-                    defaultValue=""
-                    rules={{
-                        required: "Campo Obligatorio"
-                    }}
-                    render={({ field }) => (
-                        <div className="mb-3">
-                            <input
-                                {...field}
-                                type="text"
-                                placeholder="Enter your address"
-                                maxLength={150}
-                                className={`block w-full rounded-md border ${errors.direccion ? "border-red-500" : "border-gray-300"
-                                    } focus:border-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-700 py-1 px-1.5 text-gray-500`}
-                                required
-                            />
-                            {errors.direccion && (
-                                <p className="text-red-500 text-sm">{errors.direccion.message}</p>
-                            )}
-                        </div>
-                    )}
-                />
-                {errors.direccion && (
-                    <p className="text-red-500 text-sm">{errors.direccion.message}</p>
-                )}
-            </div>
-
-            <div>
-                <label
-                    htmlFor="telefono"
-                    className="text-gray-700 uppercase font-bold text-sm"
-                >
-                    Phone:
-                </label>
-                <Controller
-                    name="telefono"
+                    name="phone"
                     control={control}
                     defaultValue=""
                     rules={{
                         required: "Campo Obligatorio",
                         pattern: {
                             value: /^[0-9]{10}$/,
-                            message: 'Valid phone with 10 digits',
+                            message: 'El celular debe tener 10 digitos',
                         },
                     }}
                     render={({ field }) => (
@@ -173,12 +136,12 @@ const FormularioPerfil = () => {
                                 {...field}
                                 type="text"
                                 placeholder="Enter your phone"
-                                className={`block w-full rounded-md border ${errors.telefono ? "border-red-500" : "border-gray-300"
+                                className={`block w-full rounded-md border ${errors.phone ? "border-red-500" : "border-gray-300"
                                     } focus:border-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-700 py-1 px-1.5 text-gray-500`}
                                 required
                             />
-                            {errors.telefono && (
-                                <p className="text-red-500 text-sm">{errors.telefono.message}</p>
+                            {errors.phone && (
+                                <p className="text-red-500 text-sm">{errors.phone.message}</p>
                             )}
                         </div>
                     )}
@@ -187,24 +150,24 @@ const FormularioPerfil = () => {
 
             <div>
                 <label
-                    htmlFor="email"
+                    htmlFor="correo"
                     className="text-gray-700 uppercase font-bold text-sm"
                 >
-                    Email:
+                    Correo:
                 </label>
                 <Controller
-                    name="email"
+                    name="Correo"
                     control={control}
                     defaultValue=""
                     rules={{
                         required: "Campo Obligatorio",
                         pattern: {
                             value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                            message: "Invalid email",
+                            message: "El correo no es valido",
                         },
                         maxLength: {
                             value:100,
-                            message: "Maximum length reached",
+                            message: "Maximo de caracteres rechazado",
                         },
                     }}
                     render={({ field }) => (
@@ -214,11 +177,11 @@ const FormularioPerfil = () => {
                                 type="email"
                                 placeholder="Enter your email"
                                 maxLength={100}
-                                className={`block w-full rounded-md border ${errors.email ? "border-red-500" : "border-gray-300"
+                                className={`block w-full rounded-md border ${errors.correo ? "border-red-500" : "border-gray-300"
                                     } focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500`}
                             />
-                            {errors.email && (
-                                <p className="text-red-500 text-sm">{errors.email.message}</p>
+                            {errors.correo && (
+                                <p className="text-red-500 text-sm">{errors.correo.message}</p>
                             )}
                         </div>
                     )}
