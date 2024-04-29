@@ -20,7 +20,7 @@ const Tabla = () => {
   const listarPacientes = async () => {
     try {
       const token = localStorage.getItem("token");
-      const url = `${import.meta.env.VITE_BACKEND_URL}/pacientes`;
+      const url = `${import.meta.env.VITE_BACKEND_URL}/admin/lista-choferes`;
       const options = {
         headers: {
           "Content-Type": "application/json",
@@ -41,12 +41,12 @@ const Tabla = () => {
   const handleDelete = async (id) => {
     try {
       const confirmar = window.confirm(
-        "Vas a registrar la salida de un paciente, ¿Estás seguro de realizar esta acción?"
+        "Vas a eliminar el siguiente conductor"
       );
       if (confirmar) {
         const token = localStorage.getItem("token");
         const url = `${import.meta.env.VITE_BACKEND_URL
-          }/paciente/eliminar/${id}`;
+          }/admin/eliminarConductor/eliminar/${id}`;
         const headers = {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
