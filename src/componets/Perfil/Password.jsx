@@ -4,6 +4,7 @@ import { useContext } from "react"
 import AuthContext from "../../context/AuthProvider"
 
 const Password = () => {
+    const autenticado = localStorage.getItem('token');
     const [mensaje, setMensaje] = useState({})
     const [form, setForm] = useState({
         passwordactual: "",
@@ -78,7 +79,9 @@ const Password = () => {
                         onChange={handleChange}
                     />
                 </div>
-
+                <div className='overflow-y-scroll p-8'>
+                    {autenticado ? <Outlet /> : <Navigate to="/login" />}
+                </div>
                 <input
                     type="submit"
                     className='bg-gray-800 w-full p-3 
