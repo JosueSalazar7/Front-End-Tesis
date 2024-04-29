@@ -19,7 +19,7 @@ const Password = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = `${import.meta.env.VITE_UPDATE_PASSWORD_URL}/admin/actulizarpassword`;
+            const url = `${import.meta.env.VITE_BACKEND_URL}/admin/actulizarpassword`;
             const response = await fetch(url, {
                 method: 'PUT',
                 headers: {
