@@ -147,9 +147,7 @@ export const Formulario = ({ conductor }) => {
                 />
             </div>
             <div>
-                <label
-                    htmlFor='contraseña:'
-                    className='text-gray-700 uppercase font-bold text-sm'>Contraseña: </label>
+                <label htmlFor='contraseña:' className='text-gray-700 uppercase font-bold text-sm'>Contraseña: </label>
                 <Controller
                     name='password'
                     control={control}
@@ -161,13 +159,13 @@ export const Formulario = ({ conductor }) => {
                             message: 'La contraseña es incorrecta ',
                         }
                     }}
-                    render={({ field }) => (
+                    render={({ field, fieldState }) => (
                         <div className="mb-3">
                             <input
                                 {...field}
                                 type="password"
                                 placeholder="********************"
-                                className={`block w-full rounded-md border ${errors.password ? "border-red-500" : "border-gray-300"
+                                className={`block w-full rounded-md border ${fieldState.invalid ? "border-red-500" : "border-gray-300"
                                     } focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-2 text-gray-500`}
                                 required
                             />
@@ -178,6 +176,7 @@ export const Formulario = ({ conductor }) => {
                     )}
                 />
             </div>
+
             <div>
                 <label
                     htmlFor='celular:'
