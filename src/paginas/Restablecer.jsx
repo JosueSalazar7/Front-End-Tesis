@@ -1,4 +1,4 @@
-import logoDog from '../assets/dog-hand.webp'
+import carro from '../assets/carro1.jpg'
 import { Link } from 'react-router-dom'
 import Mensaje from '../componets/Alertas/Mensaje'
 import { useEffect, useState } from 'react'
@@ -52,18 +52,18 @@ const Restablecer = () => {
             {Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
             <h1 className="text-3xl font-semibold mb-2 text-center uppercase  text-gray-500">Bienvenido de nuevo</h1>
             <small className="text-gray-400 block my-4 text-sm">Porfavor ingrese sus datos</small>
-            <img className="object-cover h-80 w-80 rounded-full border-4 border-solid border-slate-600" src={logoDog} alt="image description" />
+            <img className="object-cover h-80 w-80 rounded-full border-4 border-solid border-slate-600" src={carro} alt="image description" />
             {tokenback &&
                 <form className='w-full' onSubmit={handleSubmit}>
                     <div className="mb-1">
                         <label className="mb-2 block text-sm font-semibold">Constraseña</label>
-                        <input type="password" placeholder="Enter your password" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
+                        <input type="password" placeholder="Ingrese la contraseña" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
                             value={form.password || ""}
                             name='password'
                             onChange={handleChange}
                         />
                         <label className="mb-2 block text-sm font-semibold">Confirmar contraseña</label>
-                        <input type="password" placeholder="Repeat your password" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
+                        <input type="password" placeholder="Repita la constraseña" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
                             value={form.confirmpassword || ""}
                             name='confirmpassword'
                             onChange={handleChange}
