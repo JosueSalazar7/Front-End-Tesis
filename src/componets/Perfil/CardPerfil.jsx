@@ -12,10 +12,10 @@ export const CardPerfil = () => {
                 <img src="https://cdn-icons-png.flaticon.com/512/4715/4715329.png" alt="img-client" className="m-auto " width={120} height={120} />
                 </div>
             <div className="self-start">
-                <b>Nombre:</b><p className="inline-block ml-3">{auth.adminNombre}</p>
+                <b>Nombre:</b><p className="inline-block ml-3">{auth.nombre}</p>
             </div>
             <div className="self-start">
-                <b>Apellido:</b><p className="inline-block ml-3">{auth.adminApellido}</p>
+                <b>Apellido:</b><p className="inline-block ml-3">{auth.apellido}</p>
             </div >
             <div className="self-start">
                 <b>Teléfono:</b><p className="inline-block ml-3">{auth.phone}</p>
