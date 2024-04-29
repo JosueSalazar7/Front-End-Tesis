@@ -45,7 +45,7 @@ const FormularioPerfil = () => {
                     htmlFor="adminNombre"
                     className="text-gray-700 uppercase font-bold text-sm"
                 >
-                    Full name:
+                    Nombre:
                 </label>
                 <Controller
                     name="adminNombre"
@@ -80,7 +80,7 @@ const FormularioPerfil = () => {
                     htmlFor="adminApellido"
                     className="text-gray-700 uppercase font-bold text-sm"
                 >
-                    Last name:
+                    Apellido:
                 </label>
                 <Controller
                     name="adminApellido"
@@ -148,45 +148,7 @@ const FormularioPerfil = () => {
                 />
             </div>
 
-            <div>
-                <label
-                    htmlFor="correo"
-                    className="text-gray-700 uppercase font-bold text-sm"
-                >
-                    Correo:
-                </label>
-                <Controller
-                    name="Correo"
-                    control={control}
-                    defaultValue=""
-                    rules={{
-                        required: "Campo Obligatorio",
-                        pattern: {
-                            value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                            message: "El correo no es valido",
-                        },
-                        maxLength: {
-                            value:100,
-                            message: "Maximo de caracteres rechazado",
-                        },
-                    }}
-                    render={({ field }) => (
-                        <div className="mb-3">
-                            <input
-                                {...field}
-                                type="email"
-                                placeholder="Enter your email"
-                                maxLength={100}
-                                className={`block w-full rounded-md border ${errors.correo ? "border-red-500" : "border-gray-300"
-                                    } focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500`}
-                            />
-                            {errors.correo && (
-                                <p className="text-red-500 text-sm">{errors.correo.message}</p>
-                            )}
-                        </div>
-                    )}
-                />
-            </div>
+
 
             <input
                 type="submit"
