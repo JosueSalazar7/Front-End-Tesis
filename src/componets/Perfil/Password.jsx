@@ -1,6 +1,6 @@
 import Mensaje from "../Alertas/Mensaje"
 import { useState } from "react"
-import { useContext} from "react"
+import { useContext } from "react"
 import AuthContext from "../../context/AuthProvider"
 
 const Password = () => {
@@ -17,24 +17,28 @@ const Password = () => {
         })
     }
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        if (Object.values(form).includes("")) {
-            setMensaje({ respuesta: "Todos los campos deben ser ingresados", tipo: false })
-            setTimeout(() => {
-                setMensaje({})
-            }, 3000);
-            return
+        e.preventDefault();
+        try {
+            const url = `${import.meta.env.VITE_UPDATE_PASSWORD_URL}/admin/actulizarpassword`;
+            const response = await fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    // Aquí puedes incluir cualquier token de autenticación necesario
+                },
+                body: JSON.stringify(form)
+            });
+            if (response.ok) {
+                setMensaje({ respuesta: "Contraseña actualizada correctamente", tipo: true });
+            } else {
+                const errorData = await response.json();
+                setMensaje({ respuesta: errorData.message || "Hubo un error al actualizar la contraseña", tipo: false });
+            }
+        } catch (error) {
+            console.error('Error al enviar la solicitud:', error);
+            setMensaje({ respuesta: "Hubo un error al actualizar la contraseña", tipo: false });
         }
-
-        if (form.passwordnuevo.length < 6) {
-            setMensaje({ respuesta: "El password debe tener mínimo 6 carácteres", tipo: false })
-            setTimeout(() => {
-                setMensaje({})
-            }, 3000);
-            return
-        }
-    }
-
+    };
 
     return (
         <>

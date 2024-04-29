@@ -13,7 +13,6 @@ const FormularioPerfil = () => {
             nombre: auth.adminNombre || "",
             apellido: auth.adminApellido || "",
             telefono: auth.phone || "",
-            email: auth.correo || ""
         }
     });
 
