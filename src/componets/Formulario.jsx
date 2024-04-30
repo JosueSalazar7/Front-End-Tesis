@@ -182,7 +182,8 @@ export const Formulario = ({ conductor }) => {
                 />
             </div>
             <div>
-                <label htmlFor='password:' className='text-gray-700 uppercase font-bold text-sm'>Contraseña: </label>
+                <label htmlFor='password:' 
+                className='text-gray-700 uppercase font-bold text-sm'>Contraseña: </label>
                 <Controller
                     name='password'
                     control={control}
@@ -190,19 +191,18 @@ export const Formulario = ({ conductor }) => {
                     rules={{
                         required: 'Campo Obligatorio',
                         pattern: {
-                            value: 50,
+                            value: 15,
                             message: 'La contraseña es incorrecta ',
                         }
                     }}
                     render={({ field, fieldState }) => (
-                        <div className="mb-3">
+                        <div>
                             <input
                                 {...field}
                                 type="password"
                                 placeholder="********************"
-                                className={`block w-full rounded-md border ${fieldState.invalid ? "border-red-500" : "border-gray-300"
-                                    } focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-2 text-gray-500`}
-                                required
+                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
+                                    }`}
                             />
                             {fieldState.error && (
                                 <p className="text-red-500 text-sm">{fieldState.error.message}</p>
