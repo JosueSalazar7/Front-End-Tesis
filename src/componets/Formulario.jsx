@@ -50,10 +50,10 @@ export const Formulario = ({ conductor }) => {
             {Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
             <div>
                 <label
-                    htmlFor='nombre:'
+                    htmlFor='conductorNombre:'
                     className='text-gray-700 uppercase font-bold text-sm'>Nombre del conductor: </label>
                 <Controller
-                    name='ConductorNombre'
+                    name='conductorNombre'
                     control={control}
                     defaultValue=''
                     rules={{
@@ -83,7 +83,7 @@ export const Formulario = ({ conductor }) => {
 
             <div>
                 <label
-                    htmlFor='apellido:'
+                    htmlFor='conductorApellido:'
                     className='text-gray-700 uppercase font-bold text-sm'>Apellido del conductor: </label>
                 <Controller
                     name='conductorApellido'
@@ -115,7 +115,7 @@ export const Formulario = ({ conductor }) => {
             </div>
             <div>
                 <label
-                    htmlFor='email:'
+                    htmlFor='correo:'
                     className='text-gray-700 uppercase font-bold text-sm'>Correo: </label>
                 <Controller
                     name='correo'
@@ -147,7 +147,7 @@ export const Formulario = ({ conductor }) => {
                 />
             </div>
             <div>
-                <label htmlFor='contraseña:' className='text-gray-700 uppercase font-bold text-sm'>Contraseña: </label>
+                <label htmlFor='password:' className='text-gray-700 uppercase font-bold text-sm'>Contraseña: </label>
                 <Controller
                     name='password'
                     control={control}
@@ -179,7 +179,7 @@ export const Formulario = ({ conductor }) => {
 
             <div>
                 <label
-                    htmlFor='celular:'
+                    htmlFor='phone:'
                     className='text-gray-700 uppercase font-bold text-sm'>Celular: </label>
                 <Controller
                     name='phone'
@@ -249,7 +249,7 @@ export const Formulario = ({ conductor }) => {
             </div>
             <div>
                 <label
-                    htmlFor='asientos:'
+                    htmlFor='numeroAsientos:'
                     className='text-gray-700 uppercase font-bold text-sm'>Numero de asientos del vehiculo: </label>
                 <Controller
                     name='numeroAsientos'
@@ -284,7 +284,7 @@ export const Formulario = ({ conductor }) => {
             </div>
             <div>
                 <label
-                    htmlFor='placa:'
+                    htmlFor='placaVehiculo:'
                     className='text-gray-700 uppercase font-bold text-sm'>Placa del vehiculo: </label>
                 <Controller
                     name='placaVehiculo'
@@ -315,7 +315,7 @@ export const Formulario = ({ conductor }) => {
             </div>
             <div>
                 <label
-                    htmlFor='marca:'
+                    htmlFor='marcaVehiculo:'
                     className='text-gray-700 uppercase font-bold text-sm'>Marca del vehiculo: </label>
                 <Controller
                     name='marcaVehiculo'
@@ -346,7 +346,7 @@ export const Formulario = ({ conductor }) => {
             </div>
             <div>
                 <label
-                    htmlFor='modelo:'
+                    htmlFor='modeloVehiculo'
                     className='text-gray-700 uppercase font-bold text-sm'>Modelo del vehiculo: </label>
                 <Controller
                     name='modeloVehiculo'
@@ -377,7 +377,7 @@ export const Formulario = ({ conductor }) => {
             </div>
             <div>
                 <label
-                    htmlFor='año:'
+                    htmlFor='anioVehiculo:'
                     className='text-gray-700 uppercase font-bold text-sm'>Año del vehiculo: </label>
                 <Controller
                     name='anioVehiculo'
@@ -408,7 +408,7 @@ export const Formulario = ({ conductor }) => {
             </div>
             <div>
                 <label
-                    htmlFor='color:'
+                    htmlFor='colorVehiculo:'
                     className='text-gray-700 uppercase font-bold text-sm'>Color del vehiculo: </label>
                 <Controller
                     name='colorVehiculo'
