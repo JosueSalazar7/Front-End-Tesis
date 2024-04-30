@@ -167,39 +167,43 @@ export const RegisterAdmin = () => {
                         </div>
 
                         <div className="mb-3">
-                            <label
-                                className="mb-2 block text-sm font-semibold"
-                                htmlFor="password"
-                            >
+                            <label className="mb-2 block text-sm font-semibold" htmlFor="password">
                                 Contraseña:
                             </label>
-                            <Controller
-                                name="password"
-                                control={control}
-                                defaultValue=""
-                                rules={{
-                                    required: "Obligatory field",
-                                    pattern: {
-                                        value: 50,
-                                        message: 'La contraseña es incorrecta ',
-                                    },
-                                }}
-                                render={({ field }) => (
-                                    <div className="mb-3">
+                            <div className="relative">
+                                <Controller
+                                    name="password"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{
+                                        required: "Campo obligatorio",
+                                        pattern: {
+                                            value: /^[a-zA-Z0-9!@#$%^&*]{6,}$/,
+                                            message: "La contraseña debe tener al menos 6 caracteres",
+                                        },
+                                    }}
+                                    render={({ field }) => (
                                         <input
                                             {...field}
-                                            type="password"
+                                            type={showPassword ? "text" : "password"}
                                             placeholder="********************"
                                             className={`block w-full rounded-md border ${errors.password ? "border-red-500" : "border-gray-300"
                                                 } focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-2 text-gray-500`}
                                             required
                                         />
-                                        {errors.password && (
-                                            <p className="text-red-500 text-sm">{errors.password.message}</p>
-                                        )}
-                                    </div>
-                                )}
-                            />
+                                    )}
+                                />
+                                <button
+                                    type="button"
+                                    className="absolute top-1/2 right-2 transform -translate-y-1/2"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                >
+                                    {showPassword ? <HiEyeOff className="text-gray-500" /> : <HiEye className="text-gray-500" />}
+                                </button>
+                            </div>
+                            {errors.password && (
+                                <p className="text-red-500 text-sm">{errors.password.message}</p>
+                            )}
                         </div>
 
                         <div className="mb-3">
@@ -224,7 +228,7 @@ export const RegisterAdmin = () => {
                                     <div className="mb-3">
                                         <input
                                             {...field}
-                                            type="text" 
+                                            type="text"
                                             placeholder="Ingrese su telefono"
                                             className={`block w-full rounded-md border ${errors.phone ? "border-red-500" : "border-gray-300"
                                                 } focus:border-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-700 py-1 px-1.5 text-gray-500`}
