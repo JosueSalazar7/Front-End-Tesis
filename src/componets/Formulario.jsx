@@ -247,7 +247,7 @@ export const Formulario = ({ conductor }) => {
                     )}
                 />
             </div>
-           
+
             <div>
                 <label
                     htmlFor='numeroAsientos:'
@@ -294,8 +294,8 @@ export const Formulario = ({ conductor }) => {
                     rules={{
                         required: 'Campo Obligatorio',
                         pattern: {
-                            value: /^[A-Za-z0-9]*$/,
-                            message: 'La placa debe contener solo letras y números',
+                            value: /^[A-Za-z0-9\-]*$/, // Incluye el guion "-"
+                            message: 'La placa debe contener solo letras, números y guiones',
                         }
                     }}
                     render={({ field, fieldState }) => (
@@ -314,6 +314,7 @@ export const Formulario = ({ conductor }) => {
                     )}
                 />
             </div>
+
             <div>
                 <label
                     htmlFor='marcaVehiculo:'
