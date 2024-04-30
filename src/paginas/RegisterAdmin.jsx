@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import Mensaje from '../componets/Alertas/Mensaje';
-
+import { HiEye, HiEyeOff } from "react-icons/hi";
 export const RegisterAdmin = () => {
     const navigate = useNavigate();
     // Inicializa useForm para gestionar el formulario
@@ -12,7 +12,7 @@ export const RegisterAdmin = () => {
         control, // Controla los campos del formulario
         formState: { errors }, // Gestiona los errores
     } = useForm();
-
+    const [showPassword, setShowPassword] = useState(false);
     const [form, setForm] = useState({
         adminNombre: '',
         adminApellido: '',
