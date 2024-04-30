@@ -4,13 +4,15 @@ import { useForm, Controller } from 'react-hook-form';
 import AuthContext from "../context/AuthProvider";
 import axios from 'axios';
 import Mensaje from "./Alertas/Mensaje";
+import { HiEye, HiEyeOff } from 'react-icons/hi';
 
 export const Formulario = ({ conductor }) => {
     const { auth } = useContext(AuthContext);
     const navigate = useNavigate();
     const { handleSubmit, control } = useForm();
     const [mensaje, setMensaje] = useState({});
-
+    const [showPassword, setShowPassword] = useState(false);
+    
     const onSubmit = async (data) => {
         try {
             if (conductor?._id) {
