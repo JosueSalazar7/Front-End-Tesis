@@ -269,10 +269,6 @@ export const Formulario = ({ conductor }) => {
                             value: /^[1-4]*$/,
                             message: 'El vehiculo solo puede tener de 1 a 4 asientos disponibles',
                         },
-                        maxLength: {
-                            value: 1,
-                            message: 'Para el número de asientos solo se puede ingresar un digito',
-                        }
                     }}
                     render={({ field, fieldState }) => (
                         <div>
