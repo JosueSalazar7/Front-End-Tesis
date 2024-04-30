@@ -15,9 +15,9 @@ import { MdDeleteForever, MdNoteAdd, MdInfo } from "react-icons/md";
 
 const Tabla = () => {
   const navigate = useNavigate();
-  const [pacientes, setPacientes] = useState([]);
+  const [conductores, setconductor] = useState([]);
 
-  const listarPacientes = async () => {
+  const listarConductores = async () => {
     try {
       const token = localStorage.getItem("token");
       const url = `${import.meta.env.VITE_BACKEND_URL}/admin/lista-choferes`;
@@ -28,14 +28,14 @@ const Tabla = () => {
         },
       };
       const respuesta = await axios.get(url, options);
-      setPacientes(respuesta.data);
+      setconductor(respuesta.data);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    listarPacientes();
+    listarConductores();
   }, []);
 
   const handleDelete = async (id) => {
@@ -46,7 +46,7 @@ const Tabla = () => {
       if (confirmar) {
         const token = localStorage.getItem("token");
         const url = `${import.meta.env.VITE_BACKEND_URL
-          }/admin/eliminarConductor/eliminar/${id}`;
+          }/admin/eliminarConductor/${id}`;
         const headers = {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -55,14 +55,14 @@ const Tabla = () => {
           salida: new Date().toString(),
         };
         await axios.delete(url, { headers, data });
-        listarPacientes();
+        listarConductores();
       }
     } catch (error) {
       console.log(error);
     }
   };
 
-  const data = React.useMemo(() => pacientes, [pacientes]);
+  const data = React.useMemo(() => conductores, [conductores]);
 
   const columns = React.useMemo(
     () => [
@@ -151,7 +151,7 @@ const Tabla = () => {
 
   return (
     <div className="mt-4">
-      {pacientes.length === 0 ? (
+      {conductores.length === 0 ? (
         <Mensaje tipo={"active"}>{"No existen registros"}</Mensaje>
       ) : (
         <>
