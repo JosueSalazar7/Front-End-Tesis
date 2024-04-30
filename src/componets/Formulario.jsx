@@ -182,34 +182,41 @@ export const Formulario = ({ conductor }) => {
                 />
             </div>
             <div>
-                <label htmlFor='password:' 
-                className='text-gray-700 uppercase font-bold text-sm'>Contraseña: </label>
-                <Controller
-                    name='password'
-                    control={control}
-                    defaultValue=''
-                    rules={{
-                        required: 'Campo Obligatorio',
-                        pattern: {
-                            value: 15,
-                            message: 'La contraseña es incorrecta ',
-                        }
-                    }}
-                    render={({ field, fieldState }) => (
-                        <div>
-                            <input
-                                {...field}
-                                type="password"
-                                placeholder="********************"
-                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
-                                    }`}
-                            />
-                            {fieldState.error && (
-                                <p className="text-red-500 text-sm">{fieldState.error.message}</p>
-                            )}
-                        </div>
-                    )}
-                />
+                <label htmlFor='password' className='text-gray-700 uppercase font-bold text-sm'>Contraseña: </label>
+                <div className="relative">
+                    <Controller
+                        name='password'
+                        control={control}
+                        defaultValue=''
+                        rules={{
+                            required: 'Campo Obligatorio',
+                            pattern: {
+                                value: 15,
+                                message: 'La contraseña es incorrecta ',
+                            }
+                        }}
+                        render={({ field, fieldState }) => (
+                            <div>
+                                <input
+                                    {...field}
+                                    type={showPassword ? "text" : "password"}
+                                    placeholder="********************"
+                                    className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''}`}
+                                />
+                                {fieldState.error && (
+                                    <p className="text-red-500 text-sm">{fieldState.error.message}</p>
+                                )}
+                            </div>
+                        )}
+                    />
+                    <button
+                        type="button"
+                        className="absolute top-1/2 right-2 transform -translate-y-1/2"
+                        onClick={() => setShowPassword(!showPassword)}
+                    >
+                        {showPassword ? <HiEyeOff className="text-gray-500" /> : <HiEye className="text-gray-500" />}
+                    </button>
+                </div>
             </div>
 
             <div>
