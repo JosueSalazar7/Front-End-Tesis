@@ -115,6 +115,41 @@ export const Formulario = ({ conductor }) => {
             </div>
             <div>
                 <label
+                    htmlFor='cedula:'
+                    className='text-gray-700 uppercase font-bold text-sm'>Cédula: </label>
+                <Controller
+                    name='cedula'
+                    control={control}
+                    defaultValue=''
+                    rules={{
+                        required: 'Campo Obligatorio',
+                        pattern: {
+                            value: /^[0-9]*$/,
+                            message: 'La cédula debe tener 10 digitos',
+                        },
+                        maxLength: {
+                            value: 10,
+                            message: 'La cédula debe tener máximo 10 dígitos',
+                        }
+                    }}
+                    render={({ field, fieldState }) => (
+                        <div>
+                            <input
+                                {...field}
+                                type="number"
+                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
+                                    }`}
+                                placeholder='Cédula'
+                            />
+                            {fieldState.error && (
+                                <p className="text-red-500 text-sm">{fieldState.error.message}</p>
+                            )}
+                        </div>
+                    )}
+                />
+            </div>
+            <div>
+                <label
                     htmlFor='correo:'
                     className='text-gray-700 uppercase font-bold text-sm'>Correo: </label>
                 <Controller
@@ -200,7 +235,7 @@ export const Formulario = ({ conductor }) => {
                         <div>
                             <input
                                 {...field}
-                                type="number"
+                                type="text"
                                 className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
                                     }`}
                                 placeholder='Celular'
@@ -212,41 +247,7 @@ export const Formulario = ({ conductor }) => {
                     )}
                 />
             </div>
-            <div>
-                <label
-                    htmlFor='cedula:'
-                    className='text-gray-700 uppercase font-bold text-sm'>Cédula: </label>
-                <Controller
-                    name='cedula'
-                    control={control}
-                    defaultValue=''
-                    rules={{
-                        required: 'Campo Obligatorio',
-                        pattern: {
-                            value: /^[0-9]*$/,
-                            message: 'La cédula debe tener 10 digitos',
-                        },
-                        maxLength: {
-                            value: 10,
-                            message: 'La cédula debe tener máximo 10 dígitos',
-                        }
-                    }}
-                    render={({ field, fieldState }) => (
-                        <div>
-                            <input
-                                {...field}
-                                type="number"
-                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
-                                    }`}
-                                placeholder='Cédula'
-                            />
-                            {fieldState.error && (
-                                <p className="text-red-500 text-sm">{fieldState.error.message}</p>
-                            )}
-                        </div>
-                    )}
-                />
-            </div>
+           
             <div>
                 <label
                     htmlFor='numeroAsientos:'
