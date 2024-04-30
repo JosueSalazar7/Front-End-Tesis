@@ -15,7 +15,7 @@ import { MdDeleteForever, MdNoteAdd, MdInfo } from "react-icons/md";
 
 const Tabla = () => {
   const navigate = useNavigate();
-  const [conductores, setconductor] = useState([]);
+  const [conductores, setConductores] = useState([]);
 
   const listarConductores = async () => {
     try {
@@ -28,7 +28,7 @@ const Tabla = () => {
         },
       };
       const respuesta = await axios.get(url, options);
-      setconductor(respuesta.data);
+      setConductores(respuesta.data);
     } catch (error) {
       console.log(error);
     }
@@ -45,8 +45,7 @@ const Tabla = () => {
       );
       if (confirmar) {
         const token = localStorage.getItem("token");
-        const url = `${import.meta.env.VITE_BACKEND_URL
-          }/admin/eliminarConductor/${id}`;
+        const url = `${import.meta.env.VITE_BACKEND_URL}/admin/eliminarConductor/${id}`;
         const headers = {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -69,32 +68,22 @@ const Tabla = () => {
       {
         Header: "N°",
         accessor: (row, index) => index + 1,
-        // Puedes utilizar un accessor personalizado para la numeración
       },
       {
         Header: "Nombre",
-        accessor: "nombre",
+        accessor: "conductorNombre",
       },
       {
-        Header: "Propietario",
-        accessor: "propietario",
+        Header: "Apellido",
+        accessor: "conductorApellido",
       },
       {
-        Header: "Email",
-        accessor: "email",
+        Header: "Correo",
+        accessor: "correo",
       },
       {
-        Header: "Celular",
-        accessor: "celular",
-      },
-      {
-        Header: "Estado",
-        accessor: "estado",
-        Cell: ({ value }) => (
-          <span className={`bg-blue-100 text-green-500 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ${value ? 'visible' : 'invisible'}`}>
-            {value ? 'activo' : ''}
-          </span>
-        ),
+        Header: "Teléfono",
+        accessor: "phone",
       },
       {
         Header: "Acciones",
