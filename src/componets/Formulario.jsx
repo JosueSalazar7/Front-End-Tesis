@@ -15,6 +15,8 @@ export const Formulario = ({ conductor }) => {
 
     const onSubmit = async (data) => {
         try {
+            console.log("Datos enviados:", data);
+            console.log("...");
             if (conductor?._id) {
                 const token = localStorage.getItem('token');
                 const url = `${import.meta.env.VITE_BACKEND_URL}/admin/actualizarConductor/${conductor?._id}`;
@@ -73,7 +75,7 @@ export const Formulario = ({ conductor }) => {
                                 className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
                                     }`}
                                 placeholder='Nombre del conductor'
-                                maxLength={20}
+                                //maxLength={20}
                             />
                             {fieldState.error && (
                                 <p className="text-red-500 text-sm">{fieldState.error.message}</p>
@@ -106,7 +108,7 @@ export const Formulario = ({ conductor }) => {
                                 className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
                                     }`}
                                 placeholder='Apellido del conductor'
-                                maxLength={20}
+                                //maxLength={20}
                             />
                             {fieldState.error && (
                                 <p className="text-red-500 text-sm">{fieldState.error.message}</p>
@@ -130,7 +132,7 @@ export const Formulario = ({ conductor }) => {
                             message: 'La cédula debe tener 10 digitos',
                         },
                         maxLength: {
-                            value: 10,
+                            //value: 10,
                             message: 'La cédula debe tener máximo 10 dígitos',
                         }
                     }}
@@ -194,7 +196,7 @@ export const Formulario = ({ conductor }) => {
                     rules={{
                         required: 'Campo Obligatorio',
                         pattern: {
-                            value: 15,
+                            //value: 15,
                             message: 'La contraseña es incorrecta ',
                         }
                     }}
@@ -235,7 +237,7 @@ export const Formulario = ({ conductor }) => {
                                 message: 'El celular debe tener 10 digitos',
                             },
                             maxLength: {
-                                value: 10,
+                                //value: 10,
                                 message: 'El celular debe tener máximo 10 dígitos',
                             }
                         }}
