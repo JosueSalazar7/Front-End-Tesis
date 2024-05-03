@@ -41,21 +41,23 @@ const VisualizarRuta = () => {
         {Object.keys(ruta).length !== 0 ? (
           <div className="m-5">
             <p className="text-md text-gray-600 uppercase font-bold">
-              Origen: {ruta.origen}
+              Nombre de la ruta: {ruta.nombre}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
-              Destino: {ruta.destino}
+              Ciudad de origen: {ruta.ciudad1}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
-              Distancia: {ruta.distancia}
+              Ciudad de destino: {ruta.ciudad2}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
-              Duración: {ruta.duracion}
+              Primer horario: {ruta.horario1}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
-              Descripción: {ruta.descripcion}
+              Segundo horario: {ruta.horario2}
             </p>
-            {/* Agrega aquí más detalles de la ruta si es necesario */}
+            <p className="text-md text-gray-600 uppercase font-bold">
+              Tercer horario: {ruta.horario3}
+            </p>
           </div>
         ) : (
           Object.keys(mensaje).length > 0 && (
