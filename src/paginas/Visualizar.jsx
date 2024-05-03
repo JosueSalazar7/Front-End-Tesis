@@ -5,24 +5,14 @@ import Mensaje from "../componets/Alertas/Mensaje";
 
 const Visualizar = () => {
   const { id } = useParams();
-  const [paciente, setPaciente] = useState({});
+  const [conductor, setConductor] = useState({});
   const [mensaje, setMensaje] = useState({});
 
-  const formatearFecha = (fecha) => {
-    const nuevaFecha = new Date(fecha);
-    nuevaFecha.setMinutes(
-      nuevaFecha.getMinutes() + nuevaFecha.getTimezoneOffset()
-    );
-    return new Intl.DateTimeFormat("es-EC", { dateStyle: "long" }).format(
-      nuevaFecha
-    );
-  };
-
   useEffect(() => {
-    const consultarPaciente = async () => {
+    const consultarConductor = async () => {
       try {
         const token = localStorage.getItem("token");
-        const url = `${import.meta.env.VITE_BACKEND_URL}/paciente/${id}`;
+        const url = `${import.meta.env.VITE_BACKEND_URL}/admin/conductor/${id}`;
         const options = {
           headers: {
             "Content-Type": "application/json",
@@ -30,81 +20,59 @@ const Visualizar = () => {
           },
         };
         const respuesta = await axios.get(url, options);
-        setPaciente(respuesta.data);
+        setConductor(respuesta.data);
       } catch (error) {
         setMensaje({ respuesta: error.response.data.msg, tipo: false });
       }
     };
-    consultarPaciente();
+    consultarConductor();
   }, []);
 
   return (
     <>
       <div>
         <h1 className="font-black text-4xl text-gray-500">
-          Visualizar Paciente
+          Visualizar Conductor
         </h1>
         <hr className="my-4" />
-        <p className="mb-8">
-          Este módulo te permite visualizar los datos del paciente
-        </p>
+        <p className="mb-8">Datos del conductor</p>
       </div>
       <div>
-        {Object.keys(paciente).length != 0 ? (
-          <div className="m-5 flex justify-between">
-            <div>
-              <p className="text-md text-gray-00 mt-4">
-                <span className="text-gray-600 uppercase font-bold">
-                  * Nombre del paciente:{" "}
-                </span>
-                {paciente.nombre}
-              </p>
-              <p className="text-md text-gray-00 mt-4">
-                <span className="text-gray-600 uppercase font-bold">
-                  * Nombre del propietario:{" "}
-                </span>
-                {paciente.propietario}
-              </p>
-              <p className="text-md text-gray-00 mt-4">
-                <span className="text-gray-600 uppercase font-bold">
-                  * Email:{" "}
-                </span>
-                {paciente.email}
-              </p>
-              <p className="text-md text-gray-00 mt-4">
-                <span className="text-gray-600 uppercase font-bold">
-                  * Fecha de atención:{" "}
-                </span>
-                {formatearFecha(paciente.ingreso)}
-              </p>
-              <p className="text-md text-gray-00 mt-4">
-                <span className="text-gray-600 uppercase font-bold">
-                  * Fecha de salida:{" "}
-                </span>
-                {formatearFecha(paciente.salida)}
-              </p>
-              <p className="text-md text-gray-00 mt-4">
-                <span className="text-gray-600 uppercase font-bold">
-                  * Estado:{" "}
-                </span>
-                <span class="bg-blue-100 text-green-500 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
-                  {paciente.estado && "activo"}
-                </span>
-              </p>
-              <p className="text-md text-gray-00 mt-4">
-                <span className="text-gray-600 uppercase font-bold">
-                  * Síntomas:{" "}
-                </span>
-                {paciente.sintomas}
-              </p>
-            </div>
-            <div>
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/2138/2138440.png"
-                alt="dogandcat"
-                className="h-80 w-80"
-              />
-            </div>
+        {Object.keys(conductor).length !== 0 ? (
+          <div className="m-5">
+            <p className="text-md text-gray-600 uppercase font-bold">
+              Nombre del conductor: {conductor.conductorNombre}
+            </p>
+            <p className="text-md text-gray-600 uppercase font-bold">
+              Apellido del conductor: {conductor.conductorApellido}
+            </p>
+            <p className="text-md text-gray-600 uppercase font-bold">
+              Cédula: {conductor.cedula}
+            </p>
+            <p className="text-md text-gray-600 uppercase font-bold">
+              Correo: {conductor.correo}
+            </p>
+            <p className="text-md text-gray-600 uppercase font-bold">
+              Celular: {conductor.phone}
+            </p>
+            <p className="text-md text-gray-600 uppercase font-bold">
+              Numero de asientos del vehiculo: {conductor.numeroAsientos}
+            </p>
+            <p className="text-md text-gray-600 uppercase font-bold">
+              Placa del vehiculo: {conductor.placaVehiculo}
+            </p>
+            <p className="text-md text-gray-600 uppercase font-bold">
+              Marca del vehiculo: {conductor.marcaVehiculo}
+            </p>
+            <p className="text-md text-gray-600 uppercase font-bold">
+              Modelo del vehiculo: {conductor.modeloVehiculo}
+            </p>
+            <p className="text-md text-gray-600 uppercase font-bold">
+              Año del vehiculo: {conductor.anioVehiculo}
+            </p>
+            <p className="text-md text-gray-600 uppercase font-bold">
+              Color del vehiculo: {conductor.colorVehiculo}
+            </p>
           </div>
         ) : (
           Object.keys(mensaje).length > 0 && (
