@@ -23,7 +23,7 @@ const Actualizar = () => {
                     }
                 }
                 const respuesta = await axios.get(url, options)
-                setPaciente(respuesta.data)
+                setConductor(respuesta.data)
             } catch (error) {
                 setMensaje({ respuesta: error.response.data.msg, tipo: false })
             }
