@@ -17,6 +17,8 @@ import { ConfirmarChofer } from "./paginas/ConfirmarChofer";
 import Restablecer from "./paginas/Restablecer";
 import { AuthProvider } from "./context/AuthProvider";
 import { PrivateRoute } from "./routes/PrivateRoute";
+import RegistrarRuta from "./paginas/RegistrarRuta"; // Importa la página RegistrarRuta
+import ListarRuta from "./paginas/ListarRuta"; // Importa la página ListarRuta
 
 function App() {
   return (
@@ -47,6 +49,8 @@ function App() {
                       <Route path="visualizar/:id" element={<Visualizar />} />
                       <Route path="crear" element={<Crear />} />
                       <Route path="actualizar/:id" element={<Actualizar />} />
+                      <Route path="registrar-ruta" element={<RegistrarRuta />} /> {/* Agrega la ruta para registrar una nueva ruta */}
+                      <Route path="listar-rutas" element={<ListarRuta />} /> {/* Agrega la ruta para listar las rutas */}
                     </Route>
                   </Routes>
                 </PrivateRoute>
