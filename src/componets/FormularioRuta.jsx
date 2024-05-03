@@ -50,7 +50,7 @@ export const FormularioRuta = ({ ruta }) => {
                 };
                 await axios.post(url, data, options);
             }
-            navigate('/dashboard/listar');
+            navigate('/dashboard/listar-rutas');
         } catch (error) {
             setMensaje({ respuesta: error.response.data.msg, tipo: false });
             setTimeout(() => {
