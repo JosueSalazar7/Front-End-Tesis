@@ -20,7 +20,7 @@ const ActualizarRuta = () => {
                         Authorization: `Bearer ${token}`
                     }
                 };
-                const respuesta = await axios.put(url, {}, options);
+                const respuesta = await axios.get(url, options);
                 setRuta(respuesta.data);
             } catch (error) {
                 setMensaje({ respuesta: error.response.data.msg, tipo: false });
