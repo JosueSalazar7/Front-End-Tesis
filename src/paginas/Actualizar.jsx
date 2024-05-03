@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const Actualizar = () => {
     const { id } = useParams()
-    const [conductor, setconductor] = useState({})
+    const [conductor, setConductor] = useState({})
     const [mensaje, setMensaje] = useState({})
 
     useEffect(() => {
