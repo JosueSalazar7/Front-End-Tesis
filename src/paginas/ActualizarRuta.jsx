@@ -1,7 +1,7 @@
 import { FormularioRuta } from '../componets/FormularioRuta';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Mensaje from '../components/Alertas/Mensaje';
+import Mensaje from '../componets/Alertas/Mensaje';
 import axios from 'axios';
 
 const ActualizarRuta = () => {
