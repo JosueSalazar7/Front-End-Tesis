@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Mensaje from "../components/Alertas/Mensaje";
+import Mensaje from "../componets/Alertas/Mensaje";
 
 const VisualizarRuta = () => {
   const { id } = useParams();
