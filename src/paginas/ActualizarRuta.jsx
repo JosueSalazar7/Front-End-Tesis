@@ -1,4 +1,4 @@
-import { FormularioRuta } from '../components/FormularioRuta';
+import { FormularioRuta } from '../componets/FormularioRuta';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Mensaje from '../components/Alertas/Mensaje';
