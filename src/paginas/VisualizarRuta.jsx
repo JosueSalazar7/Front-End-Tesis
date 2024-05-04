@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Mensaje from "../componets/Alertas/Mensaje";
+import Mensaje from "../components/Alertas/Mensaje";
 
 const VisualizarRuta = () => {
   const { id } = useParams();
@@ -41,22 +41,22 @@ const VisualizarRuta = () => {
         {Object.keys(ruta).length !== 0 ? (
           <div className="m-5">
             <p className="text-md text-gray-600 uppercase font-bold">
-              Nombre de la ruta: {ruta.nombre}
+              Nombre de la ruta: {ruta.ruta.nombre}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
-              Ciudad de origen: {ruta.ciudad1}
+              Ciudad de origen: {ruta.ruta.ciudad1}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
-              Ciudad de destino: {ruta.ciudad2}
+              Ciudad de destino: {ruta.ruta.ciudad2}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
-              Primer horario: {ruta.horario1}
+              Primer horario: {ruta.horario.horario1}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
-              Segundo horario: {ruta.horario2}
+              Segundo horario: {ruta.horario.horario2}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
-              Tercer horario: {ruta.horario3}
+              Tercer horario: {ruta.horario.horario3}
             </p>
           </div>
         ) : (
