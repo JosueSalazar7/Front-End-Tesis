@@ -33,6 +33,7 @@ export const Formulario = ({ conductor }) => {
 
     const onSubmit = async (data) => {
         try {
+            console.log(data);
             if (conductor?._id) {
                 // Actualizar el conductor
                 const token = localStorage.getItem('token');
