@@ -335,7 +335,7 @@ export const Formulario = ({ conductor }) => {
                         <div>
                             <input
                                 {...field}
-                                type="text"
+                                type="number"
                                 className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''}`}
                                 placeholder='Año del vehículo'
                             />
