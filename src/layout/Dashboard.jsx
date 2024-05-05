@@ -31,7 +31,10 @@ const Dashboard = () => {
                         <Link to='/dashboard/registrar-ruta' className={`${urlActual === '/dashboard/registrar-ruta' ? 'text-slate-100 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Registrar Ruta</Link>
                     </li>
                     <li className="text-center">
-                        <Link to='/dashboard/listar-rutas' className={`${urlActual === '/dashboard/listar-rutas' ? 'text-slate-100 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Listar Rutas</Link>
+                        <Link to='/dashboard/listar-rutas' className={`${urlActual === '/dashboard/listar-rutas' ? 'text-slate-100 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Ver Rutas</Link>
+                    </li>
+                    <li className="text-center">
+                        <Link to='/dashboard/listar-viajes-compartidos' className={`${urlActual === '/dashboard/listar-viajes-compartidos' ? 'text-slate-100 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Ver Viajes Compartidos Pendientes</Link>
                     </li>
                 </ul>
             </div>

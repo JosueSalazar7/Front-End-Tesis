@@ -21,6 +21,9 @@ import RegistrarRuta from "./paginas/RegistrarRuta"; // Importa la página Regis
 import ListarRuta from "./paginas/ListarRuta"; // Importa la página ListarRuta
 import VisualizarRuta from "./paginas/VisualizarRuta"; // Importa la página VisualizarRuta
 import ActualizarRuta from "./paginas/ActualizarRuta"; // Importa la página ActualizarRuta
+import ListarViajesCompartidos from "./paginas/ListarViajesC";
+import VisualizarViajeCompartido from "./paginas/VisualizarViajeC";
+import ActualizarViajeCompartido from "./paginas/ActualizarViajeC";
 
 function App() {
   return (
@@ -37,7 +40,7 @@ function App() {
               <Route path="admin/confirmar/:token" element={<ConfirmarAdmin />} />
               <Route path="chofer/confirmar/:token" element={<ConfirmarChofer />} />
               <Route path="*" element={<NotFound />} />
-              <Route path="admin/recuperar-password/:token" element={<Restablecer/>} />
+              <Route path="admin/recuperar-password/:token" element={<Restablecer />} />
             </Route>
 
             <Route
@@ -55,6 +58,9 @@ function App() {
                       <Route path="listar-rutas" element={<ListarRuta />} /> {/* Agrega la ruta para listar las rutas */}
                       <Route path="visualizarRuta/:id" element={<VisualizarRuta />} /> {/* Agrega la ruta para visualizar una ruta */}
                       <Route path="actualizarRuta/:id" element={<ActualizarRuta />} /> {/* Agrega la ruta para actualizar una ruta */}
+                      <Route path="listar-viajes-compartidos" element={<ListarViajesCompartidos />} /> {/* Agrega la ruta para listar los viajes compartidos */}
+                      <Route path="visualizar-viaje-compartido/:id" element={<VisualizarViajeCompartido />} /> {/* Agrega la ruta para visualizar un viaje compartido */}
+                      <Route path="actualizar-viaje-compartido/:id" element={<ActualizarViajeCompartido />} /> {/* Agrega la ruta para actualizar un viaje compartido */}
                     </Route>
                   </Routes>
                 </PrivateRoute>
