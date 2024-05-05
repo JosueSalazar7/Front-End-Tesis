@@ -59,8 +59,8 @@ function App() {
                       <Route path="visualizarRuta/:id" element={<VisualizarRuta />} /> {/* Agrega la ruta para visualizar una ruta */}
                       <Route path="actualizarRuta/:id" element={<ActualizarRuta />} /> {/* Agrega la ruta para actualizar una ruta */}
                       <Route path="listar-viajes-compartidos" element={<ListarViajesCompartidos />} /> {/* Agrega la ruta para listar los viajes compartidos */}
-                      <Route path="visualizar-viaje-compartido/:id" element={<VisualizarViajeCompartido />} /> {/* Agrega la ruta para visualizar un viaje compartido */}
-                      <Route path="actualizar-viaje-compartido/:id" element={<ActualizarViajeCompartido />} /> {/* Agrega la ruta para actualizar un viaje compartido */}
+                      <Route path="visualizarViajeCompartido/:id" element={<VisualizarViajeCompartido />} /> {/* Agrega la ruta para visualizar un viaje compartido */}
+                      <Route path="actualizarViajeCompartido/:id" element={<ActualizarViajeCompartido />} /> {/* Agrega la ruta para actualizar un viaje compartido */}
                     </Route>
                   </Routes>
                 </PrivateRoute>
