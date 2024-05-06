@@ -171,59 +171,6 @@ const TablaViajesCompartidosPendientes = () => {
             </tbody>
           </table>
           <div className="pagination flex items-center justify-center mt-4">
-          <div className="relative flex-1">
-              <input
-                type="text"
-                value={globalFilter || ""}
-                onChange={(e) => setGlobalFilter(e.target.value)}
-                placeholder="Busca por el nombre del propietario..."
-                className="w-full px-4 py-2 border rounded-md pr-10"
-              />
-              <span className="absolute inset-y-0 right-0 pr-3 flex items-center">
-                <svg
-                  className="w-4 h-4 text-gray-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M21 21l-5.2-5.2"
-                  />
-                  <circle cx="10" cy="10" r="7" />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <table {...getTableProps()} className="w-full mt-5 table-auto shadow-lg bg-white">
-            <thead className="bg-gray-800 text-slate-400">
-              {headerGroups.map((headerGroup) => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
-                  {headerGroup.headers.map((column) => (
-                    <th {...column.getHeaderProps()} className="p-2">
-                      {column.render("Header")}
-                    </th>
-                  ))}
-                </tr>
-              ))}
-            </thead>
-            <tbody {...getTableBodyProps()}>
-              {rows.map((row) => {
-                prepareRow(row);
-                return (
-                  <tr {...row.getRowProps()} className="border-b hover:bg-gray-300 text-center">
-                    {row.cells.map((cell) => {
-                      return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
-                    })}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-          <div className="pagination flex items-center justify-center mt-4">
             <button
               className="px-3 py-1 border rounded-md mr-2 hover:bg-gray-400 hover:text-white bg-gray-800 text-slate-400"
               onClick={() => gotoPage(0)}
