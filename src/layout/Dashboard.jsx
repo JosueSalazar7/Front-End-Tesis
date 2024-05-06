@@ -21,10 +21,10 @@ const Dashboard = () => {
                         <Link to='/dashboard' className={`${urlActual === '/dashboard' ? 'text-slate-200 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Perfil</Link>
                     </li>
                     <li className="text-center">
-                        <Link to='/dashboard/listar' className={`${urlActual === '/dashboard/listar' ? 'text-slate-200 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Ver Conductores</Link>
+                        <Link to='/dashboard/crear' className={`${urlActual === '/dashboard/crear' ? 'text-slate-100 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Registrar Conductor</Link>
                     </li>
                     <li className="text-center">
-                        <Link to='/dashboard/crear' className={`${urlActual === '/dashboard/crear' ? 'text-slate-100 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Registrar Conductor</Link>
+                        <Link to='/dashboard/listar' className={`${urlActual === '/dashboard/listar' ? 'text-slate-200 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Ver Conductores</Link>
                     </li>
                     {/* Agregar enlaces para las nuevas funcionalidades de rutas */}
                     <li className="text-center">
@@ -35,6 +35,12 @@ const Dashboard = () => {
                     </li>
                     <li className="text-center">
                         <Link to='/dashboard/listar-viajes-compartidos' className={`${urlActual === '/dashboard/listar-viajes-compartidos' ? 'text-slate-100 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Ver Viajes Compartidos Pendientes</Link>
+                    </li>
+                    <li className="text-center">
+                        <Link to='/dashboard/listar-viajes-privados' className={`${urlActual === '/dashboard/listar-viajes-privados' ? 'text-slate-100 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Ver Viajes Privados Pendientes</Link>
+                    </li>
+                    <li className="text-center">
+                        <Link to='/dashboard/listar-encomiendas' className={`${urlActual === '/dashboard/listar-encomiendas' ? 'text-slate-100 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Ver Encomiendas Pendientes</Link>
                     </li>
                 </ul>
             </div>
