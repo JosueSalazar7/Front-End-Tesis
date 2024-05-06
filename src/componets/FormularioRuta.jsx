@@ -18,9 +18,9 @@ export const FormularioRuta = ({ ruta }) => {
                 nombre: ruta.ruta.nombre,
                 ciudad1: ruta.ruta.ciudad1,
                 ciudad2: ruta.ruta.ciudad2,
-                horario1: ruta.horario.horario1,
-                horario2: ruta.horario.horario2,
-                horario3: ruta.horario.horario3,
+                horario1: ruta.horario?.horario1, // Modificación aquí
+                horario2: ruta.horario?.horario2, // Modificación aquí
+                horario3: ruta.horario?.horario3, // Modificación aquí
             });
         }
     }, [ruta, reset]);

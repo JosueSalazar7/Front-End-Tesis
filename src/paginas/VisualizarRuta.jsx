@@ -50,13 +50,13 @@ const VisualizarRuta = () => {
               Ciudad de destino: {ruta.ruta.ciudad2}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
-              Primer horario: {ruta.horario.horario1}
+              Primer horario: {ruta.horario?.horario1} {/* Modificación aquí */}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
-              Segundo horario: {ruta.horario.horario2}
+              Segundo horario: {ruta.horario?.horario2} {/* Modificación aquí */}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
-              Tercer horario: {ruta.horario.horario3}
+              Tercer horario: {ruta.horario?.horario3} {/* Modificación aquí */}
             </p>
           </div>
         ) : (
