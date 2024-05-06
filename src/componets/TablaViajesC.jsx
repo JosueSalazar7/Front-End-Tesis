@@ -75,19 +75,19 @@ const TablaViajesCompartidosPendientes = () => {
       },
       {
         Header: "Nombre",
-        accessor: "user.nombre",
+        accessor: "boleto.user.nombre",
       },
       {
         Header: "Apellido",
-        accessor: "user.apellido",
+        accessor: "boleto.user.apellido",
       },
       {
         Header: "Ciudad de Salida",
-        accessor: "ciudadSalida.ciudad",
+        accessor: "boleto.ciudadSalida.ciudad",
       },
       {
         Header: "Ciudad de Llegada",
-        accessor: "ciudadLlegada.ciudad",
+        accessor: "boleto.ciudadLlegada.ciudad",
       },
       {
         Header: "Turno",
