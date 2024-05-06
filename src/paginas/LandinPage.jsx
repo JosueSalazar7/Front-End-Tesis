@@ -1,6 +1,5 @@
 import logoDarkMode from '../assets/dark.png';
 import carro from "../assets/carro.avif";
-import vet from "../assets/vet.avif";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
