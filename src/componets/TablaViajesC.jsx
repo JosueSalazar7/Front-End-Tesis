@@ -108,7 +108,7 @@ const TablaViajesCompartidosPendientes = () => {
                         <MdNoteAdd
                             className="h-7 w-7 text-slate-800 cursor-pointer inline-block mx-2"
                             onClick={() => {
-                                handleAssignDriver(row.original.id);
+                                navigate(`/dashboard/actualizarViajeCompartido/${row.original.id}`);
                             }}
                         />
                         <MdInfo

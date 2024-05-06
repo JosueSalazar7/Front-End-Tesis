@@ -50,10 +50,10 @@ const VisualizarViajeCompartido = () => {
               Apellido: {viajeCompartido.apellido}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
-              Ciudad de Salida: {viajeCompartido.ciudadSalida.ciudad}
+              Ciudad de Salida: {viajeCompartido.ciudadSalida}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
-              Ciudad de Llegada: {viajeCompartido.ciudadLlegada.ciudad}
+              Ciudad de Llegada: {viajeCompartido.ciudadLlegada}
             </p>
             <p className="text-md text-gray-600 uppercase font-bold">
               Horario: {viajeCompartido.turno.horario}

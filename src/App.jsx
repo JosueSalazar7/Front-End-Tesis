@@ -23,7 +23,7 @@ import VisualizarRuta from "./paginas/VisualizarRuta"; // Importa la página Vis
 import ActualizarRuta from "./paginas/ActualizarRuta"; // Importa la página ActualizarRuta
 import ListarViajesCompartidos from "./paginas/ListarViajesC";
 import VisualizarViajesCompartidos from "./paginas/VisualizarViajesC"; // Importa la página VisualizarViajesC
-
+import ActualizarViajeC from "./paginas/ActualizarViajeC";
 
 function App() {
   return (
@@ -60,6 +60,7 @@ function App() {
                       <Route path="actualizarRuta/:id" element={<ActualizarRuta />} /> {/* Agrega la ruta para actualizar una ruta */}
                       <Route path="listar-viajes-compartidos" element={<ListarViajesCompartidos />} /> {/* Agrega la ruta para listar los viajes compartidos */}
                       <Route path="visualizarViajeCompartido/:id" element={<VisualizarViajesCompartidos />} /> {/* Agrega la ruta para visualizar un viaje compartido */}
+                      <Route path="actualizarViajeCompartido/:id" element={<ActualizarViajeC />} />                    
                     </Route>
                   </Routes>
                 </PrivateRoute>
