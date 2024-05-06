@@ -31,6 +31,7 @@ import ListarEncomiendas from "./paginas/ListarEncomiendas";
 import VisualizarEncomienda from "./paginas/VisualizarEncomienda";
 import ActualizarEncomienda from "./paginas/ActualizarEncomienda";
 import ListarPasajeros from "./paginas/ListarPasajeros";
+import ActualizarPerfil from './paginas/ActualizarPerfil';
 
 function App() {
   return (
@@ -75,6 +76,7 @@ function App() {
                       <Route path="visualizarEncomienda/:id" element={<VisualizarEncomienda />} />
                       <Route path="actualizarEncomienda/:id" element={<ActualizarEncomienda />} />
                       <Route path="listar-pasajeros" element={<ListarPasajeros />} />
+                      <Route path="actualizarPerfil/:id" element={<ActualizarPerfil />} />
                     </Route>
                   </Routes>
                 </PrivateRoute>
