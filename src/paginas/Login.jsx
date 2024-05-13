@@ -30,17 +30,16 @@ const Login = () => {
     };
 
     return (
-        <>
-            <div className="w-1/2 h-screen bg-[url('/public/images/carlogin.jpg')] bg-no-repeat bg-cover bg-center sm:block hidden"></div>
+        <div className="flex justify-center items-center h-screen">
+            <div className="max-w-lg mx-auto"> {/* Centramos el formulario y establecemos un ancho máximo */}
+                <img src="/public/images/carlogin.jpg" alt="Background" className="rounded-full h-32 w-32 mx-auto mb-8" />
 
-            <div className="w-1/2 h-screen bg-white flex justify-center items-center">
-
-                <div className="md:w-4/5 sm:w-full">
+                <div className="w-full mx-auto"> 
                     {Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
-                    <h1 className="text-3xl font-semibold mb-2 text-center uppercase  text-gray-500">¡Bienvenido de nuevo!</h1>
+                    <h1 className="text-3xl font-semibold mb-2 text-center uppercase text-gray-500">¡Bienvenido de nuevo!</h1>
                     <small className="text-gray-400 block my-4 text-sm">Por favor ingresa tus datos</small>
 
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto"> {/* Establecemos un ancho máximo al formulario */}
                         <Controller
                             name="correo"
                             control={control}
@@ -86,10 +85,10 @@ const Login = () => {
                             />
                             <button
                                 type="button"
-                                className="absolute top-1/2 right-2 transform -translate-y-1/2"
+                                className="absolute right-1 top-1/2 transform -translate-y-1/2"
                                 onClick={() => setShowPassword(!showPassword)} // Alternar el estado de mostrar contraseña
                             >
-                                {showPassword ? <HiEyeOff className="text-gray-500" /> : <HiEye className="text-gray-500" />}
+                                {showPassword ? <HiEyeOff className="text-black-500" /> : <HiEye className="text-black-500" />}
                             </button>
                         </div>
                         {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
@@ -105,14 +104,11 @@ const Login = () => {
                     <div className="mt-3 text-sm flex justify-between items-center">
                         <p>¿No tienes una cuenta?</p>
                         <Link to="/register" className="py-2 px-5 bg-gray-600 text-slate-300 border rounded-xl hover:scale-110 duration-300 hover:bg-gray-900 hover:text-white">Registrate</Link>
-
                     </div>
-
-
                 </div>
             </div>
-        </>
-    )
+        </div>
+    );
 }
 
 export default Login;

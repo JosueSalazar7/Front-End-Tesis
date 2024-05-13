@@ -32,6 +32,7 @@ import VisualizarEncomienda from "./paginas/VisualizarEncomienda";
 import ActualizarEncomienda from "./paginas/ActualizarEncomienda";
 import ListarPasajeros from "./paginas/ListarPasajeros";
 import ActualizarPerfil from './paginas/ActualizarPerfil';
+import ActualizarContrasena from "./paginas/ActualizarContraseña";
 
 function App() {
   return (
@@ -77,6 +78,7 @@ function App() {
                       <Route path="actualizarEncomienda/:id" element={<ActualizarEncomienda />} />
                       <Route path="listar-pasajeros" element={<ListarPasajeros />} />
                       <Route path="actualizarPerfil/:id" element={<ActualizarPerfil />} />
+                      <Route path="actualizarContrasena" element={<ActualizarContrasena />} />
                     </Route>
                   </Routes>
                 </PrivateRoute>

@@ -45,8 +45,11 @@ const Perfil = () => {
                         <CardPerfil perfil={perfil} />
                     </div>
                     <div className="flex justify-center mt-4">
-                        <Link to={`/dashboard/actualizarPerfil/${perfil._id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <Link to={`/dashboard/actualizarPerfil/${perfil._id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">
                             Actualizar Perfil
+                        </Link>
+                        <Link to="/dashboard/actualizarContrasena" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Actualizar Contraseña
                         </Link>
                     </div>
                 </div>

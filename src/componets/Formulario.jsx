@@ -19,7 +19,7 @@ export const Formulario = ({ conductor }) => {
                 conductorApellido: conductor.conductorApellido,
                 cedula: conductor.cedula,
                 correo: conductor.correo,
-                password: '', // Opcional: puede ser requerido o no dependiendo de tu lógica de negocio
+                password: '', // Opcional: 
                 phone: conductor.phone,
                 numeroAsientos: conductor.numeroAsientos,
                 placaVehiculo: conductor.placaVehiculo,
