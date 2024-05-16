@@ -7,8 +7,6 @@ import {
     useTable,
     useGlobalFilter,
     usePagination,
-    canPreviousPage,
-    canNextPage,
 } from 'react-table';
 
 const TablaEncomiendasPendientes = () => {
@@ -97,25 +95,34 @@ const TablaEncomiendasPendientes = () => {
                 Header: 'Acciones',
                 accessor: 'acciones',
                 Cell: ({ row }) => (
-                    <div className="py-2 text-center">
-                        <MdDeleteForever
-                            className="h-7 w-7 text-red-900 cursor-pointer inline-block"
-                            onClick={() => {
-                                handleDelete(row.original.id);
-                            }}
-                        />
-                        <MdNoteAdd
-                            className="h-7 w-7 text-slate-800 cursor-pointer inline-block mx-2"
-                            onClick={() => {
-                                navigate(`/dashboard/actualizarEncomienda/${row.original.id}`);
-                            }}
-                        />
-                        <MdInfo
-                            className="h-7 w-7 text-blue-900 cursor-pointer inline-block"
-                            onClick={() => {
-                                navigate(`/dashboard/visualizarEncomienda/${row.original.id}`);
-                            }}
-                        />
+                    <div className="py-2 text-center flex justify-center">
+                        <div className="flex flex-col items-center mx-2">
+                            <MdNoteAdd
+                                className="h-7 w-7 text-slate-800 cursor-pointer"
+                                onClick={() => {
+                                    navigate(`/dashboard/actualizarEncomienda/${row.original.id}`);
+                                }}
+                            />
+                            <span className="text-xs">Actualizar</span>
+                        </div>
+                        <div className="flex flex-col items-center mx-2">
+                            <MdInfo
+                                className="h-7 w-7 text-blue-900 cursor-pointer"
+                                onClick={() => {
+                                    navigate(`/dashboard/visualizarEncomienda/${row.original.id}`);
+                                }}
+                            />
+                            <span className="text-xs">Visualizar</span>
+                        </div>
+                        <div className="flex flex-col items-center mx-2">
+                            <MdDeleteForever
+                                className="h-7 w-7 text-red-900 cursor-pointer"
+                                onClick={() => {
+                                    handleDelete(row.original.id);
+                                }}
+                            />
+                            <span className="text-xs">Eliminar</span>
+                        </div>
                     </div>
                 ),
             },
@@ -127,7 +134,6 @@ const TablaEncomiendasPendientes = () => {
         getTableProps,
         getTableBodyProps,
         headerGroups,
-        rows,
         prepareRow,
         setGlobalFilter,
         state: { globalFilter, pageIndex, pageSize },
@@ -135,6 +141,10 @@ const TablaEncomiendasPendientes = () => {
         gotoPage,
         setPageSize,
         previousPage,
+        nextPage,
+        canPreviousPage,
+        canNextPage,
+        pageCount,
     } = useTable(
         {
             columns,
@@ -151,6 +161,34 @@ const TablaEncomiendasPendientes = () => {
                 <Mensaje tipo={'active'}>{'No existen encomiendas pendientes'}</Mensaje>
             ) : (
                 <>
+                    <div className="flex justify-between items-center mb-4">
+                        <div className="relative flex-1">
+                            <input
+                                type="text"
+                                value={globalFilter || ""}
+                                onChange={(e) => setGlobalFilter(e.target.value)}
+                                placeholder="Busca por nombre..."
+                                className="w-full px-4 py-2 border rounded-md pr-10"
+                            />
+                            <span className="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                <svg
+                                    className="w-4 h-4 text-gray-500"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M21 21l-5.2-5.2"
+                                    />
+                                    <circle cx="10" cy="10" r="7" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
                     <table {...getTableProps()} className="w-full mt-5 table-auto shadow-lg bg-white">
                         <thead className="bg-gray-800 text-slate-400">
                             {headerGroups.map((headerGroup) => (
@@ -164,7 +202,7 @@ const TablaEncomiendasPendientes = () => {
                             ))}
                         </thead>
                         <tbody {...getTableBodyProps()}>
-                            {rows.map((row) => {
+                            {page.map((row) => {
                                 prepareRow(row);
                                 return (
                                     <tr
@@ -197,7 +235,7 @@ const TablaEncomiendasPendientes = () => {
                         <span className="mr-2">
                             Página{' '}
                             <strong>
-                                {pageIndex + 1} de {page.length}
+                                {pageIndex + 1} de {pageCount}
                             </strong>
                         </span>
                         <span className="mr-2">
@@ -247,3 +285,4 @@ const TablaEncomiendasPendientes = () => {
 };
 
 export default TablaEncomiendasPendientes;
+

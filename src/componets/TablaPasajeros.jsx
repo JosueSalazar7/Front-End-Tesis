@@ -6,8 +6,6 @@ import {
     useTable,
     useGlobalFilter,
     usePagination,
-    canPreviousPage,
-    canNextPage,
 } from "react-table";
 import { useNavigate } from "react-router-dom";
 
@@ -28,7 +26,6 @@ const TablaPasajeros = () => {
             const respuesta = await axios.get(url, options);
             if (respuesta.status === 200) {
                 setPasajeros(respuesta.data);
-
             } else {
                 console.error("Error al obtener los pasajeros:", respuesta.data.error);
             }
@@ -85,6 +82,10 @@ const TablaPasajeros = () => {
         gotoPage,
         setPageSize,
         previousPage,
+        nextPage,
+        canPreviousPage,
+        canNextPage,
+        pageCount,
     } = useTable(
         {
             columns,
@@ -101,6 +102,34 @@ const TablaPasajeros = () => {
                 <Mensaje tipo={"active"}>{"No existen pasajeros registrados"}</Mensaje>
             ) : (
                 <>
+                    <div className="flex justify-between items-center mb-4">
+                        <div className="relative flex-1">
+                            <input
+                                type="text"
+                                value={globalFilter || ""}
+                                onChange={(e) => setGlobalFilter(e.target.value)}
+                                placeholder="Buscar por nombre..."
+                                className="w-full px-4 py-2 border rounded-md pr-10"
+                            />
+                            <span className="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                <svg
+                                    className="w-4 h-4 text-gray-500"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M21 21l-5.2-5.2"
+                                    />
+                                    <circle cx="10" cy="10" r="7" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
                     <table {...getTableProps()} className="w-full mt-5 table-auto shadow-lg bg-white">
                         <thead className="bg-gray-800 text-slate-400">
                             {headerGroups.map((headerGroup) => (
@@ -114,7 +143,7 @@ const TablaPasajeros = () => {
                             ))}
                         </thead>
                         <tbody {...getTableBodyProps()}>
-                            {rows.map((row) => {
+                            {page.map((row) => {
                                 prepareRow(row);
                                 return (
                                     <tr {...row.getRowProps()} className="border-b hover:bg-gray-300 text-center">
@@ -144,7 +173,7 @@ const TablaPasajeros = () => {
                         <span className="mr-2">
                             Página{" "}
                             <strong>
-                                {pageIndex + 1} de {page.length}
+                                {pageIndex + 1} de {pageCount}
                             </strong>
                         </span>
                         <span className="mr-2">

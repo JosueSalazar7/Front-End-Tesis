@@ -89,25 +89,34 @@ const Tabla = () => {
         Header: "Acciones",
         accessor: "acciones",
         Cell: ({ row }) => (
-          <div className="py-2 text-center">
-            <MdNoteAdd
-              className="h-7 w-7 text-slate-800 cursor-pointer inline-block mr-2"
-              onClick={() =>
-                navigate(`/dashboard/visualizar/${row.original._id}`)
-              }
-            />
-            <MdInfo
-              className="h-7 w-7 text-slate-800 cursor-pointer inline-block mr-2"
-              onClick={() =>
-                navigate(`/dashboard/actualizar/${row.original._id}`)
-              }
-            />
-            <MdDeleteForever
-              className="h-7 w-7 text-red-900 cursor-pointer inline-block"
-              onClick={() => {
-                handleDelete(row.original._id);
-              }}
-            />
+          <div className="py-2 text-center flex justify-center items-center">
+            <div className="flex flex-col items-center mx-2">
+              <MdNoteAdd
+                className="h-7 w-7 text-slate-800 cursor-pointer"
+                onClick={() =>
+                  navigate(`/dashboard/actualizar/${row.original._id}`)
+                }
+              />
+              <span className="text-xs">Actualizar</span>
+            </div>
+            <div className="flex flex-col items-center mx-2">
+              <MdInfo
+                className="h-7 w-7 text-blue-800 cursor-pointer"
+                onClick={() =>
+                  navigate(`/dashboard/visualizar/${row.original._id}`)
+                }
+              />
+              <span className="text-xs">Visualizar</span>
+            </div>
+            <div className="flex flex-col items-center mx-2">
+              <MdDeleteForever
+                className="h-7 w-7 text-red-900 cursor-pointer"
+                onClick={() => {
+                  handleDelete(row.original._id);
+                }}
+              />
+              <span className="text-xs">Eliminar</span>
+            </div>
           </div>
         ),
       },
