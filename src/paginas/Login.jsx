@@ -29,17 +29,23 @@ const Login = () => {
         }
     };
 
+    // Estilo en línea para el tamaño máximo
+    const maxCardWidthStyle = {
+        maxWidth: '900px', // Puedes ajustar este valor según tus necesidades
+        margin: '800 auto' // Centrar horizontalmente
+    };
+
     return (
         <div className="flex justify-center items-center h-screen">
-            <div className="max-w-lg mx-auto"> {/* Centramos el formulario y establecemos un ancho máximo */}
-                <img src="/public/images/carlogin.jpg" alt="Background" className="rounded-full h-32 w-32 mx-auto mb-8" />
+            <img src="/public/images/login.jpg" alt="Background" className="fixed top-0 left-0 w-full h-full object-cover z-0" />
 
-                <div className="w-full mx-auto"> 
+            <div className="absolute inset-50 flex justify-center items-center z-20">
+                <div style={maxCardWidthStyle} className="bg-white bg-opacity-50 rounded-lg p-8">
                     {Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
-                    <h1 className="text-3xl font-semibold mb-2 text-center uppercase text-gray-500">¡Bienvenido de nuevo!</h1>
-                    <small className="text-gray-400 block my-4 text-sm">Por favor ingresa tus datos</small>
+                    <h1 className="text-5xl font-semibold mb-2 text-center uppercase text-black-500">¡Bienvenido de nuevo!</h1>
+                    <small className="text-black-400 block my-4 text-lg">Por favor ingresa tus datos</small>
 
-                    <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto"> {/* Establecemos un ancho máximo al formulario */}
+                    <form onSubmit={handleSubmit(onSubmit)} className="max-w-500 mx-500"> {/* Establecemos un ancho máximo al formulario */}
                         <Controller
                             name="correo"
                             control={control}
@@ -53,12 +59,12 @@ const Login = () => {
                             }}
                             render={({ field }) => (
                                 <div className="mb-3">
-                                    <label className="mb-2 block text-sm font-semibold">Correo electrónico</label>
+                                    <label className="mb-2 block text-xl font-semibold">Correo electrónico</label>
                                     <input
                                         {...field}
                                         type="email"
                                         placeholder="Introduce tu correo electrónico"
-                                        maxLength={122}
+                                        maxLength={50}
                                         className={`block w-full rounded-md border ${errors.correo ? 'border-red-500' : 'border-gray-300'} focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-2 text-gray-500`}
                                     />
                                     {errors.correo && <p className="text-red-500 text-sm">{errors.correo.message}</p>}
@@ -73,7 +79,7 @@ const Login = () => {
                                 rules={{ required: 'Este campo es obligatorio' }}
                                 render={({ field }) => (
                                     <>
-                                        <label className="mb-2 block text-sm font-semibold">Contraseña</label>
+                                        <label className="mb-2 block text-xl font-semibold">Contraseña</label>
                                         <input
                                             {...field}
                                             type={showPassword ? 'text' : 'password'} // Mostrar contraseña según el estado de showPassword
@@ -98,13 +104,9 @@ const Login = () => {
                     </form>
 
                     <div className="mt-5 text-xs border-b-2 py-4 ">
-                        <Link to="/forgot/id" className="underline text-sm text-gray-400 hover:text-gray-900">¿Olvidaste tu contraseña?</Link>
+                        <Link to="/forgot/id" className="underline text-lg text-black-400 hover:text-gray-900">¿Olvidaste tu contraseña?</Link>
                     </div>
 
-                    <div className="mt-3 text-sm flex justify-between items-center">
-                        <p>¿No tienes una cuenta?</p>
-                        <Link to="/register" className="py-2 px-5 bg-gray-600 text-slate-300 border rounded-xl hover:scale-110 duration-300 hover:bg-gray-900 hover:text-white">Registrate</Link>
-                    </div>
                 </div>
             </div>
         </div>
