@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Auth from "./layout/Auth";
 import Login from "./paginas/Login";
 import { LandinPage } from "./paginas/LandinPage";
-import { RegisterAdmin } from "./paginas/RegisterAdmin";
+import RegisterAdmin from "./paginas/RegisterAdmin";
 import { Forgot } from "./paginas/Forgot";
 import { NotFound } from "./paginas/NotFound";
 import Dashboard from "./layout/Dashboard";
@@ -44,7 +44,6 @@ function App() {
 
             <Route path="/" element={<Auth />}>
               <Route path="login" element={<Login />} />
-              <Route path="register" element={<RegisterAdmin />} />
               <Route path="forgot/:id" element={<Forgot />} />
               <Route path="admin/confirmar/:token" element={<ConfirmarAdmin />} />
               <Route path="chofer/confirmar/:token" element={<ConfirmarChofer />} />
@@ -79,6 +78,7 @@ function App() {
                       <Route path="listar-pasajeros" element={<ListarPasajeros />} />
                       <Route path="actualizarPerfil/:id" element={<ActualizarPerfil />} />
                       <Route path="actualizarContrasena" element={<ActualizarContrasena />} />
+                      <Route path="register" element={<RegisterAdmin />} />
                     </Route>
                   </Routes>
                 </PrivateRoute>

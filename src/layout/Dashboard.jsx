@@ -45,6 +45,10 @@ const Dashboard = () => {
                     <li className="text-center">
                         <Link to='/dashboard/listar-pasajeros' className={`${urlActual === '/dashboard/listar-pasajeros' ? 'text-slate-100 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Ver Pasajeros</Link>
                     </li>
+                    <li className="text-center">
+                        <Link to='/dashboard/register' className={`${urlActual === '/dashboard/register' ? 'text-slate-100 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Registrar Administrador</Link>
+                    </li>
+                    
                 </ul>
             </div>
             <div className='flex-1 flex flex-col justify-between h-screen bg-gray-100'>
