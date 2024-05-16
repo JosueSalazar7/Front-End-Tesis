@@ -92,7 +92,7 @@ export const Forgot = () => {
       </div>
 
       <div
-        className="w-1/2 h-screen bg-[url('/public/images/catforgot.jpg')] 
+        className="w-1/2 h-screen bg-[url('/public/images/fast.jpg')] 
         bg-no-repeat bg-cover bg-center sm:block hidden
         "
       ></div>
