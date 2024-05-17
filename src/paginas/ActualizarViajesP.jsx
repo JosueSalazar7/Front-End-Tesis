@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Mensaje from "../componets/Alertas/Mensaje";
@@ -11,6 +11,7 @@ const ActualizarViajePrivado = () => {
   });
   const [conductores, setConductores] = useState([]);
   const [mensaje, setMensaje] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,46 +55,47 @@ const ActualizarViajePrivado = () => {
       };
       const respuesta = await axios.put(url, datosActualizados, options);
       setMensaje({ respuesta: "Estado del viaje privado actualizado correctamente", tipo: true });
+      // Redirigir después de la actualización
+      navigate('/dashboard/listar-viajes-privados');
     } catch (error) {
       setMensaje({ respuesta: error.response.data.error, tipo: false });
     }
   };
 
   return (
-    <>
-      <div>
-        <h1 className="font-black text-4xl text-gray-500">Actualizar Viaje Privado</h1>
-        <hr className="my-4" />
-        <p className="mb-8">Completa los datos para actualizar el estado del viaje privado</p>
-      </div>
-      <div>
-        <form onSubmit={handleSubmit} className="m-5">
-          <div className="mb-4">
-            <label htmlFor="conductorAsignado" className="block text-md text-gray-600 uppercase font-bold">Conductor asignado:</label>
-            <select id="conductorAsignado" name="conductorAsignado" value={datosActualizados.conductorAsignado} onChange={handleChange} className="border border-gray-300 p-2 w-full">
-              <option value="">Seleccionar conductor</option>
-              {conductores.map(conductor => (
-                <option key={conductor._id} value={conductor._id}>{conductor.conductorNombre}</option>
-              ))}
-            </select>
-          </div>
-          <div className="mb-4">
-            <label htmlFor="estadoPax" className="block text-md text-gray-600 uppercase font-bold">Estado del viaje privado:</label>
-            <select id="estadoPax" name="estadoPax" value={datosActualizados.estadoPax} onChange={handleChange} className="border border-gray-300 p-2 w-full">
-              <option value="">Seleccionar estado</option>
-              <option value="Pendiente">Pendiente</option>
-              <option value="Aprobado">Aprobado</option>
-              <option value="En tránsito">En tránsito</option>
-              <option value="Completado">Completado</option>
-            </select>
-          </div>
-          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Actualizar</button>
-        </form>
-        {Object.keys(mensaje).length > 0 && (
-          <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
-        )}
-      </div>
-    </>
+    <div className="mt-10 h-screen pt-40 items-start text-center" >
+      <h1 className="font-black text-5xl text-gray-500 max-w-md mx-auto">Actualizar Viaje Privado</h1>
+      <hr className="my-4" />
+      <p className="mb-8">Completa los datos para actualizar el estado del viaje privado</p>
+      <form onSubmit={handleSubmit} className="m-5">
+        <div className="mb-4">
+          <label htmlFor="conductorAsignado" className="block text-md text-gray-600 uppercase font-bold">Conductor asignado:</label>
+          <select id="conductorAsignado" name="conductorAsignado" value={datosActualizados.conductorAsignado} onChange={handleChange} className="border border-gray-300 p-2 w-full">
+            <option value="">Seleccionar conductor</option>
+            {conductores.map(conductor => (
+              <option key={conductor._id} value={conductor._id}>{conductor.conductorNombre}</option>
+            ))}
+          </select>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="estadoPax" className="block text-md text-gray-600 uppercase font-bold">Estado del viaje privado:</label>
+          <select id="estadoPax" name="estadoPax" value={datosActualizados.estadoPax} onChange={handleChange} className="border border-gray-300 p-2 w-full">
+            <option value="">Seleccionar estado</option>
+            <option value="Pendiente">Pendiente</option>
+            <option value="Aprobado">Aprobado</option>
+            <option value="En tránsito">En tránsito</option>
+            <option value="Completado">Completado</option>
+          </select>
+        </div>
+        <div className="flex justify-center">
+          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">Actualizar</button>
+          <Link to="/dashboard/listar-viajes-privados" className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Cancelar</Link>
+        </div>
+      </form>
+      {Object.keys(mensaje).length > 0 && (
+        <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
+      )}
+    </div>
   );
 };
 
