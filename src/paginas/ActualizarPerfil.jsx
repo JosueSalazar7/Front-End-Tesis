@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom'; // Importa solo useParams
+import { useParams } from 'react-router-dom';
 import Mensaje from '../componets/Alertas/Mensaje';
 
 const ActualizarPerfil = () => {
@@ -56,7 +56,7 @@ const ActualizarPerfil = () => {
             setSuccess(respuesta.data.msg);
 
             setTimeout(() => {
-                window.location.href = '/dashboard'; // Utiliza window.location.href para redirigir
+                window.location.href = '/dashboard';
             }, 2000);
         } catch (error) {
             setError('Error al actualizar el perfil');
@@ -64,30 +64,62 @@ const ActualizarPerfil = () => {
     };
 
     return (
-        <>
-            <div>
-                <h1 className="font-black text-4xl text-gray-500 text-center">Actualizar Perfil</h1>
-                <hr className="my-4" />
+        <div className="h-screen pt-40  flex items-start justify-center">
+            <div className="max-w-9xl mx-auto px-4">
+                <h1 className="font-black text-7xl text-gray-500 text-center mb-8">Actualizar Perfil</h1>
+                {error && <Mensaje tipo={false}>{error}</Mensaje>}
+                {success && <Mensaje tipo={true}>{success}</Mensaje>}
+                <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <div className="mb-4">
+                        <label className="block text-gray-700 text-xl font-bold mb-2" htmlFor="adminNombre">
+                            Nombre
+                        </label>
+                        <input
+                            type="text"
+                            id="adminNombre"
+                            name="adminNombre"
+                            value={perfil.adminNombre}
+                            onChange={handleChange}
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label className="block text-gray-700 text-xl font-bold mb-2" htmlFor="adminApellido">
+                            Apellido
+                        </label>
+                        <input
+                            type="text"
+                            id="adminApellido"
+                            name="adminApellido"
+                            value={perfil.adminApellido}
+                            onChange={handleChange}
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label className="block text-gray-700 text-xl font-bold mb-2" htmlFor="phone">
+                            Teléfono
+                        </label>
+                        <input
+                            type="text"
+                            id="phone"
+                            name="phone"
+                            value={perfil.phone}
+                            onChange={handleChange}
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        />
+                    </div>
+                    <div className="flex items-center justify-center">
+                        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">
+                            Guardar Datos
+                        </button>
+                        <button onClick={() => window.location.href = '/dashboard'} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
             </div>
-
-            {error && <Mensaje tipo={false}>{error}</Mensaje>}
-            {success && <Mensaje tipo={true}>{success}</Mensaje>}
-
-            <form className="flex flex-col items-center" onSubmit={handleSubmit}>
-                <label htmlFor="adminNombre">Nombre</label>
-                <input type="text" id="adminNombre" name="adminNombre" value={perfil.adminNombre} onChange={handleChange} className="mb-4 p-2 border" />
-
-                <label htmlFor="adminApellido">Apellido</label>
-                <input type="text" id="adminApellido" name="adminApellido" value={perfil.adminApellido} onChange={handleChange} className="mb-4 p-2 border" />
-
-                <label htmlFor="phone">Teléfono</label>
-                <input type="text" id="phone" name="phone" value={perfil.phone} onChange={handleChange} className="mb-4 p-2 border" />
-
-                <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Guardar Datos
-                </button>
-            </form>
-        </>
+        </div>
     );
 };
 

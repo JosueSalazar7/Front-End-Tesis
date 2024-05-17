@@ -18,8 +18,6 @@ export const Formulario = ({ conductor }) => {
                 conductorNombre: conductor.conductorNombre,
                 conductorApellido: conductor.conductorApellido,
                 cedula: conductor.cedula,
-                correo: conductor.correo,
-                password: '', // Opcional: 
                 phone: conductor.phone,
                 numeroAsientos: conductor.numeroAsientos,
                 placaVehiculo: conductor.placaVehiculo,
@@ -144,55 +142,64 @@ export const Formulario = ({ conductor }) => {
                 />
             </div>
 
-            <div>
-                <label htmlFor='correo' className='text-gray-700 uppercase font-bold text-sm'>Correo electrónico del conductor: </label>
-                <Controller
-                    name='correo'
-                    control={control}
-                    defaultValue=''
-                    rules={{
-                        required: 'Campo Obligatorio',
-                    }}
-                    render={({ field, fieldState }) => (
-                        <div>
-                            <input
-                                {...field}
-                                type="email"
-                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''}`}
-                                placeholder='Correo electrónico del conductor'
-                            />
-                            {fieldState.error && (
-                                <p className="text-red-500 text-sm">{fieldState.error.message}</p>
+            {
+                !conductor?._id && (
+                    <div>
+                        <label htmlFor='correo' className='text-gray-700 uppercase font-bold text-sm'>Correo electrónico del conductor: </label>
+                        <Controller
+                            name='correo'
+                            control={control}
+                            defaultValue=''
+                            rules={{
+                                required: 'Campo Obligatorio',
+                            }}
+                            render={({ field, fieldState }) => (
+                                <div>
+                                    <input
+                                        {...field}
+                                        type="email"
+                                        className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''}`}
+                                        placeholder='Correo electrónico del conductor'
+                                    />
+                                    {fieldState.error && (
+                                        <p className="text-red-500 text-sm">{fieldState.error.message}</p>
+                                    )}
+                                </div>
                             )}
-                        </div>
-                    )}
-                />
-            </div>
+                        />
+                    </div>
+                )
+            }
 
-            <div>
-                <label htmlFor='password' className='text-gray-700 uppercase font-bold text-sm'>Contraseña: </label>
-                <Controller
-                    name='password'
-                    control={control}
-                    defaultValue=''
-                    rules={{
-                        required: 'Campo Obligatorio',
-                    }}
-                    render={({ field, fieldState }) => (
-                        <div>
-                            <input
-                                {...field}
-                                type="password"
-                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''}`}
-                                placeholder='Contraseña'
-                            />
-                            {fieldState.error && (
-                                <p className="text-red-500 text-sm">{fieldState.error.message}</p>
+
+            {
+                !conductor?._id && (
+                    <div>
+                        <label htmlFor='password' className='text-gray-700 uppercase font-bold text-sm'>Contraseña: </label>
+                        <Controller
+                            name='password'
+                            control={control}
+                            defaultValue=''
+                            rules={{
+                                required: 'Campo Obligatorio',
+                            }}
+                            render={({ field, fieldState }) => (
+                                <div>
+                                    <input
+                                        {...field}
+                                        type="password"
+                                        className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''}`}
+                                        placeholder='Contraseña'
+                                    />
+                                    {fieldState.error && (
+                                        <p className="text-red-500 text-sm">{fieldState.error.message}</p>
+                                    )}
+                                </div>
                             )}
-                        </div>
-                    )}
-                />
-            </div>
+                        />
+                    </div>
+                )
+            }
 
             <div>
                 <label htmlFor='phone' className='text-gray-700 uppercase font-bold text-sm'>Teléfono del conductor: </label>
