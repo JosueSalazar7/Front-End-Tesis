@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Mensaje from "../componets/Alertas/Mensaje";
@@ -29,43 +29,52 @@ const VisualizarRuta = () => {
   }, []);
 
   return (
-    <>
-      <div>
-        <h1 className="font-black text-4xl text-gray-500">
-          Visualizar Ruta
-        </h1>
-        <hr className="my-4" />
-        <p className="mb-8">Datos de la ruta</p>
+    <div className="relative">
+      <Link to="/dashboard/listar-rutas" className=" left-4 top-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <svg className="h-6 w-6 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+        Volver
+      </Link>
+
+      <div className="mt-10 h-screen pt-20 items-start text-center">
+        <div className="text-center">
+          <h1 className="font-black text-6xl text-gray-500">
+            Visualizar Ruta
+          </h1>
+          <hr className="my-4" />
+          <p className="mb-8 text-2xl">Datos de la ruta</p>
+        </div>
+        <div className="text-center">
+          {Object.keys(ruta).length !== 0 ? (
+            <div className="m-5 space-y-4">
+              <p className="text-lg uppercase font-bold">
+                <span className="text-black-600">Nombre de la ruta:</span> <span className="text-blue-600">{ruta.ruta?.nombre}</span>
+              </p>
+              <p className="text-lg uppercase font-bold">
+                <span className="text-black-600">Ciudad de origen:</span> <span className="text-blue-600">{ruta.ruta?.ciudad1}</span>
+              </p>
+              <p className="text-lg uppercase font-bold">
+                <span className="text-black-600">Ciudad de destino:</span> <span className="text-blue-600">{ruta.ruta?.ciudad2}</span>
+              </p>
+              <p className="text-lg uppercase font-bold">
+                <span className="text-black-600">Primer horario:</span> <span className="text-blue-600">{ruta.horario?.horario1}</span>
+              </p>
+              <p className="text-lg uppercase font-bold">
+                <span className="text-black-600">Segundo horario:</span> <span className="text-blue-600">{ruta.horario?.horario2}</span>
+              </p>
+              <p className="text-lg uppercase font-bold">
+                <span className="text-black-600">Tercer horario:</span> <span className="text-blue-600">{ruta.horario?.horario3}</span>
+              </p>
+            </div>
+          ) : (
+            Object.keys(mensaje).length > 0 && (
+              <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
+            )
+          )}
+        </div>
       </div>
-      <div>
-        {Object.keys(ruta).length !== 0 ? (
-          <div className="m-5">
-            <p className="text-md text-gray-600 uppercase font-bold">
-              Nombre de la ruta: {ruta.ruta.nombre}
-            </p>
-            <p className="text-md text-gray-600 uppercase font-bold">
-              Ciudad de origen: {ruta.ruta.ciudad1}
-            </p>
-            <p className="text-md text-gray-600 uppercase font-bold">
-              Ciudad de destino: {ruta.ruta.ciudad2}
-            </p>
-            <p className="text-md text-gray-600 uppercase font-bold">
-              Primer horario: {ruta.horario?.horario1} {/* Modificación aquí */}
-            </p>
-            <p className="text-md text-gray-600 uppercase font-bold">
-              Segundo horario: {ruta.horario?.horario2} {/* Modificación aquí */}
-            </p>
-            <p className="text-md text-gray-600 uppercase font-bold">
-              Tercer horario: {ruta.horario?.horario3} {/* Modificación aquí */}
-            </p>
-          </div>
-        ) : (
-          Object.keys(mensaje).length > 0 && (
-            <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
-          )
-        )}
-      </div>
-    </>
+    </div>
   );
 };
 

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Mensaje from "../componets/Alertas/Mensaje";
@@ -29,47 +29,56 @@ const VisualizarViajeCompartido = () => {
   }, []);
 
   return (
-    <>
-      <div>
-        <h1 className="font-black text-4xl text-gray-500">
-          Visualizar Viaje Compartido
-        </h1>
-        <hr className="my-4" />
-        <p className="mb-8">Detalles del viaje compartido</p>
+    <div className="relative">
+      <Link to="/dashboard/listar-viajes-compartidos" className="left-4 top-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <svg className="h-6 w-6 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+        Volver
+      </Link>
+
+      <div className="mt-10 h-screen pt-20 items-start text-center">
+        <div className="text-center">
+          <h1 className="font-black text-6xl text-gray-500">
+            Visualizar Viaje Compartido
+          </h1>
+          <hr className="my-4" />
+          <p className="mb-8 text-2xl">Detalles del viaje compartido</p>
+        </div>
+        <div className="text-center">
+          {Object.keys(viajeCompartido).length !== 0 ? (
+            <div className="m-5 space-y-4">
+              <p className="text-lg uppercase font-bold">
+                <span className="text-black-600">Tipo de Boleto:</span> <span className="text-blue-600">{viajeCompartido.tipoBoleto}</span>
+              </p>
+              <p className="text-lg uppercase font-bold">
+                <span className="text-black-600">Nombre:</span> <span className="text-blue-600">{viajeCompartido.nombre}</span>
+              </p>
+              <p className="text-lg uppercase font-bold">
+                <span className="text-black-600">Apellido:</span> <span className="text-blue-600">{viajeCompartido.apellido}</span>
+              </p>
+              <p className="text-lg uppercase font-bold">
+                <span className="text-black-600">Ciudad de Salida:</span> <span className="text-blue-600">{viajeCompartido.ciudadSalida}</span>
+              </p>
+              <p className="text-lg uppercase font-bold">
+                <span className="text-black-600">Ciudad de Llegada:</span> <span className="text-blue-600">{viajeCompartido.ciudadLlegada}</span>
+              </p>
+              <p className="text-lg uppercase font-bold">
+                <span className="text-black-600">Horario:</span> <span className="text-blue-600">{viajeCompartido.turno?.horario}</span>
+              </p>
+              <p className="text-lg uppercase font-bold">
+                <span className="text-black-600">Fecha:</span> <span className="text-blue-600">{viajeCompartido.turno?.fecha}</span>
+              </p>
+              {/* Agregar más detalles según sea necesario */}
+            </div>
+          ) : (
+            Object.keys(mensaje).length > 0 && (
+              <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
+            )
+          )}
+        </div>
       </div>
-      <div>
-        {Object.keys(viajeCompartido).length !== 0 ? (
-          <div className="m-5">
-            <p className="text-md text-gray-600 uppercase font-bold">
-              Tipo de Boleto: {viajeCompartido.tipoBoleto}
-            </p>
-            <p className="text-md text-gray-600 uppercase font-bold">
-              Nombre: {viajeCompartido.nombre}
-            </p>
-            <p className="text-md text-gray-600 uppercase font-bold">
-              Apellido: {viajeCompartido.apellido}
-            </p>
-            <p className="text-md text-gray-600 uppercase font-bold">
-              Ciudad de Salida: {viajeCompartido.ciudadSalida}
-            </p>
-            <p className="text-md text-gray-600 uppercase font-bold">
-              Ciudad de Llegada: {viajeCompartido.ciudadLlegada}
-            </p>
-            <p className="text-md text-gray-600 uppercase font-bold">
-              Horario: {viajeCompartido.turno.horario}
-            </p>
-            <p className="text-md text-gray-600 uppercase font-bold">
-              Fecha: {viajeCompartido.turno.fecha}
-            </p>
-            {/* Agregar más detalles según sea necesario */}
-          </div>
-        ) : (
-          Object.keys(mensaje).length > 0 && (
-            <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
-          )
-        )}
-      </div>
-    </>
+    </div>
   );
 };
 
