@@ -81,7 +81,6 @@ const ActualizarEncomienda = () => {
                     <label htmlFor="estadoPaquete" className="block text-md text-gray-600 uppercase font-bold">Estado de la encomienda:</label>
                     <select id="estadoPaquete" name="estadoPaquete" value={datosActualizados.estadoPaquete} onChange={handleChange} className="border border-gray-300 p-2 w-full">
                         <option value="">Seleccionar estado</option>
-                        <option value="Pendiente">Pendiente</option>
                         <option value="Aprobado">Aprobado</option>
                         <option value="En tránsito">En tránsito</option>
                         <option value="Completado">Completado</option>

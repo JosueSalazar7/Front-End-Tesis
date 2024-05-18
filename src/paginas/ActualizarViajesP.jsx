@@ -81,7 +81,6 @@ const ActualizarViajePrivado = () => {
           <label htmlFor="estadoPax" className="block text-md text-gray-600 uppercase font-bold">Estado del viaje privado:</label>
           <select id="estadoPax" name="estadoPax" value={datosActualizados.estadoPax} onChange={handleChange} className="border border-gray-300 p-2 w-full">
             <option value="">Seleccionar estado</option>
-            <option value="Pendiente">Pendiente</option>
             <option value="Aprobado">Aprobado</option>
             <option value="En tránsito">En tránsito</option>
             <option value="Completado">Completado</option>
