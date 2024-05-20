@@ -133,7 +133,7 @@ export const FormularioRegistroAdmin = () => {
 
             <input
                 type="submit"
-                className='bg-gray-600 w-full p-3 text-slate-300 uppercase font-bold rounded-lg hover:bg-gray-900 cursor-pointer transition-all'
+                className=' bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg mt-6'
                 value='Registrar Administrador'
             />
         </form>
