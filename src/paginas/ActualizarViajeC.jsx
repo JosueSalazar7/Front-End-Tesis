@@ -11,6 +11,7 @@ const ActualizarViajeC = () => {
   });
   const [conductores, setConductores] = useState([]);
   const [mensaje, setMensaje] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
