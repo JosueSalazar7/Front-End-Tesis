@@ -127,7 +127,17 @@ export const Formulario = ({ conductor }) => {
                             name='cedula'
                             control={control}
                             defaultValue=''
-                            rules={{ required: 'Campo Obligatorio' }}
+                            rules={{
+                                required: 'Campo Obligatorio',
+                                minLength: {
+                                    value: 10,
+                                    message: 'La cédula debe tener 10 dígitos'
+                                },
+                                maxLength: {
+                                    value: 10,
+                                    message: 'La cédula debe tener 10 dígitos'
+                                }
+                            }}
                             render={({ field, fieldState }) => (
                                 <div>
                                     <input
@@ -162,7 +172,17 @@ export const Formulario = ({ conductor }) => {
                                     name='correo'
                                     control={control}
                                     defaultValue=''
-                                    rules={{ required: 'Campo Obligatorio' }}
+                                    rules={{ 
+                                        required: 'Campo Obligatorio',
+                                        maxLength: {
+                                            value: 30,
+                                            message: 'El correo electrónico debe tener máximo 30 caracteres'
+                                        },
+                                        pattern: {
+                                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                            message: 'Ingrese un correo electrónico válido'
+                                        }
+                                    }}
                                     render={({ field, fieldState }) => (
                                         <div>
                                             <input
@@ -183,7 +203,17 @@ export const Formulario = ({ conductor }) => {
                                     name='password'
                                     control={control}
                                     defaultValue=''
-                                    rules={{ required: 'Campo Obligatorio' }}
+                                    rules={{ 
+                                        required: 'Campo Obligatorio',
+                                        minLength: {
+                                            value: 6,
+                                            message: 'La contraseña debe tener al menos 6 caracteres'
+                                        },
+                                        pattern: {
+                                            value: /^(?=.*[A-Za-z])(?=.*\d).+$/,
+                                            message: 'La contraseña debe contener al menos una letra y un número'
+                                        }
+                                    }}
                                     render={({ field, fieldState }) => (
                                         <div>
                                             <input
@@ -206,7 +236,17 @@ export const Formulario = ({ conductor }) => {
                             name='phone'
                             control={control}
                             defaultValue=''
-                            rules={{ required: 'Campo Obligatorio' }}
+                            rules={{
+                                required: 'Campo Obligatorio',
+                                minLength: {
+                                    value: 10,
+                                    message: 'El número de celular debe tener 10 dígitos'
+                                },
+                                maxLength: {
+                                    value: 10,
+                                    message: 'El número de celular debe tener 10 dígitos'
+                                }
+                            }}
                             render={({ field, fieldState }) => (
                                 <div>
                                     <input
