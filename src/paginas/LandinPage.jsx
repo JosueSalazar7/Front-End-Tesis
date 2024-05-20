@@ -29,7 +29,7 @@ export const LandinPage = () => {
                         <div className='w-2/5'>
                             <div className='text-center'>
                                 <h2 className='text-5xl py-2 text-teal-600 font-medium md:text-6xl'>Empresa de viajes</h2>
-                                <h3 className='text-2xl py-2 md:text-3xl dark:text-white'>ADMINISTRADOR</h3>
+                                <h3 className='text-2xl py-2 md:text-3xl dark:text-dark'>ADMINISTRADOR</h3>
                             </div>
                             <div className='relative mx-auto bg-gradient-to-b from-indigo-400 rounded-full w-96 h-96 mt-12 overflow-hidden md:w-96 md:h-96 dark:border-4 border-teal-300'>
                                 <div className='absolute inset-0 flex items-center justify-center'>
