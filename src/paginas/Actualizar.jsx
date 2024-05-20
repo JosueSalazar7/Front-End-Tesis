@@ -1,6 +1,6 @@
 import { Formulario } from '../componets/Formulario';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Mensaje from '../componets/Alertas/Mensaje';
 import axios from 'axios';
 
@@ -47,17 +47,27 @@ const Actualizar = () => {
     };
 
     return (
-        <div>
-            <h1 className='font-black text-4xl text-gray-500'>Actualizar Conductor</h1>
-            <hr className='my-4' />
-            <p className='mb-8'>Actualizar la información del conductor</p>
-            {
-                Object.keys(conductor).length !== 0 ? (
-                    <Formulario conductor={conductor} onSubmit={actualizarConductor} />
-                ) : (
-                    Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
-                )
-            }
+        <div className="relative">
+            <Link to="/dashboard/listar" className="left-4 top-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <svg className="h-6 w-6 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                Volver
+            </Link>
+            <div className="h-screen pt-32 items-start text-center">
+                <div>
+                    <h1 className='font-black text-center text-5xl text-gray-500'>Actualizar Conductor</h1>
+                    <hr className='my-4' />
+                    <p className='mb-8'>Actualizar la información del conductor</p>
+                    {
+                        Object.keys(conductor).length !== 0 ? (
+                            <Formulario conductor={conductor} onSubmit={actualizarConductor} />
+                        ) : (
+                            Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
+                        )
+                    }
+                </div>
+            </div>
         </div>
     );
 };

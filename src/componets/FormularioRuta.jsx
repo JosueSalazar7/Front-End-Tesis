@@ -78,7 +78,7 @@ export const FormularioRuta = ({ ruta }) => {
                             <input
                                 {...field}
                                 type="text"
-                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
+                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-1 ${fieldState.invalid ? 'border-red-500' : ''
                                     }`}
                                 placeholder='Nombre de la ruta'
                             />
@@ -106,7 +106,7 @@ export const FormularioRuta = ({ ruta }) => {
                             <input
                                 {...field}
                                 type="text"
-                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
+                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-1 ${fieldState.invalid ? 'border-red-500' : ''
                                     }`}
                                 placeholder='Ciudad de origen'
                             />
@@ -134,7 +134,7 @@ export const FormularioRuta = ({ ruta }) => {
                             <input
                                 {...field}
                                 type="text"
-                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
+                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-1 ${fieldState.invalid ? 'border-red-500' : ''
                                     }`}
                                 placeholder='Ciudad de destino'
                             />
@@ -162,7 +162,7 @@ export const FormularioRuta = ({ ruta }) => {
                             <input
                                 {...field}
                                 type="text"
-                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
+                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-1 ${fieldState.invalid ? 'border-red-500' : ''
                                     }`}
                                 placeholder='Horario 1'
                             />
@@ -190,7 +190,7 @@ export const FormularioRuta = ({ ruta }) => {
                             <input
                                 {...field}
                                 type="text"
-                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
+                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-1 ${fieldState.invalid ? 'border-red-500' : ''
                                     }`}
                                 placeholder='Horario 2'
                             />
@@ -218,7 +218,7 @@ export const FormularioRuta = ({ ruta }) => {
                             <input
                                 {...field}
                                 type="text"
-                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
+                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-1 ${fieldState.invalid ? 'border-red-500' : ''
                                     }`}
                                 placeholder='Horario 3'
                             />
@@ -232,7 +232,7 @@ export const FormularioRuta = ({ ruta }) => {
 
             <input
                 type="submit"
-                className='bg-gray-600 w-full p-3 text-slate-300 uppercase font-bold rounded-lg hover:bg-gray-900 cursor-pointer transition-all'
+                className=' bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg mt-3'
                 value={ruta?._id ? 'Actualizar ruta' : 'Registrar ruta'}
             />
         </form>

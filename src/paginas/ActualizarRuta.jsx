@@ -54,6 +54,7 @@ const ActualizarRuta = () => {
                 </svg>
                 Volver
             </Link>
+            <div className="h-screen pt-18 items-start text-center">
             <h1 className='font-black text-center text-4xl text-gray-500 mt-10'>Actualizar Ruta</h1>
             <hr className='my-4' />
             <p className='mb-8 text-center'>Actualizar la información de la ruta</p>
@@ -64,6 +65,7 @@ const ActualizarRuta = () => {
                     Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
                 )
             }
+        </div>
         </div>
     );
 };
