@@ -162,7 +162,6 @@ const Dashboard = () => {
                                 >
                                     Ver Viajes Compartidos Pendientes
                                 </Link>
-                        
                             </div>
                         )}
                     </li>

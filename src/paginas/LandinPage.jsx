@@ -1,4 +1,5 @@
 import carro from "../assets/carro.avif";
+import appVideo from "../assets/App.mp4"; // Importar el video
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -35,6 +36,15 @@ export const LandinPage = () => {
                                 <div className='absolute inset-0 flex items-center justify-center'>
                                     <img src={carro} alt="carro" className='w-full h-full object-cover' />
                                 </div>
+                            </div>
+                        </div>
+                        <div className='w-1/3'>
+                            <div className='text-center'>
+                                <h2 className='text-2xl py-2 md:text-2xl dark:text-dark'>App Móvil</h2>
+                                <video controls className='w-2/4 h-auto mx-auto mt-6 rounded-lg'>
+                                    <source src={appVideo} type="video/mp4" />
+                                    Tu navegador no soporta la reproducción de videos.
+                                </video>
                             </div>
                         </div>
                     </div>
