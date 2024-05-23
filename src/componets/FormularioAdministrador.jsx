@@ -24,10 +24,10 @@ export const FormularioRegistroAdmin = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}className="w-full max-w-lg mx-auto">
             {Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
             <div>
-                <label htmlFor='adminNombre' className='text-gray-700 uppercase font-bold text-sm'>Nombre: </label>
+                <label htmlFor='adminNombre' className='text-gray-700 font-bold text-lg'>Nombre: </label>
                 <Controller
                     name='adminNombre'
                     control={control}
@@ -48,7 +48,7 @@ export const FormularioRegistroAdmin = () => {
             </div>
 
             <div>
-                <label htmlFor='adminApellido' className='text-gray-700 uppercase font-bold text-sm'>Apellido: </label>
+                <label htmlFor='adminApellido' className='text-gray-700 font-bold text-lg'>Apellido: </label>
                 <Controller
                     name='adminApellido'
                     control={control}
@@ -69,7 +69,7 @@ export const FormularioRegistroAdmin = () => {
             </div>
 
             <div>
-                <label htmlFor='correo' className='text-gray-700 uppercase font-bold text-sm'>Correo Electrónico: </label>
+                <label htmlFor='correo' className='text-gray-700 font-bold text-lg'>Correo Electrónico: </label>
                 <Controller
                     name='correo'
                     control={control}
@@ -90,7 +90,7 @@ export const FormularioRegistroAdmin = () => {
             </div>
 
             <div>
-                <label htmlFor='password' className='text-gray-700 uppercase font-bold text-sm'>Contraseña: </label>
+                <label htmlFor='password' className='text-gray-700 font-bold text-lg'>Contraseña: </label>
                 <Controller
                     name='password'
                     control={control}
@@ -111,7 +111,7 @@ export const FormularioRegistroAdmin = () => {
             </div>
 
             <div>
-                <label htmlFor='phone' className='text-gray-700 uppercase font-bold text-sm'>Teléfono: </label>
+                <label htmlFor='phone' className='text-gray-700 font-bold text-lg'>Teléfono: </label>
                 <Controller
                     name='phone'
                     control={control}
@@ -130,12 +130,13 @@ export const FormularioRegistroAdmin = () => {
                     )}
                 />
             </div>
-
+            <div className="flex justify-center">
             <input
                 type="submit"
                 className=' bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg mt-6'
                 value='Registrar Administrador'
             />
+            </div>
         </form>
     );
 };

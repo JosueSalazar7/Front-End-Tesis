@@ -62,13 +62,13 @@ const ActualizarViajeC = () => {
   };
 
   return (
-    <div className="mt-10 h-screen pt-40 items-start text-center" > 
-      <h1 className="font-black text-5xl text-gray-500 max-w-md mx-auto">Actualizar Viaje Compartido</h1> {/* Limitar el ancho y centrarlo */}
+    <div className="mt-10 h-screen pt-40 items-start" > 
+      <h1 className="font-black text-5xl text-gray-500 max-w-md mx-auto text-center">Actualizar Viaje Compartido</h1> {/* Limitar el ancho y centrarlo */}
       <hr className="my-4" />
-      <p className="mb-8">Completa los datos para actualizar el estado del viaje compartido</p>
-      <form onSubmit={handleSubmit} className="m-5">
+      <p className="mb-8 text-center">Completa los datos para actualizar el estado del viaje compartido</p>
+      <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
         <div className="mb-4">
-          <label htmlFor="conductorAsignado" className="block text-md text-gray-600 uppercase font-bold">Conductor asignado:</label>
+          <label htmlFor="conductorAsignado" className="block text-md text-gray-600 font-bold text-lg">Conductor asignado:</label>
           <select id="conductorAsignado" name="conductorAsignado" value={datosActualizados.conductorAsignado} onChange={handleChange} className="border border-gray-300 p-2 w-full">
             <option value="">Seleccionar conductor</option>
             {conductores.map(conductor => (
@@ -77,7 +77,7 @@ const ActualizarViajeC = () => {
           </select>
         </div>
         <div className="mb-4">
-          <label htmlFor="estadoPax" className="block text-md text-gray-600 uppercase font-bold">Estado del viaje compartido:</label>
+          <label htmlFor="estadoPax" className="block text-md text-gray-600 font-bold text-lg">Estado del viaje compartido:</label>
           <select id="estadoPax" name="estadoPax" value={datosActualizados.estadoPax} onChange={handleChange} className="border border-gray-300 p-2 w-full">
             <option value="">Seleccionar estado</option>
             <option value="Aprobado">Aprobado</option>

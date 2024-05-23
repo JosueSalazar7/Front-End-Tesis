@@ -11,11 +11,11 @@ const Crear = () => {
                     </svg>
                     Volver
                 </Link>
-                <div className="h-screen pt-32 items-start text-center">
+                <div className="h-screen pt-32 justify-center">
                 <div>
                     <h1 className='font-black text-center text-5xl text-gray-500'>Conductores</h1>
                     <hr className='my-4' />
-                    <p className='mb-8'>Registrar un nuevo conductor</p>
+                    <p className='mb-8 text-center'>Registrar un nuevo conductor</p>
                     <Formulario />
                 </div>
             </div>

@@ -63,13 +63,13 @@ const ActualizarEncomienda = () => {
     };
 
     return (
-        <div className="mt-10 h-screen pt-40 items-start text-center">
-            <h1 className="font-black text-5xl text-gray-500 max-w-md mx-auto">Actualizar Encomienda</h1>
+        <div className="mt-10 h-screen pt-40 items-start">
+            <h1 className="font-black text-5xl text-gray-500 max-w-md mx-auto text-center">Actualizar Encomienda</h1>
             <hr className="my-4" />
-            <p className="mb-8">Completa los datos para actualizar el estado de la encomienda</p>
-            <form onSubmit={handleSubmit} className="m-5">
+            <p className="mb-8 text-center">Completa los datos para actualizar el estado de la encomienda</p>
+            <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto m-5">
                 <div className="mb-4">
-                    <label htmlFor="conductorAsignado" className="block text-md text-gray-600 uppercase font-bold">Conductor asignado:</label>
+                    <label htmlFor="conductorAsignado" className="block text-md text-gray-600 font-bold text-lg">Conductor asignado:</label>
                     <select id="conductorAsignado" name="conductorAsignado" value={datosActualizados.conductorAsignado} onChange={handleChange} className="border border-gray-300 p-2 w-full">
                         <option value="">Seleccionar conductor</option>
                         {conductores.map(conductor => (
@@ -78,7 +78,7 @@ const ActualizarEncomienda = () => {
                     </select>
                 </div>
                 <div className="mb-4">
-                    <label htmlFor="estadoPaquete" className="block text-md text-gray-600 uppercase font-bold">Estado de la encomienda:</label>
+                    <label htmlFor="estadoPaquete" className="block text-md text-gray-600 font-bold text-lg">Estado de la encomienda:</label>
                     <select id="estadoPaquete" name="estadoPaquete" value={datosActualizados.estadoPaquete} onChange={handleChange} className="border border-gray-300 p-2 w-full">
                         <option value="">Seleccionar estado</option>
                         <option value="Aprobado">Aprobado</option>

@@ -73,14 +73,14 @@ export const Formulario = ({ conductor }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}className="w-full max-w-lg mx-auto">
 
             {Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
 
             {step === 1 && (
                 <div>
                     <div>
-                        <label htmlFor='conductorNombre' className='text-gray-700 uppercase font-bold text-sm'>Nombre del conductor: </label>
+                        <label htmlFor='conductorNombre' className='text-gray-700 font-bold text-lg'>Nombre del conductor: </label>
                         <Controller
                             name='conductorNombre'
                             control={control}
@@ -101,7 +101,7 @@ export const Formulario = ({ conductor }) => {
                     </div>
 
                     <div>
-                        <label htmlFor='conductorApellido' className='text-gray-700 uppercase font-bold text-sm'>Apellido del conductor: </label>
+                        <label htmlFor='conductorApellido' className='text-gray-700 font-bold text-lg'>Apellido del conductor: </label>
                         <Controller
                             name='conductorApellido'
                             control={control}
@@ -122,7 +122,7 @@ export const Formulario = ({ conductor }) => {
                     </div>
 
                     <div>
-                        <label htmlFor='cedula' className='text-gray-700 uppercase font-bold text-sm'>Cédula del conductor: </label>
+                        <label htmlFor='cedula' className='text-gray-700 font-bold text-lg'>Cédula del conductor: </label>
                         <Controller
                             name='cedula'
                             control={control}
@@ -152,13 +152,15 @@ export const Formulario = ({ conductor }) => {
                         />
                     </div>
 
-                    <button
-                        type="button"
-                        className=' bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg mt-6'
-                        onClick={nextStep}
-                    >
-                        Siguiente
-                    </button>
+                    <div className="flex justify-center mt-6">
+                        <button
+                            type="button"
+                            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg'
+                            onClick={nextStep}
+                        >
+                            Siguiente
+                        </button>
+                    </div>
                 </div>
             )}
 
@@ -167,12 +169,12 @@ export const Formulario = ({ conductor }) => {
                     {!conductor?._id && (
                         <>
                             <div>
-                                <label htmlFor='correo' className='text-gray-700 uppercase font-bold text-sm'>Correo electrónico del conductor: </label>
+                                <label htmlFor='correo' className='text-gray-700 font-bold text-lg'>Correo electrónico del conductor: </label>
                                 <Controller
                                     name='correo'
                                     control={control}
                                     defaultValue=''
-                                    rules={{ 
+                                    rules={{
                                         required: 'Campo Obligatorio',
                                         maxLength: {
                                             value: 30,
@@ -198,12 +200,12 @@ export const Formulario = ({ conductor }) => {
                             </div>
 
                             <div>
-                                <label htmlFor='password' className='text-gray-700 uppercase font-bold text-sm'>Contraseña: </label>
+                                <label htmlFor='password' className='text-gray-700 font-bold text-lg'>Contraseña: </label>
                                 <Controller
                                     name='password'
                                     control={control}
                                     defaultValue=''
-                                    rules={{ 
+                                    rules={{
                                         required: 'Campo Obligatorio',
                                         minLength: {
                                             value: 6,
@@ -231,7 +233,7 @@ export const Formulario = ({ conductor }) => {
                     )}
 
                     <div>
-                        <label htmlFor='phone' className='text-gray-700 uppercase font-bold text-sm'>Teléfono del conductor: </label>
+                        <label htmlFor='phone' className='text-gray-700 font-bold text-lg'>Teléfono del conductor: </label>
                         <Controller
                             name='phone'
                             control={control}
@@ -261,27 +263,29 @@ export const Formulario = ({ conductor }) => {
                         />
                     </div>
 
-                    <button
-                        type="button"
-                        className='bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-lg mt-6 mr-3'
-                        onClick={prevStep}
-                    >
-                        Anterior
-                    </button>
-                    <button
-                        type="button"
-                        className=' bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg mt-6'
-                        onClick={nextStep}
-                    >
-                        Siguiente
-                    </button>
+                    <div className="flex justify-center mt-6">
+                        <button
+                            type="button"
+                            className='bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-lg mr-3'
+                            onClick={prevStep}
+                        >
+                            Anterior
+                        </button>
+                        <button
+                            type="button"
+                            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg'
+                            onClick={nextStep}
+                        >
+                            Siguiente
+                        </button>
+                    </div>
                 </div>
             )}
 
             {step === 3 && (
                 <div>
                     <div>
-                        <label htmlFor='numeroAsientos' className='text-gray-700 uppercase font-bold text-sm'>Número de asientos disponibles: </label>
+                        <label htmlFor='numeroAsientos' className='text-gray-700 font-bold text-lg'>Número de asientos disponibles: </label>
                         <Controller
                             name='numeroAsientos'
                             control={control}
@@ -308,7 +312,7 @@ export const Formulario = ({ conductor }) => {
                     </div>
 
                     <div>
-                        <label htmlFor='placaVehiculo' className='text-gray-700 uppercase font-bold text-sm'>Placa del vehículo: </label>
+                        <label htmlFor='placaVehiculo' className='text-gray-700 font-bold text-lg'>Placa del vehículo: </label>
                         <Controller
                             name='placaVehiculo'
                             control={control}
@@ -329,7 +333,7 @@ export const Formulario = ({ conductor }) => {
                     </div>
 
                     <div>
-                        <label htmlFor='marcaVehiculo' className='text-gray-700 uppercase font-bold text-sm'>Marca del vehículo: </label>
+                        <label htmlFor='marcaVehiculo' className='text-gray-700 font-bold text-lg'>Marca del vehículo: </label>
                         <Controller
                             name='marcaVehiculo'
                             control={control}
@@ -349,27 +353,29 @@ export const Formulario = ({ conductor }) => {
                         />
                     </div>
 
-                    <button
-                        type="button"
-                        className='bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-lg mt-6 mr-3'
-                        onClick={prevStep}
-                    >
-                        Anterior
-                    </button>
-                    <button
-                        type="button"
-                        className=' bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg mt-6'
-                        onClick={nextStep}
-                    >
-                        Siguiente
-                    </button>
+                    <div className="flex justify-center mt-6">
+                        <button
+                            type="button"
+                            className='bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-lg mr-3'
+                            onClick={prevStep}
+                        >
+                            Anterior
+                        </button>
+                        <button
+                            type="button"
+                            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg'
+                            onClick={nextStep}
+                        >
+                            Siguiente
+                        </button>
+                    </div>
                 </div>
             )}
 
             {step === 4 && (
                 <div>
                     <div>
-                        <label htmlFor='modeloVehiculo' className='text-gray-700 uppercase font-bold text-sm'>Modelo del vehículo: </label>
+                        <label htmlFor='modeloVehiculo' className='text-gray-700 font-bold text-lg'>Modelo del vehículo: </label>
                         <Controller
                             name='modeloVehiculo'
                             control={control}
@@ -390,7 +396,7 @@ export const Formulario = ({ conductor }) => {
                     </div>
 
                     <div>
-                        <label htmlFor='anioVehiculo' className='text-gray-700 uppercase font-bold text-sm'>Año del vehículo: </label>
+                        <label htmlFor='anioVehiculo' className='text-gray-700 font-bold text-lg'>Año del vehículo: </label>
                         <Controller
                             name='anioVehiculo'
                             control={control}
@@ -411,7 +417,7 @@ export const Formulario = ({ conductor }) => {
                     </div>
 
                     <div>
-                        <label htmlFor='colorVehiculo' className='text-gray-700 uppercase font-bold text-sm'>Color del vehículo: </label>
+                        <label htmlFor='colorVehiculo' className='text-gray-700 font-bold text-lg'>Color del vehículo: </label>
                         <Controller
                             name='colorVehiculo'
                             control={control}
@@ -430,19 +436,20 @@ export const Formulario = ({ conductor }) => {
                             )}
                         />
                     </div>
-
-                    <button
-                        type="button"
-                        className='bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-lg mt-6 mr-3'
-                        onClick={prevStep}
-                    >
-                        Anterior
-                    </button>
-                    <input
-                        type="submit"
-                        className=' bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg mt-6'
-                        value={conductor?._id ? 'Actualizar conductor' : 'Registrar conductor'}
-                    />
+                    <div className="flex justify-center mt-6">
+                        <button
+                            type="button"
+                            className='bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-lg mt-6 mr-3'
+                            onClick={prevStep}
+                        >
+                            Anterior
+                        </button>
+                        <input
+                            type="submit"
+                            className=' bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg mt-6'
+                            value={conductor?._id ? 'Actualizar conductor' : 'Registrar conductor'}
+                        />
+                    </div>
                 </div>
             )}
         </form>
