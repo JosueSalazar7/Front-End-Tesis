@@ -37,9 +37,9 @@ const Login = () => {
 
     return (
         <div className="flex justify-center items-center h-screen">
-            <img src="/images/login.jpg" alt="Background" className="fixed top-0 left-0 w-full h-full object-cover z-0" />
+            <img src="/images/login1.jpg" alt="Background" className="fixed top-0 left-0 w-full h-full object-cover z-0" />
             <div className="absolute inset-50 flex justify-center items-center z-20">
-                <div style={maxCardWidthStyle} className="bg-white bg-opacity-50 rounded-lg p-8">
+                <div style={maxCardWidthStyle} className="bg-white bg-opacity-95 rounded-lg p-8">
                     {Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
                     <h1 className="text-5xl font-semibold mb-2 text-center uppercase text-black-500">¡Bienvenido de nuevo!</h1>
                     <small className="text-black-400 block my-4 text-lg">Por favor ingresa tus datos</small>
