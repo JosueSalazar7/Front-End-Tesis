@@ -1,71 +1,72 @@
-    import React, { useState, useContext, useEffect } from 'react';
-    import { Link, Navigate, Outlet, useLocation } from 'react-router-dom';
-    import AuthContext from '../context/AuthProvider';
-    import axios from 'axios';
-    import {
-        Card,
-        Typography,
-        List,
-        ListItem,
-        ListItemPrefix,
-        ListItemSuffix,
-        Chip,
-        Accordion,
-        AccordionHeader,
-        AccordionBody,
-    } from "@material-tailwind/react";
-    import {
-        PresentationChartBarIcon,
-        ShoppingBagIcon,
-        UserCircleIcon,
-        Cog6ToothIcon,
-        InboxIcon,
-        PowerIcon,
-    } from "@heroicons/react/24/solid";
-    import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import React, { useState, useContext, useEffect } from 'react';
+import { Link, Navigate, Outlet, useLocation } from 'react-router-dom';
+import AuthContext from '../context/AuthProvider';
+import axios from 'axios';
+import {
+    Card,
+    Typography,
+    List,
+    ListItem,
+    ListItemPrefix,
+    ListItemSuffix,
+    Chip,
+    Accordion,
+    AccordionHeader,
+    AccordionBody,
+} from "@material-tailwind/react";
+import {
+    UserCircleIcon,
+    TicketIcon,
+    InboxIcon,
+    MapIcon,
+    TruckIcon,
+    UsersIcon,
+    UserPlusIcon
+} from "@heroicons/react/24/solid";
+import { ChevronRightIcon, ChevronDownIcon, MapPinIcon } from "@heroicons/react/24/outline";
 
-    const Dashboard = () => {
-        const location = useLocation();
-        const urlActual = location.pathname;
-        const { auth } = useContext(AuthContext);
-        const autenticado = localStorage.getItem('token');
+const Dashboard = () => {
+    const location = useLocation();
+    const urlActual = location.pathname;
+    const { auth } = useContext(AuthContext);
+    const autenticado = localStorage.getItem('token');
 
-        const [menuAbierto, setMenuAbierto] = useState(null);
-        const [perfil, setPerfil] = useState(null);
-        const [error, setError] = useState(null);
+    const [menuAbierto, setMenuAbierto] = useState(null);
+    const [perfil, setPerfil] = useState(null);
+    const [error, setError] = useState(null);
 
-        useEffect(() => {
-            const obtenerPerfil = async () => {
-                try {
-                    const token = localStorage.getItem('token');
-                    const url = `${import.meta.env.VITE_BACKEND_URL}/admin/perfil`;
-                    const options = {
-                        headers: {
-                            'Content-Type': 'application/json',
-                            Authorization: `Bearer ${token}`,
-                        },
-                    };
-                    const respuesta = await axios.get(url, options);
-                    if (respuesta.data) {
-                        setPerfil(respuesta.data);
-                    } else {
-                        setError('No se recibió respuesta del servidor');
-                    }
-                } catch (error) {
-                    setError('Error al obtener el perfil: ' + error.message);
+    useEffect(() => {
+        const obtenerPerfil = async () => {
+            try {
+                const token = localStorage.getItem('token');
+                const url = `${import.meta.env.VITE_BACKEND_URL}/admin/perfil`;
+                const options = {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                };
+                const respuesta = await axios.get(url, options);
+                if (respuesta.data) {
+                    setPerfil(respuesta.data);
+                } else {
+                    setError('No se recibió respuesta del servidor');
                 }
-            };
-
-            obtenerPerfil();
-        }, []);
-
-        const handleOpen = (value) => {
-            setMenuAbierto(menuAbierto === value ? null : value);
+            } catch (error) {
+                setError('Error al obtener el perfil: ' + error.message);
+            }
         };
 
-        return (
-            <div className="md:flex md:min-h-screen">
-                 <div className="md:w-1/5 bg-gray-800 px-5 py-4 mb-[-0px]">
+        obtenerPerfil();
+    }, []);
+
+    const handleOpen = (value) => {
+        setMenuAbierto(menuAbierto === value ? null : value);
+    };
+
+    return (
+        <div className="md:flex md:min-h-screen">
+            <div className="md:w-1/5 bg-gray-800 px-5 py-4 mb-[-0px]">
                 <Card className=" bg-gray-800">
                     <div className="text-3xl font-black text-center text-slate-200">
                         Fasty Cars Administrador
@@ -88,7 +89,7 @@
                             <ListItem className="p-0">
                                 <AccordionHeader onClick={() => handleOpen('perfil')} className="border-b-0 p-3">
                                     <ListItemPrefix>
-                                        <PresentationChartBarIcon className="h-5 w-5" />
+                                        <UserCircleIcon className="h-5 w-5" />
                                     </ListItemPrefix>
                                     <Typography color="white" className="mr-auto font-normal">
                                         Información del Perfil
@@ -139,9 +140,9 @@
                                 <ListItem className="p-0">
                                     <AccordionHeader onClick={() => handleOpen('conductor')} className="border-b-0 p-3">
                                         <ListItemPrefix>
-                                            <ShoppingBagIcon className="h-5 w-5" />
+                                            <TruckIcon className="h-5 w-5" />
                                         </ListItemPrefix>
-                                        <Typography color="blue-gray" className="mr-auto font-normal">
+                                        <Typography color="white" className="mr-auto font-normal">
                                             Conductores
                                         </Typography>
                                     </AccordionHeader>
@@ -181,9 +182,9 @@
                                 <ListItem className="p-0">
                                     <AccordionHeader onClick={() => handleOpen('ruta')} className="border-b-0 p-3">
                                         <ListItemPrefix>
-                                            <Cog6ToothIcon className="h-5 w-5" />
+                                            <MapPinIcon className="h-5 w-5" />
                                         </ListItemPrefix>
-                                        <Typography color="blue-gray" className="mr-auto font-normal">
+                                        <Typography color="white" className="mr-auto font-normal">
                                             Rutas y Horarios
                                         </Typography>
                                     </AccordionHeader>
@@ -224,9 +225,9 @@
                                 <ListItem className="p-0">
                                     <AccordionHeader onClick={() => handleOpen('viajesCompartidos')} className="border-b-0 p-3">
                                         <ListItemPrefix>
-                                            <ShoppingBagIcon className="h-5 w-5" />
+                                            <TicketIcon className="h-5 w-5" />
                                         </ListItemPrefix>
-                                        <Typography color="blue-gray" className="mr-auto font-normal">
+                                        <Typography color="white" className="mr-auto font-normal">
                                             Viajes Compartidos
                                         </Typography>
                                     </AccordionHeader>
@@ -259,9 +260,9 @@
                                 <ListItem className="p-0">
                                     <AccordionHeader onClick={() => handleOpen('viajesPrivados')} className="border-b-0 p-3">
                                         <ListItemPrefix>
-                                            <UserCircleIcon className="h-5 w-5" />
+                                            <TicketIcon className="h-5 w-5" />
                                         </ListItemPrefix>
-                                        <Typography color="blue-gray" className="mr-auto font-normal">
+                                        <Typography color="white" className="mr-auto font-normal">
                                             Viajes Privados
                                         </Typography>
                                     </AccordionHeader>
@@ -296,7 +297,7 @@
                                         <ListItemPrefix>
                                             <InboxIcon className="h-5 w-5" />
                                         </ListItemPrefix>
-                                        <Typography color="blue-gray" className="mr-auto font-normal">
+                                        <Typography color="white" className="mr-auto font-normal">
                                             Encomiendas
                                         </Typography>
                                     </AccordionHeader>
@@ -329,9 +330,9 @@
                                 <ListItem className="p-0">
                                     <AccordionHeader onClick={() => handleOpen('pasajeros')} className="border-b-0 p-3">
                                         <ListItemPrefix>
-                                            <PresentationChartBarIcon className="h-5 w-5" />
+                                            <UsersIcon className="h-5 w-5" />
                                         </ListItemPrefix>
-                                        <Typography color="blue-gray" className="mr-auto font-normal">
+                                        <Typography color="white" className="mr-auto font-normal">
                                             Pasajeros
                                         </Typography>
                                     </AccordionHeader>
@@ -364,9 +365,9 @@
                                 <ListItem className="p-0">
                                     <AccordionHeader onClick={() => handleOpen('administrador')} className="border-b-0 p-3">
                                         <ListItemPrefix>
-                                            <Cog6ToothIcon className="h-5 w-5" />
+                                            <UserPlusIcon className="h-5 w-5" />
                                         </ListItemPrefix>
-                                        <Typography color="blue-gray" className="mr-auto font-normal">
+                                        <Typography color="white" className="mr-auto font-normal">
                                             Administrador
                                         </Typography>
                                     </AccordionHeader>
@@ -390,18 +391,18 @@
                         </div>
                     </List>
                 </Card>
+            </div>
+            <div className='flex-1 flex flex-col justify-between h-screen bg-gray-100'>
+                <div className='bg-gray-800 py-2 flex md:justify-end items-center gap-5 justify-center'>
+                    {/* Contenido superior (puede ir aquí si lo deseas) */}
                 </div>
-                <div className='flex-1 flex flex-col justify-between h-screen bg-gray-100'>
-                    <div className='bg-gray-800 py-2 flex md:justify-end items-center gap-5 justify-center'>
-                        {/* Contenido superior (puede ir aquí si lo deseas) */}
-                    </div>
-                    <div className='overflow-y-scroll p-8'>
-                        {autenticado ? <Outlet /> : <Navigate to="/login" />}
-                    </div>
+                <div className='overflow-y-scroll p-8'>
+                    {autenticado ? <Outlet /> : <Navigate to="/login" />}
                 </div>
             </div>
-        );
+        </div>
+    );
 
-    }
+}
 
-    export default Dashboard;
+export default Dashboard;
