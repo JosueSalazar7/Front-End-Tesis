@@ -58,7 +58,12 @@ export const FormularioRuta = ({ ruta }) => {
                     name='nombre'
                     control={control}
                     defaultValue=''
-                    rules={{ required: 'Campo Obligatorio' }}
+                    rules={{ 
+                        required: 'Campo Obligatorio', 
+                        minLength: { value: 5, message: 'El campo "nombre de la ruta" debe tener al menos 5 caracteres' },
+                        maxLength: { value: 20, message: 'El campo "nombre de la ruta" debe tener máximo 20 caracteres' },
+                        pattern: { value: /^[a-zA-Z\s]*$/, message: 'El campo debe contener solo letras' }
+                    }}
                     render={({ field, fieldState }) => (
                         <div>
                             <input
@@ -81,7 +86,12 @@ export const FormularioRuta = ({ ruta }) => {
                     name='ciudad1'
                     control={control}
                     defaultValue=''
-                    rules={{ required: 'Campo Obligatorio' }}
+                    rules={{ 
+                        required: 'Campo Obligatorio', 
+                        minLength: { value: 5, message: 'El campo "Ciudad 1" debe tener al menos 5 caracteres' },
+                        maxLength: { value: 20, message: 'El campo "Ciudad 1" debe tener máximo 20 caracteres' },
+                        pattern: { value: /^[a-zA-Z\s]*$/, message: 'El campo debe contener solo letras' }
+                    }}
                     render={({ field, fieldState }) => (
                         <div>
                             <input
@@ -102,7 +112,12 @@ export const FormularioRuta = ({ ruta }) => {
                     name='ciudad2'
                     control={control}
                     defaultValue=''
-                    rules={{ required: 'Campo Obligatorio' }}
+                    rules={{ 
+                        required: 'Campo Obligatorio', 
+                        minLength: { value: 5, message: 'El campo "Ciudad 2" debe tener al menos 5 caracteres' },
+                        maxLength: { value: 20, message: 'El campo "Ciudad 2" debe tener máximo 20 caracteres' },
+                        pattern: { value: /^[a-zA-Z\s]*$/, message: 'El campo debe contener solo letras' }
+                    }}
                     render={({ field, fieldState }) => (
                         <div>
                             <input

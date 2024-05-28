@@ -92,12 +92,12 @@ const Login = () => {
                                     rules={{
                                         required: 'Debe llenar todos los campos',
                                         minLength: {
-                                            value: 6,
-                                            message: 'La contraseña debe contener al menos 6 caracteres y al menos un número y una letra'
+                                            value: 8,
+                                            message: 'La contraseña debe contener al menos 8 caracteres y al menos un número y una letra'
                                         },
                                         pattern: {
                                             value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
-                                            message: 'La contraseña debe contener al menos 6 caracteres y al menos un número y una letra'
+                                            message: 'La contraseña debe contener al menos 8 caracteres y al menos un número y una letra'
                                         }
                                     }}
                                     render={({ field }) => (

@@ -57,7 +57,7 @@ const ActualizarViajeC = () => {
       setMensaje({ respuesta: "Estado del viaje compartido actualizado correctamente", tipo: true });
       navigate('/dashboard/listar-viajes-compartidos');
     } catch (error) {
-      setMensaje({ respuesta: error.response.data.error, tipo: false });
+      setMensaje({ respuesta: error.response.data.error.msg, tipo: false });
     }
   };
 
@@ -90,9 +90,7 @@ const ActualizarViajeC = () => {
           <Link to="/dashboard/listar-viajes-compartidos" className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Cancelar</Link> {/* Botón Cancelar en rojo */}
         </div>
       </form>
-      {Object.keys(mensaje).length > 0 && (
-        <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
-      )}
+      {Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
     </div>
   );
 };

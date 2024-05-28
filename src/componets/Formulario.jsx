@@ -85,7 +85,21 @@ export const Formulario = ({ conductor }) => {
                             name='conductorNombre'
                             control={control}
                             defaultValue=''
-                            rules={{ required: 'Campo Obligatorio' }}
+                            rules={{ 
+                                required: 'Campo Obligatorio',
+                                minLength: {
+                                    value: 3,
+                                    message: 'El campo "Nombre del conductor" debe tener al menos 3 caracteres'
+                                },
+                                maxLength: {
+                                    value: 20,
+                                    message: 'El campo "Nombre del conductor" debe tener máximo 20 caracteres'
+                                },
+                                pattern: {
+                                    value: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/,
+                                    message: 'El campo "Nombre del conductor" debe contener solo letras'
+                                }
+                            }}
                             render={({ field, fieldState }) => (
                                 <div>
                                     <input
@@ -106,7 +120,21 @@ export const Formulario = ({ conductor }) => {
                             name='conductorApellido'
                             control={control}
                             defaultValue=''
-                            rules={{ required: 'Campo Obligatorio' }}
+                            rules={{ 
+                                required: 'Campo Obligatorio',
+                                minLength: {
+                                    value: 3,
+                                    message: 'El campo "Apellido del conductor" debe tener al menos 3 caracteres'
+                                },
+                                maxLength: {
+                                    value: 20,
+                                    message: 'El campo "Aepllido del conductor" debe tener máximo 20 caracteres'
+                                },
+                                pattern: {
+                                    value: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/,
+                                    message: 'El campo "Apellido del conductor" debe contener solo letras'
+                                }
+                            }}
                             render={({ field, fieldState }) => (
                                 <div>
                                     <input
@@ -338,7 +366,21 @@ export const Formulario = ({ conductor }) => {
                             name='marcaVehiculo'
                             control={control}
                             defaultValue=''
-                            rules={{ required: 'Campo Obligatorio' }}
+                            rules={{
+                                required: 'Campo Obligatorio',
+                                minLength: {
+                                    value: 3,
+                                    message: 'El campo "Marca del vehículo" debe tener al menos 3 caracteres'
+                                },
+                                maxLength: {
+                                    value: 20,
+                                    message: 'El campo "Marca del vehículo" debe tener máximo 20 caracteres'
+                                },
+                                pattern: {
+                                    value: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/,
+                                    message: 'El campo "Marca del vehículo" debe contener solo letras'
+                                }
+                            }}
                             render={({ field, fieldState }) => (
                                 <div>
                                     <input
@@ -380,7 +422,17 @@ export const Formulario = ({ conductor }) => {
                             name='modeloVehiculo'
                             control={control}
                             defaultValue=''
-                            rules={{ required: 'Campo Obligatorio' }}
+                            rules={{
+                                required: 'Campo Obligatorio',
+                                minLength: {
+                                    value: 2,
+                                    message: 'El campo "Modelo del vehículo" debe tener al menos 2 caracteres'
+                                },
+                                maxLength: {
+                                    value: 20,
+                                    message: 'El campo "Modelo del vehículo" debe tener máximo 20 caracteres'
+                                }
+                            }}
                             render={({ field, fieldState }) => (
                                 <div>
                                     <input
@@ -401,7 +453,21 @@ export const Formulario = ({ conductor }) => {
                             name='anioVehiculo'
                             control={control}
                             defaultValue=''
-                            rules={{ required: 'Campo Obligatorio' }}
+                            rules={{
+                                required: 'Campo Obligatorio',
+                                min: {
+                                    value: 1900,
+                                    message: 'Ingrese un año válido'
+                                },
+                                max: {
+                                    value: new Date().getFullYear(),
+                                    message: `El año no puede ser mayor a ${new Date().getFullYear()}`
+                                },
+                                pattern: {
+                                    value: /^\d+$/,
+                                    message: 'Ingrese un año válido'
+                                }
+                            }}
                             render={({ field, fieldState }) => (
                                 <div>
                                     <input
@@ -422,7 +488,21 @@ export const Formulario = ({ conductor }) => {
                             name='colorVehiculo'
                             control={control}
                             defaultValue=''
-                            rules={{ required: 'Campo Obligatorio' }}
+                            rules={{
+                                required: 'Campo Obligatorio',
+                                minLength: {
+                                    value: 3,
+                                    message: 'El campo "Color del vehículo" debe tener al menos 3 caracteres'
+                                },
+                                maxLength: {
+                                    value: 20,
+                                    message: 'El campo "Color del vehículo" debe tener máximo 20 caracteres'
+                                },
+                                pattern: {
+                                    value: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/,
+                                    message: 'El campo "Color del vehículo" debe contener solo letras'
+                                }
+                            }}
                             render={({ field, fieldState }) => (
                                 <div>
                                     <input

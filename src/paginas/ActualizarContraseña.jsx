@@ -12,12 +12,12 @@ const ActualizarContrasena = () => {
     const passwordValidation = {
         required: 'Campo Obligatorio',
         minLength: {
-            value: 6,
-            message: 'La contraseña debe tener al menos 6 caracteres y contener al menos una letra y un número',
+            value: 8,
+            message: 'La contraseña debe tener al menos 8 caracteres y contener al menos una letra y un número',
         },
         pattern: {
             value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
-            message: 'La contraseña debe tener al menos 6 caracteres y contener al menos una letra y un número',
+            message: 'La contraseña debe tener al menos 8 caracteres y contener al menos una letra y un número',
         },
     };
 
