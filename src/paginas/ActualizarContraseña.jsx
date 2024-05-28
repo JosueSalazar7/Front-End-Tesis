@@ -6,8 +6,20 @@ import { HiEye, HiEyeOff } from 'react-icons/hi';
 
 const ActualizarContrasena = () => {
     const { handleSubmit, register, formState: { errors } } = useForm();
-    const [mensaje, setMensaje] = useState('');
+    const [mensaje, setMensaje] = useState({});
     const [showPassword, setShowPassword] = useState(false);
+
+    const passwordValidation = {
+        required: 'Campo Obligatorio',
+        minLength: {
+            value: 6,
+            message: 'La contraseña debe tener al menos 6 caracteres y contener al menos una letra y un número',
+        },
+        pattern: {
+            value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
+            message: 'La contraseña debe tener al menos 6 caracteres y contener al menos una letra y un número',
+        },
+    };
 
     const onSubmit = async (data) => {
         try {
@@ -20,13 +32,18 @@ const ActualizarContrasena = () => {
                 },
             };
             const respuesta = await axios.put(url, data, options);
-            setMensaje(respuesta.data.msg);
+            setMensaje({ respuesta: respuesta.data.msg, tipo: true });
+            // Lógica adicional si es necesario
         } catch (error) {
-            if (error.response) {
-                setMensaje(error.response.data.msg);
+            if (error.response && error.response.data) {
+                const errorMessage = error.response.data.msg;
+                setMensaje({ respuesta: errorMessage, tipo: false });
             } else {
-                setMensaje('Error al procesar la solicitud');
+                setMensaje({ respuesta: 'Error de conexión', tipo: false });
             }
+            setTimeout(() => {
+                setMensaje({});
+            }, 3000);
         }
     };
 
@@ -38,7 +55,7 @@ const ActualizarContrasena = () => {
         <div className="h-screen pt-48  flex items-start justify-center">
             <div className="max-w-9xl mx-auto px-4">
                 <h1 className="font-black text-7xl text-gray-500 text-center mb-8">Actualizar Contraseña</h1>
-                {mensaje && <Mensaje tipo={false}>{mensaje}</Mensaje>}
+                {mensaje.respuesta && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
                 <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div className="mb-4 relative">
                         <label className="block text-gray-700 text-xl font-bold mb-2" htmlFor="passwordActual">
@@ -47,7 +64,7 @@ const ActualizarContrasena = () => {
                         <div className="relative">
                             <input
                                 type={showPassword ? 'text' : 'password'}
-                                {...register('passwordactual', { required: 'Campo Obligatorio' })}
+                                {...register('passwordactual', passwordValidation)}
                                 className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.passwordactual ? 'border-red-500' : ''}`}
                                 id="passwordActual"
                                 required
@@ -69,7 +86,7 @@ const ActualizarContrasena = () => {
                         <div className="relative">
                             <input
                                 type={showPassword ? 'text' : 'password'}
-                                {...register('passwordnuevo', { required: 'Campo Obligatorio' })}
+                                {...register('passwordnuevo', passwordValidation)}
                                 className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.passwordnuevo ? 'border-red-500' : ''}`}
                                 id="passwordNuevo"
                                 required

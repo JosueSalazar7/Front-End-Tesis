@@ -66,7 +66,11 @@ const ActualizarPerfil = () => {
                         <input
                             type="text"
                             id="adminNombre"
-                            {...register('adminNombre', { required: 'Campo Obligatorio' })}
+                            {...register('adminNombre', { 
+                                required: 'Campo Obligatorio',
+                                minLength: { value: 5, message: 'El nombre debe tener al menos 5 caracteres' },
+                                maxLength: { value: 20, message: 'El nombre debe tener como máximo 20 caracteres' }
+                            })}
                             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.adminNombre ? 'border-red-500' : ''}`}
                         />
                         {errors.adminNombre && <p className="text-red-500 text-sm">{errors.adminNombre.message}</p>}
@@ -78,7 +82,11 @@ const ActualizarPerfil = () => {
                         <input
                             type="text"
                             id="adminApellido"
-                            {...register('adminApellido', { required: 'Campo Obligatorio' })}
+                            {...register('adminApellido', { 
+                                required: 'Campo Obligatorio',
+                                minLength: { value: 5, message: 'El apellido debe tener al menos 5 caracteres' },
+                                maxLength: { value: 20, message: 'El apellido debe tener como máximo 20 caracteres' }
+                            })}
                             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.adminApellido ? 'border-red-500' : ''}`}
                         />
                         {errors.adminApellido && <p className="text-red-500 text-sm">{errors.adminApellido.message}</p>}
@@ -90,7 +98,12 @@ const ActualizarPerfil = () => {
                         <input
                             type="text"
                             id="phone"
-                            {...register('phone', { required: 'Campo Obligatorio' })}
+                            {...register('phone', { 
+                                required: 'Campo Obligatorio',
+                                minLength: { value: 10, message: 'El teléfono debe tener 10 dígitos' },
+                                maxLength: { value: 10, message: 'El teléfono debe tener 10 dígitos' },
+                                pattern: { value: /^\d+$/, message: 'El teléfono solo puede contener números' }
+                            })}
                             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.phone ? 'border-red-500' : ''}`}
                         />
                         {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
