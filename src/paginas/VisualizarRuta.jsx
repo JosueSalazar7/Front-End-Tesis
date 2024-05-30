@@ -52,44 +52,45 @@ const VisualizarRuta = () => {
         Volver
       </Link>
 
-      <div className="mt-10 h-screen items-start text-center">
-        <div className="text-center">
+      
+        <div className="mt-10">
           <h1 className="font-black text-6xl text-gray-500">
             Visualizar Ruta
           </h1>
           <hr className="my-4" />
-          <p className="mb-8 text-lg">Detalles de la ruta</p>
+          <p className="mb-8 text-lg">Este módulo permite visualizar los detalles de la ruta</p>
         </div>
-        <div className="text-center flex justify-center">
-          <div className="w-1/2 m-5 ">
+        <div className="h-screen items-start">
+        <div className="flex justify-center">
+          <div className="w-1/3 m-5 ">
             <img src={ruta1} alt="Conductor" className="w-full" />
           </div>
-          <div className="w-1/2 m-5 pt-24">
+          <div className="w-1/2 pt-10">
             <hr className="my-4" />
             <div className="m-5 space-y-4">
               {Object.keys(ruta).length !== 0 ? (
                 <div className="bg-white shadow-md p-4 rounded-lg">
-                  <p className="text-lg font-bold">
+                  <p className="text-2xl font-bold">
                     <span className="text-black-600">Nombre de la ruta:</span>{" "}
                     <span className="text-blue-600">{ruta.ruta?.nombre}</span>
                   </p>
-                  <p className="text-lg font-bold">
+                  <p className="text-2xl font-bold">
                     <span className="text-black-600">Ciudad de origen:</span>{" "}
                     <span className="text-blue-600">{ruta.ruta?.ciudad1}</span>
                   </p>
-                  <p className="text-lg font-bold">
+                  <p className="text-2xl font-bold">
                     <span className="text-black-600">Ciudad de destino:</span>{" "}
                     <span className="text-blue-600">{ruta.ruta?.ciudad2}</span>
                   </p>
-                  <p className="text-lg font-bold">
+                  <p className="text-2xl font-bold">
                     <span className="text-black-600">Primer horario:</span>{" "}
                     <span className="text-blue-600">{ruta.horario?.horario1}</span>
                   </p>
-                  <p className="text-lg font-bold">
+                  <p className="text-2xl font-bold">
                     <span className="text-black-600">Segundo horario:</span>{" "}
                     <span className="text-blue-600">{ruta.horario?.horario2}</span>
                   </p>
-                  <p className="text-lg font-bold">
+                  <p className="text-2xl font-bold">
                     <span className="text-black-600">Tercer horario:</span>{" "}
                     <span className="text-blue-600">{ruta.horario?.horario3}</span>
                   </p>

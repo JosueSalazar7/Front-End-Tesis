@@ -62,12 +62,12 @@ const Visualizar = () => {
         </div>
         <div className=" h-screen items-start ">
         <div className=" flex justify-center">
-          <div className="w-1/2 m-5 pt-20">
+          <div className="w-1/2  pt-14">
             <img src={chofer} alt="Conductor" className="w-full" />
           </div>
-          <div className="w-1/2 m-5 ">
+          <div className="w-1/2">
             <hr className="my-4" />
-            <div className="m-5 space-y-4">
+            <div className=" space-y-4">
               {Object.keys(conductor).length !== 0 ? (
                 <>
                   <div className="bg-white shadow-md p-4 rounded-lg">

@@ -52,52 +52,53 @@ const VisualizarEncomienda = () => {
         Volver
       </Link>
       
-      <div className="mt-10 h-screen items-start text-center">
-        <div className="text-center">
+      
+        <div className="pt-20">
           <h1 className="font-black text-6xl text-gray-500">
             Visualizar Encomienda
           </h1>
           <hr className="my-4" />
-          <p className="mb-8 text-lg">Detalles de la encomienda</p>
+          <p className="mb-8 text-lg">Este módulo permite visualizar los detalles de la encomienda</p>
         </div>
-        <div className="text-center flex justify-center">
-          <div className="w-1/2 m-5 ">
+        <div className="h-screen items-start">
+        <div className="flex justify-center">
+          <div className="w-1/3 pt-20 ">
             <img src={encomiendasImg} alt="Encomienda" className="w-full" />
           </div>
-          <div className="w-1/2 m-5 pt-7">
+          <div className="w-1/2 m-5 pt-5">
             <hr className="my-4" />
             <div className="m-5 space-y-4">
               {Object.keys(encomienda).length !== 0 ? (
                 <div className="bg-white shadow-md p-4 rounded-lg">
-                  <p className="text-lg font-bold">
+                  <p className="text-2xl font-bold">
                     <span className="text-black-600">Tipo de Encomienda:</span>{" "}
                     <span className="text-blue-600">{encomienda.tipoEncomienda}</span>
                   </p>
-                  <p className="text-lg font-bold">
+                  <p className="text-2xl font-bold">
                     <span className="text-black-600">Nombre del Remitente:</span>{" "}
                     <span className="text-blue-600">{encomienda.nombreRemitente}</span>
                   </p>
-                  <p className="text-lg font-bold">
+                  <p className="text-2xl font-bold">
                     <span className="text-black-600">Apellido del Remitente:</span>{" "}
                     <span className="text-blue-600">{encomienda.apellidoRemitente}</span>
                   </p>
-                  <p className="text-lg font-bold">
+                  <p className="text-2xl font-bold">
                     <span className="text-black-600">Ciudad de Salida:</span>{" "}
                     <span className="text-blue-600">{encomienda.ciudadSalida}</span>
                   </p>
-                  <p className="text-lg font-bold">
+                  <p className="text-2xl font-bold">
                     <span className="text-black-600">Ciudad de Llegada:</span>{" "}
                     <span className="text-blue-600">{encomienda.ciudadLlegada}</span>
                   </p>
-                  <p className="text-lg font-bold">
+                  <p className="text-2xl font-bold">
                     <span className="text-black-600">Horario:</span>{" "}
                     <span className="text-blue-600">{encomienda.turno?.horario}</span>
                   </p>
-                  <p className="text-lg font-bold">
+                  <p className="text-2xl font-bold">
                     <span className="text-black-600">Fecha:</span>{" "}
                     <span className="text-blue-600">{encomienda.turno?.fecha}</span>
                   </p>
-                  <p className="text-lg font-bold">
+                  <p className="text-2xl font-bold">
                     <span className="text-black-600">Número de Paquetes:</span>{" "}
                     <span className="text-blue-600">{encomienda.numPaquetes}</span>
                   </p>
