@@ -135,7 +135,7 @@ const TablaPasajeros = () => {
                             {headerGroups.map((headerGroup) => (
                                 <tr {...headerGroup.getHeaderGroupProps()}>
                                     {headerGroup.headers.map((column) => (
-                                        <th {...column.getHeaderProps()} className="p-2">
+                                        <th {...column.getHeaderProps()} className="p-3">
                                             {column.render("Header")}
                                         </th>
                                     ))}
@@ -148,7 +148,7 @@ const TablaPasajeros = () => {
                                 return (
                                     <tr {...row.getRowProps()} className="border-b hover:bg-gray-300 text-center">
                                         {row.cells.map((cell) => {
-                                            return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
+                                            return <td {...cell.getCellProps()} className="p-3">{cell.render("Cell")}</td>;
                                         })}
                                     </tr>
                                 );
