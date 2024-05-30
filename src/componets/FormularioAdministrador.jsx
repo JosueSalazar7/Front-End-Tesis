@@ -4,19 +4,20 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import AuthContext from '../context/AuthProvider';
 import Mensaje from './Alertas/Mensaje';
+import { HiEye, HiEyeOff } from 'react-icons/hi'; // Importa los iconos
 
 export const FormularioRegistroAdmin = () => {
     const { auth } = useContext(AuthContext);
     const navigate = useNavigate();
-    const { handleSubmit, control, reset } = useForm();
+    const { handleSubmit, control, reset, formState: { errors } } = useForm();
     const [mensaje, setMensaje] = useState({});
+    const [showPassword, setShowPassword] = useState(false); // Estado para mostrar/ocultar contraseña
 
     const onSubmit = async (data) => {
         try {
             const url = `${import.meta.env.VITE_BACKEND_URL}/admin/register`;
             const respuesta = await axios.post(url, data);
             setMensaje({ respuesta: respuesta.data.msg, tipo: true });
-            // Redirigir a la página de administrador después del registro exitoso
             navigate('/dashboard');
         } catch (error) {
             setMensaje({ respuesta: error.response.data.msg, tipo: false });
@@ -112,18 +113,25 @@ export const FormularioRegistroAdmin = () => {
                         required: 'Campo Obligatorio', 
                         minLength: { value: 8, message: 'El campo "Contraseña" debe tener al menos 8 caracteres' },
                         pattern: {
-                            value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
+                            value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
                             message: 'La contraseña debe tener al menos 8 caracteres y contener al menos una letra y un número',
                         },
                     }}
                     render={({ field, fieldState }) => (
-                        <div>
+                        <div className="relative">
                             <input
                                 {...field}
-                                type="password"
+                                type={showPassword ? 'text' : 'password'} // Cambio aquí
                                 className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md ${fieldState.invalid ? 'border-red-500' : ''}`}
                                 placeholder='Contraseña'
                             />
+                            <button
+                                type="button"
+                                className="absolute right-1 top-1/2 transform -translate-y-1/2"
+                                onClick={() => setShowPassword(!showPassword)}
+                            >
+                                {showPassword ? <HiEyeOff className="text-black-500" /> : <HiEye className="text-black-500" />}
+                            </button>
                             {fieldState.error && <p className="text-red-500 text-sm">{fieldState.error.message}</p>}
                         </div>
                     )}
