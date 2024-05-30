@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link, Navigate, Outlet, useLocation } from 'react-router-dom';
-import AuthContext from '../context/AuthProvider';
+import  AuthContext  from '../context/AuthProvider'; // Cambio aquí
 import axios from 'axios';
 import {
     Card,
@@ -28,7 +28,7 @@ import { ChevronRightIcon, ChevronDownIcon, MapPinIcon } from "@heroicons/react/
 const Dashboard = () => {
     const location = useLocation();
     const urlActual = location.pathname;
-    const { auth } = useContext(AuthContext);
+    const { auth, setAuth } = useContext(AuthContext);
     const autenticado = localStorage.getItem('token');
 
     const [menuAbierto, setMenuAbierto] = useState(null);
@@ -49,6 +49,8 @@ const Dashboard = () => {
                 const respuesta = await axios.get(url, options);
                 if (respuesta.data) {
                     setPerfil(respuesta.data);
+                    localStorage.setItem('nombre', respuesta.data.nombre);
+                    setAuth(prevAuth => ({ ...prevAuth, nombre: respuesta.data.nombre }));
                 } else {
                     setError('No se recibió respuesta del servidor');
                 }
@@ -58,6 +60,12 @@ const Dashboard = () => {
         };
 
         obtenerPerfil();
+    }, []);
+    useEffect(() => {
+        const nombre = localStorage.getItem('nombre');
+        if (nombre) {
+            setAuth(prevAuth => ({ ...prevAuth, nombre }));
+        }
     }, []);
 
     const handleOpen = (value) => {
@@ -73,7 +81,8 @@ const Dashboard = () => {
                     </div>
                     <img src="https://static.vecteezy.com/system/resources/previews/011/171/301/non_2x/road-trip-vacation-by-car-on-mountain-highway-with-rocky-cliffs-view-concept-cartoon-illustration-vector.jpg" alt="img-client" className="m-auto mt-5 p-1 border-2 border-slate-500 rounded-full" width={120} height={120} />
                     <p className="text-white text-center my-3 text-sm">
-                        <span className="bg-green-600 mx-2 w-3 h-3 inline-block rounded-full"></span>Bienvenido - {auth?.nombre}
+                        <span className="bg-green-600 mx-2 w-3 h-3 inline-block rounded-full"></span>
+                        Bienvenido - {auth?.adminNombre}
                     </p>
                     <hr className="" />
                     <List className="mt-0">
