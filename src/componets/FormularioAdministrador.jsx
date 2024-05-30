@@ -18,7 +18,9 @@ export const FormularioRegistroAdmin = () => {
             const url = `${import.meta.env.VITE_BACKEND_URL}/admin/register`;
             const respuesta = await axios.post(url, data);
             setMensaje({ respuesta: respuesta.data.msg, tipo: true });
-            navigate('/dashboard');
+            setTimeout(() => {
+                window.location.href = '/dashboard';
+            }, 2000);
         } catch (error) {
             setMensaje({ respuesta: error.response.data.msg, tipo: false });
         }
