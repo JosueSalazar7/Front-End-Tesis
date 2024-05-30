@@ -5,7 +5,8 @@ const ListarPasajeros = () => {
     return (
         <div className="h-screen pt-32 flex items-start justify-center">
             <div className="max-w-7xl w-full mx-auto px-4">
-                <h1 className='font-black text-7xl text-gray-500 text-center mb-8'>Pasajeros</h1>
+                <h1 className='font-black text-7xl text-gray-500 mb-8'>Pasajeros</h1>
+                <p className='mb-8'>Este módulo permite visualizar los clientes registrados de FastyCars</p>
                 <hr className='my-4' />
                 <p className='mb-8'></p>
                 <TablaPasajeros />

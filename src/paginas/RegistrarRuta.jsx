@@ -12,11 +12,11 @@ const RegistrarRuta = () => {
                 </svg>
                 Volver
             </Link>
-            <div className="h-screen items-start justify-center">
+            <div className="h-screen items-start pt-14 justify-center">
                 <div>
-                    <h1 className='font-black text-5xl text-gray-500 text-center'>Rutas</h1>
+                    <h1 className='font-black text-5xl text-gray-500'>Rutas</h1>
                     <hr className='my-4' />
-                    <p className='mb-8 text-center'>Registrar una nueva ruta</p>
+                    <p className='mb-8 '>Este módulo permite registrar una nueva ruta</p>
                     <FormularioRuta />
                 </div>
             </div>

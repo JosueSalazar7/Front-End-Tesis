@@ -64,9 +64,9 @@ const ActualizarEncomienda = () => {
 
     return (
         <div className="mt-10 h-screen pt-40 items-start">
-            <h1 className="font-black text-5xl text-gray-500 max-w-md mx-auto text-center">Actualizar Encomienda</h1>
+            <h1 className="font-black text-6xl text-gray-500">Actualizar Encomienda</h1>
             <hr className="my-4" />
-            <p className="mb-8 text-center">Completa los datos para actualizar el estado de la encomienda</p>
+            <p className="mb-8 ">Este módulo permite actualizar la encomienda</p>
             <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto m-5">
                 <div className="mb-4">
                     <label htmlFor="conductorAsignado" className="block text-md text-gray-600 font-bold text-lg">Conductor asignado:</label>

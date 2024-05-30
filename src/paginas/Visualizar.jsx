@@ -52,14 +52,16 @@ const Visualizar = () => {
         Volver
       </Link>
 
-      <div className="mt-10 h-screen items-start text-center">
-        <div className="text-center">
+        <div className="mt-10">
           <h1 className="font-black text-6xl text-gray-500">
             Visualizar Conductor
           </h1>
           <hr className="my-4" />
+          <p className='mb-8'>Este modulo permite visualizar los datos del conductor y su vehículo</p>
+          
         </div>
-        <div className="text-center flex justify-center">
+        <div className=" h-screen items-start ">
+        <div className=" flex justify-center">
           <div className="w-1/2 m-5 pt-20">
             <img src={chofer} alt="Conductor" className="w-full" />
           </div>
@@ -69,59 +71,59 @@ const Visualizar = () => {
               {Object.keys(conductor).length !== 0 ? (
                 <>
                   <div className="bg-white shadow-md p-4 rounded-lg">
-                    <p className="text-lg font-bold mb-2">
+                    <p className="text-4xl font-bold mb-2">
                       Datos del conductor
                     </p>
-                    <p className="text-lg font-bold">
+                    <p className="text-2xl font-bold">
                       <span className="text-black-600">Nombre:</span>{" "}
                       <span className="text-blue-600">
                         {conductor.conductorNombre}
                       </span>
                     </p>
-                    <p className="text-lg font-bold">
+                    <p className="text-2xl font-bold">
                       <span className="text-black-600">Apellido:</span>{" "}
                       <span className="text-blue-600">
                         {conductor.conductorApellido}
                       </span>
                     </p>
-                    <p className="text-lg font-bold">
+                    <p className="text-2xl font-bold">
                       <span className="text-black-600">Cédula:</span>{" "}
                       <span className="text-blue-600">{conductor.cedula}</span>
                     </p>
-                    <p className="text-lg font-bold">
+                    <p className="text-2xl font-bold">
                       <span className="text-black-600">Correo:</span>{" "}
                       <span className="text-blue-600">{conductor.correo}</span>
                     </p>
-                    <p className="text-lg font-bold">
+                    <p className="text-2xl font-bold">
                       <span className="text-black-600">Celular:</span>{" "}
                       <span className="text-blue-600">{conductor.phone}</span>
                     </p>
                   </div>
                   <div className="bg-white shadow-md p-4 rounded-lg mt-4">
-                    <p className="text-lg font-bold mb-2">
+                    <p className="text-4xl font-bold mb-2">
                       Datos del vehículo
                     </p>
-                    <p className="text-lg font-bold">
+                    <p className="text-2xl font-bold">
                       <span className="text-black-600">Número de asientos:</span>{" "}
                       <span className="text-blue-600">{conductor.numeroAsientos}</span>
                     </p>
-                    <p className="text-lg font-bold">
+                    <p className="text-2xl font-bold">
                       <span className="text-black-600">Placa:</span>{" "}
                       <span className="text-blue-600">{conductor.placaVehiculo}</span>
                     </p>
-                    <p className="text-lg font-bold">
+                    <p className="text-2xl font-bold">
                       <span className="text-black-600">Marca:</span>{" "}
                       <span className="text-blue-600">{conductor.marcaVehiculo}</span>
                     </p>
-                    <p className="text-lg font-bold">
+                    <p className="text-2xl font-bold">
                       <span className="text-black-600">Modelo:</span>{" "}
                       <span className="text-blue-600">{conductor.modeloVehiculo}</span>
                     </p>
-                    <p className="text-lg font-bold">
+                    <p className="text-2xl font-bold">
                       <span className="text-black-600">Año:</span>{" "}
                       <span className="text-blue-600">{conductor.anioVehiculo}</span>
                     </p>
-                    <p className="text-lg font-bold">
+                    <p className="text-2xl font-bold">
                       <span className="text-black-600">Color:</span>{" "}
                       <span className="text-blue-600">{conductor.colorVehiculo}</span>
                     </p>

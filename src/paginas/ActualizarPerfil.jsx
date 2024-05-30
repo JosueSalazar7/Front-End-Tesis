@@ -54,9 +54,10 @@ const ActualizarPerfil = () => {
     };
 
     return (
-        <div className="h-screen pt-40  flex items-start justify-center">
-            <div className="max-w-9xl mx-auto px-4">
-                <h1 className="font-black text-7xl text-gray-500 text-center mb-8">Actualizar Perfil</h1>
+            <div className="max-w-9xl mx-auto px-4 pt-40">
+                <h1 className="font-black text-6xl text-gray-500 mb-8">Actualizar Perfil</h1>
+                <p className='mb-8 '>Este modulo permite actualizar los datos el administrador</p>
+                <div className="h-screen   w-full max-w-lg mx-auto justify-center">
                 {success && <Mensaje tipo={true}>{success}</Mensaje>}
                 <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div className="mb-4">

@@ -54,11 +54,11 @@ const Actualizar = () => {
                 </svg>
                 Volver
             </Link>
-            <div className="h-screen pt-32 flex items-start justify-center">
+            <div className="h-screen pt-32 items-start justify-center">
                 <div>
-                    <h1 className='font-black text-center text-5xl text-gray-500'>Actualizar Conductor</h1>
+                    <h1 className='font-black text-6xl text-gray-500'>Actualizar Conductor</h1>
                     <hr className='my-4' />
-                    <p className='mb-8 text-center'>Actualizar la información del conductor</p>
+                    <p className='mb-8'>Este módulo permite actualizar la información del conductor</p>
                     {
                         Object.keys(conductor).length !== 0 ? (
                             <Formulario conductor={conductor} onSubmit={actualizarConductor} />

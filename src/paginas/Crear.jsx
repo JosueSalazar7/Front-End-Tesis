@@ -13,9 +13,9 @@ const Crear = () => {
                 </Link>
                 <div className="h-screen pt-32 justify-center">
                 <div>
-                    <h1 className='font-black text-center text-5xl text-gray-500'>Conductores</h1>
+                    <h1 className='font-black text-6xl text-gray-500'>Conductores</h1>
                     <hr className='my-4' />
-                    <p className='mb-8 text-center'>Registrar un nuevo conductor</p>
+                    <p className='mb-8 '>Este modulo permite registrar un nuevo conductor</p>
                     <Formulario />
                 </div>
             </div>

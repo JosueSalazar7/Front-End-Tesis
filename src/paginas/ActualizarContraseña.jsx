@@ -52,9 +52,12 @@ const ActualizarContrasena = () => {
     };
 
     return (
-        <div className="h-screen pt-48  flex items-start justify-center">
-            <div className="max-w-9xl mx-auto px-4">
-                <h1 className="font-black text-7xl text-gray-500 text-center mb-8">Actualizar Contraseña</h1>
+        
+        <div className="max-w-9xl mx-auto px-4 pt-48 ">
+                <h1 className="font-black text-6xl text-gray-500 mb-8">Actualizar Contraseña</h1>
+                <p className='mb-8 '>Este modulo permite actualizar la contraseña del administrador</p>
+                <div className="h-screen w-full max-w-lg mx-auto justify-center ">
+    
                 {mensaje.respuesta && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
                 <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <div className="mb-4 relative">

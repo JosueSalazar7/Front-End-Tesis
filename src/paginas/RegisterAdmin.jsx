@@ -13,9 +13,9 @@ const RegisterAdmin = () => {
             </Link>
             <div className="h-screen pt-14 items-start">
                 <div>
-                    <h1 className='font-black text-5xl text-gray-500 text-center'>Registrar Administrador</h1>
+                    <h1 className='font-black text-6xl text-gray-500 '>Registrar Administrador</h1>
                     <hr className='my-4' />
-                    <p className='mb-8 text-center'>Registrar un nuevo administrador</p>
+                    <p className='mb-8'>Este módulo permite registrar un nuevo administrador</p>
                     <FormularioRegistroAdmin />
                 </div>
             </div>

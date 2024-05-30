@@ -30,12 +30,12 @@ const Perfil = () => {
     }, []);
 
     return (
-        <div className="h-screen pt-20  flex items-start justify-center">
+        <div className="pt-20 items-start" >
             <div className="max-w-9xl mx-auto px-4">
-                <h1 className="font-black text-7xl text-gray-500 text-center mb-8">Perfil</h1>
+                <h1 className="font-black text-6xl text-gray-500 mb-8">Perfil</h1>
                 <hr className="my-4" />
-                <p className="mb-8 text-center">Perfil de Usuario</p>
-
+                <p className="mb-8 ">Este módulo permite visualizar el perfil del usuario</p>
+                <div className="h-screen flex items-start justify-center">
                 {error && <Mensaje tipo={false}>{error}</Mensaje>}
 
                 {perfil && (
@@ -54,6 +54,7 @@ const Perfil = () => {
                     </div>
                 )}
             </div>
+        </div>
         </div>
     );
 };
