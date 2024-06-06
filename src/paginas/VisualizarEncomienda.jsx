@@ -70,36 +70,36 @@ const VisualizarEncomienda = () => {
             <div className="m-5 space-y-4">
               {Object.keys(encomienda).length !== 0 ? (
                 <div className="bg-white shadow-md p-4 rounded-lg">
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Tipo de Encomienda:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Tipo de Encomienda:</span>{" "}
                     <span className="text-blue-600">{encomienda.tipoEncomienda}</span>
                   </p>
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Nombre del Remitente:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Nombre del Remitente:</span>{" "}
                     <span className="text-blue-600">{encomienda.nombreRemitente}</span>
                   </p>
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Apellido del Remitente:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Apellido del Remitente:</span>{" "}
                     <span className="text-blue-600">{encomienda.apellidoRemitente}</span>
                   </p>
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Ciudad de Salida:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Ciudad de Salida:</span>{" "}
                     <span className="text-blue-600">{encomienda.ciudadSalida}</span>
                   </p>
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Ciudad de Llegada:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Ciudad de Llegada:</span>{" "}
                     <span className="text-blue-600">{encomienda.ciudadLlegada}</span>
                   </p>
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Horario:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Horario:</span>{" "}
                     <span className="text-blue-600">{encomienda.turno?.horario}</span>
                   </p>
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Fecha:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Fecha:</span>{" "}
                     <span className="text-blue-600">{encomienda.turno?.fecha}</span>
                   </p>
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Número de Paquetes:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Número de Paquetes:</span>{" "}
                     <span className="text-blue-600">{encomienda.numPaquetes}</span>
                   </p>
                 </div>

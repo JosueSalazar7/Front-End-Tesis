@@ -15,7 +15,7 @@ const Crear = () => {
                 <div>
                     <h1 className='font-black text-6xl text-gray-500'>Conductores</h1>
                     <hr className='my-4' />
-                    <p className='mb-8 '>Este modulo permite registrar un nuevo conductor</p>
+                    <p className='mb-8 '>Este modulo te permite registrar un nuevo conductor y su vehículo</p>
                     <Formulario />
                 </div>
             </div>

@@ -15,7 +15,7 @@ const RegisterAdmin = () => {
                 <div>
                     <h1 className='font-black text-6xl text-gray-500 '>Registrar Administrador</h1>
                     <hr className='my-4' />
-                    <p className='mb-8'>Este módulo permite registrar un nuevo administrador</p>
+                    <p className='mb-8'>Este módulo te permite registrar un nuevo administrador</p>
                     <FormularioRegistroAdmin />
                 </div>
             </div>

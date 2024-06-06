@@ -37,9 +37,9 @@ export const FormularioRegistroAdmin = () => {
                     defaultValue=''
                     rules={{ 
                         required: 'Campo Obligatorio', 
-                        minLength: { value: 5, message: 'El campo "Nombre" debe tener al menos 5 caracteres' },
-                        maxLength: { value: 20, message: 'El campo "Nombre" debe tener máximo 20 caracteres' },
-                        pattern: { value: /^[a-zA-Z\s]*$/, message: 'El campo "Nombre" debe contener solo letras' }
+                        minLength: { value: 3, message: 'El campo "Nombre" debe tener al menos 3 caracteres' },
+                        maxLength: { value: 15, message: 'El campo "Nombre" debe tener máximo 15 caracteres' },
+                        pattern: { value: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/, message: 'El campo "Nombre" debe contener solo letras' }
                     }}
                     render={({ field, fieldState }) => (
                         <div>
@@ -63,9 +63,9 @@ export const FormularioRegistroAdmin = () => {
                     defaultValue=''
                     rules={{ 
                         required: 'Campo Obligatorio', 
-                        minLength: { value: 5, message: 'El campo "Apellido" debe tener al menos 5 caracteres' },
-                        maxLength: { value: 20, message: 'El campo "Apellido" debe tener máximo 20 caracteres' },
-                        pattern: { value: /^[a-zA-Z\s]*$/, message: 'El campo "Apellido" debe contener solo letras' }
+                        minLength: { value: 3, message: 'El campo "Apellido" debe tener al menos 3 caracteres' },
+                        maxLength: { value: 15, message: 'El campo "Apellido" debe tener máximo 15 caracteres' },
+                        pattern: { value: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/, message: 'El campo "Apellido" debe contener solo letras' }
                     }}
                     render={({ field, fieldState }) => (
                         <div>

@@ -104,7 +104,7 @@ const TablaViajesPrivadosPendientes = () => {
                                     navigate(`/dashboard/actualizarViajePrivado/${row.original.id}`);
                                 }}
                             />
-                            <span className="text-xs">Actualizar</span>
+                            <span className="text-xs">Asignar conductor</span>
                         </div>
                         <div className="flex flex-col items-center mx-2">
                             <MdInfo

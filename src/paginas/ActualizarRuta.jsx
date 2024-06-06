@@ -57,7 +57,7 @@ const ActualizarRuta = () => {
             <div className="h-screen items-start">
             <h1 className='font-black text-6xl text-gray-500 mt-10'>Actualizar Ruta</h1>
             <hr className='my-4' />
-            <p className='mb-8 '>Este módulo permite actualizar los datos de la ruta</p>
+            <p className='mb-8 '>Este módulo te permite actualizar los datos de la ruta</p>
             {
                 Object.keys(ruta).length !== 0 ? (
                     <FormularioRuta ruta={ruta} onSubmit={actualizarRuta} />

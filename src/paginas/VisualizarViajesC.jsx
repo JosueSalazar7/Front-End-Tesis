@@ -70,32 +70,32 @@ const VisualizarViajeCompartido = () => {
             <div className="m-5 space-y-4">
               {Object.keys(viajeCompartido).length !== 0 ? (
                 <div className="bg-white shadow-md p-4 rounded-lg">
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Tipo de Boleto:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Tipo de Boleto:</span>{" "}
                     <span className="text-blue-600">{viajeCompartido.tipoBoleto}</span>
                   </p>
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Nombre:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Nombre:</span>{" "}
                     <span className="text-blue-600">{viajeCompartido.nombre}</span>
                   </p>
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Apellido:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Apellido:</span>{" "}
                     <span className="text-blue-600">{viajeCompartido.apellido}</span>
                   </p>
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Ciudad de Salida:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Ciudad de Salida:</span>{" "}
                     <span className="text-blue-600">{viajeCompartido.ciudadSalida}</span>
                   </p>
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Ciudad de Llegada:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Ciudad de Llegada:</span>{" "}
                     <span className="text-blue-600">{viajeCompartido.ciudadLlegada}</span>
                   </p>
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Horario:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Horario:</span>{" "}
                     <span className="text-blue-600">{viajeCompartido.turno?.horario}</span>
                   </p>
-                  <p className="text-2xl font-bold">
-                    <span className="text-black-600">Fecha:</span>{" "}
+                  <p className="text-2xl ">
+                    <span className="text-black-600 font-bold">Fecha:</span>{" "}
                     <span className="text-blue-600">{viajeCompartido.turno?.fecha}</span>
                   </p>
                   {/* Agregar más detalles según sea necesario */}

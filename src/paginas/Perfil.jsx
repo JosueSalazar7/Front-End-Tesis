@@ -34,7 +34,7 @@ const Perfil = () => {
             <div className="max-w-9xl mx-auto px-4">
                 <h1 className="font-black text-6xl text-gray-500 mb-8">Perfil</h1>
                 <hr className="my-4" />
-                <p className="mb-8 ">Este módulo permite visualizar el perfil del usuario</p>
+                <p className="mb-8 ">Este módulo te permite visualizar el perfil del usuario</p>
                 <div className="h-screen flex items-start justify-center">
                 {error && <Mensaje tipo={false}>{error}</Mensaje>}
 

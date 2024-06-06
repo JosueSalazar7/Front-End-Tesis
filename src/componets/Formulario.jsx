@@ -4,12 +4,13 @@ import { useForm, Controller } from 'react-hook-form';
 import AuthContext from "../context/AuthProvider";
 import axios from 'axios';
 import Mensaje from "./Alertas/Mensaje";
-
+import { HiEye, HiEyeOff } from 'react-icons/hi'; // Importa los iconos
 export const Formulario = ({ conductor }) => {
     const { auth } = useContext(AuthContext);
     const navigate = useNavigate();
     const { handleSubmit, control, reset, trigger, formState: { errors } } = useForm();
     const [mensaje, setMensaje] = useState({});
+    const [showPassword, setShowPassword] = useState(false); // Estado para mostrar/ocultar contraseña
     const [step, setStep] = useState(1);
 
     useEffect(() => {
@@ -73,7 +74,7 @@ export const Formulario = ({ conductor }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}className="w-full max-w-lg mx-auto">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-lg mx-auto">
 
             {Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
 
@@ -85,7 +86,7 @@ export const Formulario = ({ conductor }) => {
                             name='conductorNombre'
                             control={control}
                             defaultValue=''
-                            rules={{ 
+                            rules={{
                                 required: 'Campo Obligatorio',
                                 minLength: {
                                     value: 3,
@@ -120,7 +121,7 @@ export const Formulario = ({ conductor }) => {
                             name='conductorApellido'
                             control={control}
                             defaultValue=''
-                            rules={{ 
+                            rules={{
                                 required: 'Campo Obligatorio',
                                 minLength: {
                                     value: 3,
@@ -236,8 +237,8 @@ export const Formulario = ({ conductor }) => {
                                     rules={{
                                         required: 'Campo Obligatorio',
                                         minLength: {
-                                            value: 6,
-                                            message: 'La contraseña debe tener al menos 6 caracteres'
+                                            value: 8,
+                                            message: 'La contraseña debe tener al menos 8 caracteres'
                                         },
                                         pattern: {
                                             value: /^(?=.*[A-Za-z])(?=.*\d).+$/,
@@ -245,13 +246,20 @@ export const Formulario = ({ conductor }) => {
                                         }
                                     }}
                                     render={({ field, fieldState }) => (
-                                        <div>
+                                        <div className="relative">
                                             <input
                                                 {...field}
-                                                type="password"
-                                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-1 ${fieldState.invalid ? 'border-red-500' : ''}`}
+                                                type={showPassword ? 'text' : 'password'} // Cambio aquí
+                                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md ${fieldState.invalid ? 'border-red-500' : ''}`}
                                                 placeholder='Contraseña'
                                             />
+                                            <button
+                                                type="button"
+                                                className="absolute right-1 top-1/2 transform -translate-y-1/2"
+                                                onClick={() => setShowPassword(!showPassword)}
+                                            >
+                                                {showPassword ? <HiEyeOff className="text-black-500" /> : <HiEye className="text-black-500" />}
+                                            </button>
                                             {fieldState.error && <p className="text-red-500 text-sm">{fieldState.error.message}</p>}
                                         </div>
                                     )}
@@ -321,8 +329,8 @@ export const Formulario = ({ conductor }) => {
                             rules={{
                                 required: 'Campo Obligatorio',
                                 pattern: {
-                                    value: /^[1-4]$/,
-                                    message: 'El número de asientos debe ser un número entre 1 y 4'
+                                    value: /^[1-10]$/,
+                                    message: 'El número de asientos debe ser un número entre 1 y 10'
                                 }
                             }}
                             render={({ field, fieldState }) => (

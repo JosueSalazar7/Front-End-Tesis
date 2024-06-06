@@ -74,28 +74,28 @@ const Visualizar = () => {
                     <p className="text-4xl font-bold mb-2">
                       Datos del conductor
                     </p>
-                    <p className="text-2xl font-bold">
-                      <span className="text-black-600">Nombre:</span>{" "}
+                    <p className="text-2xl ">
+                      <span className="text-black-600 font-bold">Nombre:</span>{" "}
                       <span className="text-blue-600">
                         {conductor.conductorNombre}
                       </span>
                     </p>
-                    <p className="text-2xl font-bold">
-                      <span className="text-black-600">Apellido:</span>{" "}
+                    <p className="text-2xl ">
+                      <span className="text-black-600 font-bold">Apellido:</span>{" "}
                       <span className="text-blue-600">
                         {conductor.conductorApellido}
                       </span>
                     </p>
-                    <p className="text-2xl font-bold">
-                      <span className="text-black-600">Cédula:</span>{" "}
+                    <p className="text-2xl ">
+                      <span className="text-black-600 font-bold">Cédula:</span>{" "}
                       <span className="text-blue-600">{conductor.cedula}</span>
                     </p>
-                    <p className="text-2xl font-bold">
-                      <span className="text-black-600">Correo:</span>{" "}
+                    <p className="text-2xl ">
+                      <span className="text-black-600 font-bold">Correo:</span>{" "}
                       <span className="text-blue-600">{conductor.correo}</span>
                     </p>
-                    <p className="text-2xl font-bold">
-                      <span className="text-black-600">Celular:</span>{" "}
+                    <p className="text-2xl ">
+                      <span className="text-black-600 font-bold">Celular:</span>{" "}
                       <span className="text-blue-600">{conductor.phone}</span>
                     </p>
                   </div>
@@ -103,28 +103,28 @@ const Visualizar = () => {
                     <p className="text-4xl font-bold mb-2">
                       Datos del vehículo
                     </p>
-                    <p className="text-2xl font-bold">
-                      <span className="text-black-600">Número de asientos:</span>{" "}
+                    <p className="text-2xl ">
+                      <span className="text-black-600 font-bold">Número de asientos:</span>{" "}
                       <span className="text-blue-600">{conductor.numeroAsientos}</span>
                     </p>
-                    <p className="text-2xl font-bold">
-                      <span className="text-black-600">Placa:</span>{" "}
+                    <p className="text-2xl ">
+                      <span className="text-black-600 font-bold">Placa:</span>{" "}
                       <span className="text-blue-600">{conductor.placaVehiculo}</span>
                     </p>
-                    <p className="text-2xl font-bold">
-                      <span className="text-black-600">Marca:</span>{" "}
+                    <p className="text-2xl ">
+                      <span className="text-black-600 font-bold">Marca:</span>{" "}
                       <span className="text-blue-600">{conductor.marcaVehiculo}</span>
                     </p>
-                    <p className="text-2xl font-bold">
-                      <span className="text-black-600">Modelo:</span>{" "}
+                    <p className="text-2xl ">
+                      <span className="text-black-600 font-bold">Modelo:</span>{" "}
                       <span className="text-blue-600">{conductor.modeloVehiculo}</span>
                     </p>
-                    <p className="text-2xl font-bold">
-                      <span className="text-black-600">Año:</span>{" "}
+                    <p className="text-2xl ">
+                      <span className="text-black-600 font-bold">Año:</span>{" "}
                       <span className="text-blue-600">{conductor.anioVehiculo}</span>
                     </p>
-                    <p className="text-2xl font-bold">
-                      <span className="text-black-600">Color:</span>{" "}
+                    <p className="text-2xl ">
+                      <span className="text-black-600 font-bold">Color:</span>{" "}
                       <span className="text-blue-600">{conductor.colorVehiculo}</span>
                     </p>
                   </div>

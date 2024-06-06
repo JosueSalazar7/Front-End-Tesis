@@ -55,7 +55,7 @@ const ActualizarContrasena = () => {
         
         <div className="max-w-9xl mx-auto px-4 pt-48 ">
                 <h1 className="font-black text-6xl text-gray-500 mb-8">Actualizar Contraseña</h1>
-                <p className='mb-8 '>Este modulo permite actualizar la contraseña del administrador</p>
+                <p className='mb-8 '>Este modulo te permite actualizar la contraseña del administrador</p>
                 <div className="h-screen w-full max-w-lg mx-auto justify-center ">
     
                 {mensaje.respuesta && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
