@@ -12,7 +12,7 @@ const RegistrarRuta = () => {
                 </svg>
                 Volver
             </Link>
-            <div className="h-screen items-start pt-14 justify-center">
+            <div className="h-screen items-start pt-10 justify-center">
                 <div>
                     <h1 className='font-black text-5xl text-gray-500'>Rutas</h1>
                     <hr className='my-4' />

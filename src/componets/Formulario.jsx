@@ -74,7 +74,7 @@ export const Formulario = ({ conductor }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-lg mx-auto">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-lg mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
             {Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
 

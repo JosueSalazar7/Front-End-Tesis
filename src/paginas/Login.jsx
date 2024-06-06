@@ -53,10 +53,10 @@ const Login = () => {
             <div className="flex justify-center items-center h-screen">
                 <img src="/images/login1.jpg" alt="Background" className="fixed top-0 left-0 w-full h-full object-cover z-0" />
                 <div className="absolute inset-50 flex justify-center items-center z-20">
-                    <div style={maxCardWidthStyle} className="bg-white bg-opacity-95 rounded-lg p-8">
+                <div style={{ ...maxCardWidthStyle, backgroundColor: '#47B7A1', opacity: 0.95 }} className="rounded-lg p-8">
                         {mensaje.respuesta && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
-                        <h1 className="text-5xl font-semibold mb-2 text-center uppercase text-black-500">¡Bienvenido de nuevo!</h1>
-                        <small className="text-black-400 block my-4 text-lg">Por favor ingresa tus datos</small>
+                        <h1 className="text-5xl font-semibold mb-2 text-center uppercase text-white">¡Bienvenido de nuevo!</h1>
+                        <small className="text-white block my-4 text-lg">Por favor ingresa tus datos</small>
 
                         <form onSubmit={handleSubmit(onSubmit)} className="max-w-500 mx-500">
                             <Controller
@@ -72,7 +72,7 @@ const Login = () => {
                                 }}
                                 render={({ field }) => (
                                     <div className="mb-3">
-                                        <label className="mb-2 block text-xl font-semibold">Correo electrónico</label>
+                                        <label className="mb-2 block text-xl font-semibold text-white">Correo electrónico</label>
                                         <input
                                             {...field}
                                             type="email"
@@ -102,12 +102,12 @@ const Login = () => {
                                     }}
                                     render={({ field }) => (
                                         <>
-                                            <label className="mb-2 block text-xl font-semibold">Contraseña</label>
+                                            <label className="mb-2 block text-xl font-semibold text-white">Contraseña</label>
                                             <input
                                                 {...field}
                                                 type={showPassword ? 'text' : 'password'}
                                                 placeholder="********************"
-                                                className={`block w-full rounded-md border ${errors.password ? 'border-red-500' : 'border-gray-300'} focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-2 text-gray-500`}
+                                                className={`block w-full rounded-md border ${errors.password ? 'border-red-500' : 'border-gray-300'} focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-2 text-white`}
                                             />
                                         </>
                                     )}
@@ -127,7 +127,7 @@ const Login = () => {
                         </form>
 
                         <div className="mt-5 text-xs border-b-2 py-4 ">
-                            <Link to="/forgot/id" className="underline text-lg text-black-400 hover:text-gray-900">¿Olvidaste tu contraseña?</Link>
+                            <Link to="/forgot/id" className="underline text-lg text-white hover:text-white-900">¿Olvidaste tu contraseña?</Link>
                         </div>
                     </div>
                 </div>

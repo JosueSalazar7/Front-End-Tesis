@@ -66,7 +66,7 @@ const ActualizarViajeC = () => {
       <h1 className="font-black text-6xl text-gray-500 ">Actualizar Viaje Compartido</h1> {/* Limitar el ancho y centrarlo */}
       <hr className="my-4" />
       <p className="mb-8">Este módulo te permite asignar un conductor al viaje compartido</p>
-      <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
+      <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
           <label htmlFor="conductorAsignado" className="block text-md text-gray-600 font-bold text-lg">Conductor asignado:</label>
           <select id="conductorAsignado" name="conductorAsignado" value={datosActualizados.conductorAsignado} onChange={handleChange} className="border border-gray-300 p-2 w-full">
