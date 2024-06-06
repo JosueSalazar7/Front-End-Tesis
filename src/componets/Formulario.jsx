@@ -329,8 +329,8 @@ export const Formulario = ({ conductor }) => {
                             rules={{
                                 required: 'Campo Obligatorio',
                                 pattern: {
-                                    value: /^[1-10]$/,
-                                    message: 'El número de asientos debe ser un número entre 1 y 10'
+                                    value: /^([1-9]|1[0-9]|20)$/,
+                                    message: 'El número de asientos debe ser un número entre 1 y 20'
                                 }
                             }}
                             render={({ field, fieldState }) => (
