@@ -22,16 +22,19 @@ const AuthProvider = ({ children }) => {
             console.log(error);
         }
     };
-
+    const login = async (token) => {
+        perfil(token);
+        setAuth({ ...auth, token });
+    };
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
-            perfil(token);
+            login(token);
         }
     }, []);
 
     return (
-        <AuthContext.Provider value={{ auth, setAuth }}>
+        <AuthContext.Provider value={{ auth, setAuth, login }}>
             {children}
         </AuthContext.Provider>
     );

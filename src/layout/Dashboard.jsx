@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link, Navigate, Outlet, useLocation } from 'react-router-dom';
-import  AuthContext  from '../context/AuthProvider'; // Cambio aquí
+import AuthContext from '../context/AuthProvider'; // Cambio aquí
 import axios from 'axios';
 import {
     Card,
@@ -28,13 +28,22 @@ import { ChevronRightIcon, ChevronDownIcon, MapPinIcon } from "@heroicons/react/
 const Dashboard = () => {
     const location = useLocation();
     const urlActual = location.pathname;
-    const { auth, setAuth } = useContext(AuthContext);
+    const { auth, setAuth, login } = useContext(AuthContext);
     const autenticado = localStorage.getItem('token');
+  
 
     const [menuAbierto, setMenuAbierto] = useState(null);
     const [perfil, setPerfil] = useState(null);
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true); // Estado de carga
 
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            login(token);
+        }
+    }, []);
+    
     useEffect(() => {
         const obtenerPerfil = async () => {
             try {
@@ -57,20 +66,27 @@ const Dashboard = () => {
             } catch (error) {
                 setError('Error al obtener el perfil: ' + error.message);
             }
+            finally {
+                setLoading(false); // Cambiar estado de carga a falso después de la solicitud
+            }
         };
 
         obtenerPerfil();
-    }, []);
+    }, [setAuth]);
     useEffect(() => {
         const nombre = localStorage.getItem('nombre');
         if (nombre) {
             setAuth(prevAuth => ({ ...prevAuth, nombre }));
         }
-    }, []);
+    }, [auth]);
 
     const handleOpen = (value) => {
         setMenuAbierto(menuAbierto === value ? null : value);
     };
+    // Mostrar un mensaje de carga mientras se obtienen los datos del perfil
+    if (loading) {
+        return <div className="flex justify-center items-center h-screen">Cargando...</div>;
+    }
 
     return (
         <div className="md:flex md:min-h-screen">
