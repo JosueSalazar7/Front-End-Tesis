@@ -169,7 +169,7 @@ const TablaViajesPrivadosPendientes = () => {
                                 type="text"
                                 value={globalFilter || ""}
                                 onChange={(e) => setGlobalFilter(e.target.value)}
-                                placeholder="Busca por nombre..."
+                                placeholder="Busca por nombre o apellido..."
                                 className="w-full px-4 py-2 border rounded-md pr-10"
                             />
                             <span className="absolute inset-y-0 right-0 pr-3 flex items-center">

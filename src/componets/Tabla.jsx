@@ -159,7 +159,7 @@ const Tabla = () => {
                 type="text"
                 value={globalFilter || ""}
                 onChange={(e) => setGlobalFilter(e.target.value)}
-                placeholder="Busca por el nombre del propietario..."
+                placeholder="Buscar por nombre, apellido o correo..."
                 className="w-full px-4 py-2 border rounded-md pr-10"
               />
               <span className="absolute inset-y-0 right-0 pr-3 flex items-center">

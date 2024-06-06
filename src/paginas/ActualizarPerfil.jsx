@@ -56,7 +56,7 @@ const ActualizarPerfil = () => {
     return (
         <div className="max-w-9xl mx-auto px-4 pt-40">
             <h1 className="font-black text-6xl text-gray-500 mb-8">Actualizar Perfil</h1>
-            <p className='mb-8 '>Este modulo te permite actualizar los datos el administrador</p>
+            <p className='mb-8 '>Este modulo te permite actualizar los datos del administrador</p>
             <div className="h-screen w-full max-w-lg mx-auto justify-center">
                 {success && <Mensaje tipo={true}>{success}</Mensaje>}
                 <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -71,7 +71,7 @@ const ActualizarPerfil = () => {
                                 required: 'Campo Obligatorio',
                                 minLength: { value: 3, message: 'El nombre debe tener al menos 3 caracteres' },
                                 maxLength: { value: 15, message: 'El nombre debe tener como máximo 15 caracteres' },
-                                pattern: { value: /^[A-Za-z]+$/, message: 'El nombre solo puede contener letras' }
+                                pattern: { value: /^[A-Za-záéíóúÁÉÍÓÚñÑ]+$/, message: 'El nombre solo puede contener letras y la letra ñ' }
                             })}
                             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.adminNombre ? 'border-red-500' : ''}`}
                         />
@@ -88,7 +88,7 @@ const ActualizarPerfil = () => {
                                 required: 'Campo Obligatorio',
                                 minLength: { value: 3, message: 'El apellido debe tener al menos 3 caracteres' },
                                 maxLength: { value: 15, message: 'El apellido debe tener como máximo 15 caracteres' },
-                                pattern: { value: /^[A-Za-z]+$/, message: 'El apellido solo puede contener letras' }
+                                pattern: { value: /^[A-Za-záéíóúÁÉÍÓÚñÑ]+$/, message: 'El apellido solo puede contener letras y la letra ñ' }
                             })}
                             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.adminApellido ? 'border-red-500' : ''}`}
                         />

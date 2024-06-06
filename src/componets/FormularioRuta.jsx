@@ -62,7 +62,7 @@ export const FormularioRuta = ({ ruta }) => {
                         required: 'Campo Obligatorio', 
                         minLength: { value: 5, message: 'El campo "nombre de la ruta" debe tener al menos 5 caracteres' },
                         maxLength: { value: 20, message: 'El campo "nombre de la ruta" debe tener máximo 20 caracteres' },
-                        pattern: { value: /^[a-zA-Z\s]*$/, message: 'El campo debe contener solo letras' }
+                        pattern: { value: /^[a-zA-Z\sñÑ-]*$/, message: 'El campo debe contener solo letras, espacios, guiones y la letra ñ' }
                     }}
                     render={({ field, fieldState }) => (
                         <div>
@@ -88,7 +88,7 @@ export const FormularioRuta = ({ ruta }) => {
                     defaultValue=''
                     rules={{ 
                         required: 'Campo Obligatorio', 
-                        minLength: { value: 5, message: 'El campo "Ciudad 1" debe tener al menos 5 caracteres' },
+                        minLength: { value: 4, message: 'El campo "Ciudad 1" debe tener al menos 4 caracteres' },
                         maxLength: { value: 20, message: 'El campo "Ciudad 1" debe tener máximo 20 caracteres' },
                         pattern: { value: /^[a-zA-Z\s]*$/, message: 'El campo debe contener solo letras' }
                     }}
@@ -114,7 +114,7 @@ export const FormularioRuta = ({ ruta }) => {
                     defaultValue=''
                     rules={{ 
                         required: 'Campo Obligatorio', 
-                        minLength: { value: 5, message: 'El campo "Ciudad 2" debe tener al menos 5 caracteres' },
+                        minLength: { value: 4, message: 'El campo "Ciudad 2" debe tener al menos 4 caracteres' },
                         maxLength: { value: 20, message: 'El campo "Ciudad 2" debe tener máximo 20 caracteres' },
                         pattern: { value: /^[a-zA-Z\s]*$/, message: 'El campo debe contener solo letras' }
                     }}
@@ -143,7 +143,7 @@ export const FormularioRuta = ({ ruta }) => {
                         <div>
                             <input
                                 {...field}
-                                type="text"
+                                type="time"
                                 className={`border-2 w-full p-2 placeholder-gray-400 rounded-md ${fieldState.invalid ? 'border-red-500' : ''}`}
                                 placeholder='Horario 1'
                             />
@@ -164,7 +164,7 @@ export const FormularioRuta = ({ ruta }) => {
                         <div>
                             <input
                                 {...field}
-                                type="text"
+                                type="time"
                                 className={`border-2 w-full p-2 placeholder-gray-400 rounded-md ${fieldState.invalid ? 'border-red-500' : ''}`}
                                 placeholder='Horario 2'
                             />
@@ -185,7 +185,7 @@ export const FormularioRuta = ({ ruta }) => {
                         <div>
                             <input
                                 {...field}
-                                type="text"
+                                type="time"
                                 className={`border-2 w-full p-2 placeholder-gray-400 rounded-md ${fieldState.invalid ? 'border-red-500' : ''}`}
                                 placeholder='Horario 3'
                             />
