@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test-landing-page": "jest LandingPage.test.jsx",
+    "test-landing-page": "jest LadingPage.test.jsx",
     "test-login": "jest Login.test.jsx"
   },
   "dependencies": {
@@ -24,6 +24,7 @@
     "react-table": "^7.8.0"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-import-meta": "^7.10.4",
     "@babel/preset-env": "^7.24.7",
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^16.0.0",
