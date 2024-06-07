@@ -107,7 +107,7 @@ const Login = () => {
                                                 {...field}
                                                 type={showPassword ? 'text' : 'password'}
                                                 placeholder="********************"
-                                                className={`block w-full rounded-md border ${errors.password ? 'border-red-500' : 'border-gray-300'} focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-2 text-white`}
+                                                className={`block w-full rounded-md border ${errors.password ? 'border-red-500' : 'border-gray-300'} focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-2 text-gray-500`}
                                             />
                                         </>
                                     )}

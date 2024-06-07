@@ -1,4 +1,3 @@
-// src/LandingPage.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import carro from '../assets/carro.avif';
@@ -9,7 +8,7 @@ import encomienda from '../assets/encomienda.jpeg';
 import viajecompartido from '../assets/viaje compartido.jpg';
 
 export const LandinPage = () => {
-    const [darkMode, setDarkMode] = useState(true); // Dark mode por defecto
+    const [darkMode, setDarkMode] = useState(true);
 
     return (
         <div className={darkMode ? 'dark' : ''}>
@@ -29,7 +28,6 @@ export const LandinPage = () => {
                     </ul>
                 </nav>
 
-                {/* Sección Principal */}
                 <div id="inicio" className='flex flex-wrap items-center mb-20'>
                     <div className='w-full md:w-1/2 px-6 mb-12 md:mb-0'>
                         <h2 className='text-6xl py-2 text-teal-600 font-medium md:text-7xl text-center'>Empresa de viajes</h2>
@@ -42,7 +40,6 @@ export const LandinPage = () => {
                     </div>
                 </div>
 
-                {/* Sección Servicios */}
                 <section id="servicios" className='text-center mb-20'>
                     <h2 className='text-5xl py-2 text-teal-600 font-medium md:text-6xl'>Nuestros Servicios</h2>
                     <div className='flex flex-wrap justify-center mt-12'>
@@ -70,7 +67,6 @@ export const LandinPage = () => {
                     </div>
                 </section>
 
-                {/* Sección Sobre Nosotros */}
                 <section id="sobrenosotros" className='text-center mb-20'>
                     <h2 className='text-5xl py-2 text-teal-600 font-medium md:text-6xl'>Sobre Nosotros</h2>
                     <div className='flex flex-wrap justify-center mt-12'>
@@ -93,12 +89,11 @@ export const LandinPage = () => {
                     </div>
                 </section>
 
-                {/* Sección App Móvil */}
                 <section id="appmovil" className='text-center mb-20'>
                     <h2 className='text-5xl py-2 text-teal-600 font-medium md:text-6xl'>App Móvil</h2>
                     <div className='flex flex-wrap justify-center mt-12'>
                         <div className='w-full md:w-1/4 px-8 mb-8'>
-                            <video controls className='w-full h-auto rounded-lg'>
+                            <video controls className='w-full h-auto rounded-lg' data-testid="app-video">
                                 <source src={appVideo} type="video/mp4" />
                                 Tu navegador no soporta la reproducción de videos.
                             </video>
