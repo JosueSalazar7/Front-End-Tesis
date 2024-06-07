@@ -57,7 +57,7 @@ const Visualizar = () => {
             Visualizar Conductor
           </h1>
           <hr className="my-4" />
-          <p className='mb-8'>Este modulo permite visualizar los datos del conductor y su vehículo</p>
+          <p className='mb-8'>Este módulo te permite visualizar los datos del conductor y su vehículo</p>
           
         </div>
         <div className=" h-screen items-start ">

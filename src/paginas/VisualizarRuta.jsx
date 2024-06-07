@@ -58,7 +58,7 @@ const VisualizarRuta = () => {
             Visualizar Ruta
           </h1>
           <hr className="my-4" />
-          <p className="mb-8 text-lg">Este módulo permite visualizar los detalles de la ruta</p>
+          <p className="mb-8 text-lg">Este módulo te permite visualizar los detalles de la ruta</p>
         </div>
         <div className="h-screen items-start">
         <div className="flex justify-center">

@@ -57,7 +57,7 @@ const VisualizarViajePrivado = () => {
           Visualizar Viaje Privado
         </h1>
         <hr className="my-4" />
-        <p className="mb-8 text-lg">Este módulo permite visualizar los detalles del viaje privado</p>
+        <p className="mb-8 text-lg">Este módulo te permite visualizar los detalles del viaje privado</p>
       </div>
       <div className=" h-screen items-start pt-10">
         <div className="flex justify-center">

@@ -66,7 +66,7 @@ const ActualizarEncomienda = () => {
         <div className="mt-10 h-screen pt-40 items-start">
             <h1 className="font-black text-6xl text-gray-500">Actualizar Encomienda</h1>
             <hr className="my-4" />
-            <p className="mb-8 ">Este módulo permite te permite asignar un conductor a la encomienda</p>
+            <p className="mb-8 ">Este módulo te permite asignar un conductor a la encomienda</p>
             <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto m-5 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <div className="mb-4">
                     <label htmlFor="conductorAsignado" className="block text-md text-gray-600 font-bold text-lg">Conductor asignado:</label>
