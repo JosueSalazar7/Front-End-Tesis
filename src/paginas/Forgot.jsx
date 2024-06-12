@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import axios from "axios";
 import Mensaje from "../componets/Alertas/Mensaje";
+import React from 'react';
 
 export const Forgot = () => {
   const {
@@ -99,3 +100,4 @@ export const Forgot = () => {
     </>
   );
 };
+

@@ -82,8 +82,6 @@ const ActualizarEncomienda = () => {
                     <select id="estadoPaquete" name="estadoPaquete" value={datosActualizados.estadoPaquete} onChange={handleChange} className="border border-gray-300 p-2 w-full">
                         <option value="">Seleccionar estado</option>
                         <option value="Aprobado">Aprobado</option>
-                        <option value="En tránsito">En tránsito</option>
-                        <option value="Completado">Completado</option>
                     </select>
                 </div>
                 <div className="flex justify-center">

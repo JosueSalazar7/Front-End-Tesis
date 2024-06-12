@@ -285,4 +285,3 @@ const TablaEncomiendasPendientes = () => {
 };
 
 export default TablaEncomiendasPendientes;
-
