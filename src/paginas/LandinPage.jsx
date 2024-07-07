@@ -12,23 +12,22 @@ export const LandinPage = () => {
 
     return (
         <div className={darkMode ? 'dark' : ''}>
-            <main className='bg-white dark:bg-gray-900 px-0 md:px-20 lg:px-40'>
-                <nav className='p-10 mb-12 flex justify-between bg-gray-800'>
-                    <h1 className='text-4xl font-bold text-white'>FastyCars SA</h1>
-                    <ul className='flex items-center'>
-                        <li><a href="#inicio" className='text-white text-lg px-4 hover:text-gray-400'>Inicio</a></li>
-                        <li><a href="#servicios" className='text-white text-lg px-4 hover:text-gray-400'>Nuestros Servicios</a></li>
-                        <li><a href="#sobrenosotros" className='text-white text-lg px-4 hover:text-gray-400'>Sobre Nosotros</a></li>
-                        <li><a href="#appmovil" className='text-white text-lg px-4 hover:text-gray-400'>App Móvil</a></li>
-                        <li>
-                            <Link to="/login" className='bg-blue-500 text-white text-lg px-8 py-3 rounded-full ml-8 hover:bg-blue-600'>
-                                Iniciar sesión
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
-
-                <div id="inicio" className='flex flex-wrap items-center mb-20'>
+            <nav className='fixed top-0 left-0 w-full p-10 mb-12 flex justify-between bg-gray-800 z-10'>
+                <h1 className='text-4xl font-bold text-white'>FastyCars SA</h1>
+                <ul className='flex items-center'>
+                    <li><a href="#inicio" className='text-white text-lg px-4 hover:text-gray-400'>Inicio</a></li>
+                    <li><a href="#servicios" className='text-white text-lg px-4 hover:text-gray-400'>Nuestros Servicios</a></li>
+                    <li><a href="#sobrenosotros" className='text-white text-lg px-4 hover:text-gray-400'>Sobre Nosotros</a></li>
+                    <li><a href="#appmovil" className='text-white text-lg px-4 hover:text-gray-400'>App Móvil</a></li>
+                    <li>
+                        <Link to="/login" className='bg-blue-500 text-white text-lg px-8 py-3 rounded-full ml-8 hover:bg-blue-600'>
+                            Iniciar sesión
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
+            <main className='bg-white dark:bg-gray-900 px-0 md:px-20 lg:px-40 pt-24'>
+                <div id="inicio" className='flex flex-wrap items-center mb-20 pt-20'>
                     <div className='w-full md:w-1/2 px-6 mb-12 md:mb-0'>
                         <h2 className='text-6xl py-2 text-teal-600 font-medium md:text-7xl text-center'>Empresa de viajes</h2>
                         <h3 className='text-3xl py-2 md:text-4xl dark:text-white text-center'>ADMINISTRADOR</h3>
