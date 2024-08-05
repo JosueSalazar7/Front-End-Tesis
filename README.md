@@ -1,30 +1,10 @@
-# Plantilla para proyectos de react
+# FastyCras S.A Frontend
 
-Landing Page
-------
-![Image text](https://raw.githubusercontent.com/Byrontosh/Plantilla-App-Demo/main/src/assets/fondos/captura-1.png)
+- Documento de Tesis
+  
+  [Tesis_Salazar_Josue.pdf](https://github.com/user-attachments/files/16498480/Tesis_Salazar_Josue.pdf)
 
+  - Formulario 233
 
-Login
-------
-![Image text](https://raw.githubusercontent.com/Byrontosh/Plantilla-App-Demo/main/src/assets/fondos/captura-2.png)
-
-Register
-------
-![Image text](https://raw.githubusercontent.com/Byrontosh/Plantilla-App-Demo/main/src/assets/fondos/captura-3.png)
-
-Forgot Password
-------
-![Image text](https://raw.githubusercontent.com/Byrontosh/Plantilla-App-Demo/main/src/assets/fondos/captura-4.png)
-
-Confirm email
-------
-![Image text](https://raw.githubusercontent.com/Byrontosh/Plantilla-App-Demo/main/src/assets/fondos/captura-6.png)
-
-Not Found
-------
-![Image text](https://raw.githubusercontent.com/Byrontosh/Plantilla-App-Demo/main/src/assets/fondos/captura-5.png)
-
-Dashboard
-------
-![Image text](https://raw.githubusercontent.com/Byrontosh/Plantilla-App-Demo/main/src/assets/fondos/captura-7.png)
+    
+  [F_AA_233.pdf](https://github.com/user-attachments/files/16498489/F_AA_233.pdf)
