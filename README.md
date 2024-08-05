@@ -1,6 +1,6 @@
 # FastyCras S.A 
 
-Desarrollo del componente Frontedn para la empresa FastyCars S.A
+Desarrollo del componente Frontend para la empresa FastyCars S.A
 
 - Documento de Tesis
   
