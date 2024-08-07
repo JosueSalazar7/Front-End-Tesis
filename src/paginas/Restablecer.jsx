@@ -43,18 +43,23 @@ const Restablecer = () => {
         let valid = true;
         const errors = {};
 
+        const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
         if (!form.password) {
             errors.password = 'Debe llenar todos los campos';
             valid = false;
-        } else if (form.password.length < 8) {
-            errors.password = 'La contraseña debe contener al menos 8 caracteres y al menos un número y una letra, sin caracteres especiales';
-            valid = false;
-        } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(form.password)) {
+        } else if (!passwordPattern.test(form.password)) {
             errors.password = 'La contraseña debe contener al menos 8 caracteres y al menos un número y una letra, sin caracteres especiales';
             valid = false;
         }
 
-        if (form.password !== form.confirmpassword) {
+        if (!form.confirmpassword) {
+            errors.confirmpassword = 'Debe llenar todos los campos';
+            valid = false;
+        } else if (!passwordPattern.test(form.confirmpassword)) {
+            errors.confirmpassword = 'La contraseña debe contener al menos 8 caracteres y al menos un número y una letra, sin caracteres especiales';
+            valid = false;
+        } else if (form.password !== form.confirmpassword) {
             errors.confirmpassword = 'Las contraseñas no coinciden';
             valid = false;
         }
