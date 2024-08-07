@@ -171,7 +171,7 @@ export const Formulario = ({ conductor }) => {
                                 <div>
                                     <input
                                         {...field}
-                                        type="text"
+                                        type="number"
                                         className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-1 ${fieldState.invalid ? 'border-red-500' : ''}`}
                                         placeholder='Cédula del conductor'
                                     />
@@ -329,8 +329,8 @@ export const Formulario = ({ conductor }) => {
                             rules={{
                                 required: 'Campo Obligatorio',
                                 pattern: {
-                                    value: /^([1-9]|1[0-9]|20)$/,
-                                    message: 'El número de asientos debe ser un número entre 1 y 20'
+                                    value: /^[1-7]$/,
+                                    message: 'El número de asientos debe ser un número entre 1 y 7'
                                 }
                             }}
                             render={({ field, fieldState }) => (
@@ -346,6 +346,7 @@ export const Formulario = ({ conductor }) => {
                             )}
                         />
                     </div>
+
 
                     <div>
                         <label htmlFor='placaVehiculo' className='text-gray-700 font-bold text-lg'>Placa del vehículo: </label>
