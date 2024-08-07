@@ -1,30 +1,17 @@
-# Plantilla para proyectos de react
+# FastyCras S.A 
 
-Landing Page
-------
-![Image text](https://raw.githubusercontent.com/Byrontosh/Plantilla-App-Demo/main/src/assets/fondos/captura-1.png)
+Desarrollo del componente Frontend para la empresa FastyCars S.A
 
+- Documento de Tesis
+  
+  [Tesis_Salazar_Josue.pdf](https://github.com/user-attachments/files/16498480/Tesis_Salazar_Josue.pdf)
 
-Login
-------
-![Image text](https://raw.githubusercontent.com/Byrontosh/Plantilla-App-Demo/main/src/assets/fondos/captura-2.png)
+- Formulario 233
 
-Register
-------
-![Image text](https://raw.githubusercontent.com/Byrontosh/Plantilla-App-Demo/main/src/assets/fondos/captura-3.png)
+  [F_AA_233.pdf](https://github.com/user-attachments/files/16498489/F_AA_233.pdf)
 
-Forgot Password
-------
-![Image text](https://raw.githubusercontent.com/Byrontosh/Plantilla-App-Demo/main/src/assets/fondos/captura-4.png)
+- Enlace de despliegue de la página web
 
-Confirm email
-------
-![Image text](https://raw.githubusercontent.com/Byrontosh/Plantilla-App-Demo/main/src/assets/fondos/captura-6.png)
+  https://front-end-tesis.vercel.app/
 
-Not Found
-------
-![Image text](https://raw.githubusercontent.com/Byrontosh/Plantilla-App-Demo/main/src/assets/fondos/captura-5.png)
-
-Dashboard
-------
-![Image text](https://raw.githubusercontent.com/Byrontosh/Plantilla-App-Demo/main/src/assets/fondos/captura-7.png)
+  
