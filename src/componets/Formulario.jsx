@@ -557,4 +557,4 @@ export const Formulario = ({ conductor }) => {
     );
 };
 
-export default Registro;
+
