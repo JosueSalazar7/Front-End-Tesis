@@ -1,17 +1,16 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import AuthContext from "../context/AuthProvider";
 import axios from 'axios';
 import Mensaje from "./Alertas/Mensaje";
-import { HiEye, HiEyeOff } from 'react-icons/hi';
-
+import { HiEye, HiEyeOff } from 'react-icons/hi'; // Importa los iconos
 export const Formulario = ({ conductor }) => {
     const { auth } = useContext(AuthContext);
     const navigate = useNavigate();
     const { handleSubmit, control, reset, trigger, formState: { errors } } = useForm();
     const [mensaje, setMensaje] = useState({});
-    const [showPassword, setShowPassword] = useState(false);
+    const [showPassword, setShowPassword] = useState(false); // Estado para mostrar/ocultar contraseña
     const [step, setStep] = useState(1);
 
     useEffect(() => {
@@ -250,53 +249,17 @@ export const Formulario = ({ conductor }) => {
                                         <div className="relative">
                                             <input
                                                 {...field}
-                                                type={showPassword ? 'text' : 'password'}
-                                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-1 ${fieldState.invalid ? 'border-red-500' : ''}`}
+                                                type={showPassword ? 'text' : 'password'} // Cambio aquí
+                                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md ${fieldState.invalid ? 'border-red-500' : ''}`}
                                                 placeholder='Contraseña'
                                             />
-                                            <div className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
-                                                <button
-                                                    type="button"
-                                                    className="text-gray-500 focus:outline-none"
-                                                    onClick={() => setShowPassword(!showPassword)}
-                                                >
-                                                    {showPassword ? <HiEye /> : <HiEyeOff />}
-                                                </button>
-                                            </div>
-                                            {fieldState.error && <p className="text-red-500 text-sm">{fieldState.error.message}</p>}
-                                        </div>
-                                    )}
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor='confirmar_password' className='text-gray-700 font-bold text-lg'>Confirmar contraseña: </label>
-                                <Controller
-                                    name='confirmar_password'
-                                    control={control}
-                                    defaultValue=''
-                                    rules={{
-                                        required: 'Campo Obligatorio',
-                                        validate: value =>
-                                            value === control._formValues.password || 'Las contraseñas no coinciden'
-                                    }}
-                                    render={({ field, fieldState }) => (
-                                        <div className="relative">
-                                            <input
-                                                {...field}
-                                                type={showPassword ? 'text' : 'password'}
-                                                className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-1 ${fieldState.invalid ? 'border-red-500' : ''}`}
-                                                placeholder='Confirmar contraseña'
-                                            />
-                                            <div className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
-                                                <button
-                                                    type="button"
-                                                    className="text-gray-500 focus:outline-none"
-                                                    onClick={() => setShowPassword(!showPassword)}
-                                                >
-                                                    {showPassword ? <HiEye /> : <HiEyeOff />}
-                                                </button>
-                                            </div>
+                                            <button
+                                                type="button"
+                                                className="absolute right-1 top-1/2 transform -translate-y-1/2"
+                                                onClick={() => setShowPassword(!showPassword)}
+                                            >
+                                                {showPassword ? <HiEyeOff className="text-black-500" /> : <HiEye className="text-black-500" />}
+                                            </button>
                                             {fieldState.error && <p className="text-red-500 text-sm">{fieldState.error.message}</p>}
                                         </div>
                                     )}
@@ -306,7 +269,7 @@ export const Formulario = ({ conductor }) => {
                     )}
 
                     <div>
-                        <label htmlFor='phone' className='text-gray-700 font-bold text-lg'>Número de teléfono: </label>
+                        <label htmlFor='phone' className='text-gray-700 font-bold text-lg'>Teléfono del conductor: </label>
                         <Controller
                             name='phone'
                             control={control}
@@ -314,25 +277,21 @@ export const Formulario = ({ conductor }) => {
                             rules={{
                                 required: 'Campo Obligatorio',
                                 minLength: {
-                                    value: 9,
-                                    message: 'El teléfono debe tener mínimo 9 dígitos'
+                                    value: 10,
+                                    message: 'El número de celular debe tener 10 dígitos'
                                 },
                                 maxLength: {
-                                    value: 12,
-                                    message: 'El teléfono debe tener máximo 12 dígitos'
-                                },
-                                pattern: {
-                                    value: /^[0-9]+$/,
-                                    message: 'El teléfono debe contener solo números'
+                                    value: 10,
+                                    message: 'El número de celular debe tener 10 dígitos'
                                 }
                             }}
                             render={({ field, fieldState }) => (
                                 <div>
                                     <input
                                         {...field}
-                                        type="tel"
+                                        type="text"
                                         className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-1 ${fieldState.invalid ? 'border-red-500' : ''}`}
-                                        placeholder='Número de teléfono'
+                                        placeholder='Teléfono del conductor'
                                     />
                                     {fieldState.error && <p className="text-red-500 text-sm">{fieldState.error.message}</p>}
                                 </div>
@@ -340,10 +299,10 @@ export const Formulario = ({ conductor }) => {
                         />
                     </div>
 
-                    <div className="flex justify-between mt-6">
+                    <div className="flex justify-center mt-6">
                         <button
                             type="button"
-                            className='bg-gray-500 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded text-lg'
+                            className='bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-lg mr-3'
                             onClick={prevStep}
                         >
                             Anterior
@@ -362,7 +321,7 @@ export const Formulario = ({ conductor }) => {
             {step === 3 && (
                 <div>
                     <div>
-                        <label htmlFor='numeroAsientos' className='text-gray-700 font-bold text-lg'>Número de asientos del vehículo: </label>
+                        <label htmlFor='numeroAsientos' className='text-gray-700 font-bold text-lg'>Número de asientos disponibles: </label>
                         <Controller
                             name='numeroAsientos'
                             control={control}
@@ -370,8 +329,8 @@ export const Formulario = ({ conductor }) => {
                             rules={{
                                 required: 'Campo Obligatorio',
                                 pattern: {
-                                    value: /^[0-9]+$/,
-                                    message: 'El número de asientos debe contener solo números'
+                                    value: /^[1-7]$/,
+                                    message: 'El número de asientos debe ser un número entre 1 y 7'
                                 }
                             }}
                             render={({ field, fieldState }) => (
@@ -380,13 +339,15 @@ export const Formulario = ({ conductor }) => {
                                         {...field}
                                         type="number"
                                         className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-1 ${fieldState.invalid ? 'border-red-500' : ''}`}
-                                        placeholder='Número de asientos del vehículo'
+                                        placeholder='Número de asientos'
                                     />
                                     {fieldState.error && <p className="text-red-500 text-sm">{fieldState.error.message}</p>}
                                 </div>
                             )}
                         />
                     </div>
+
+
 
                     <div>
                         <label htmlFor='placaVehiculo' className='text-gray-700 font-bold text-lg'>Placa del vehículo: </label>
@@ -396,13 +357,13 @@ export const Formulario = ({ conductor }) => {
                             defaultValue=''
                             rules={{
                                 required: 'Campo Obligatorio',
+                                maxLength: {
+                                    value: 8,
+                                    message: 'La placa del vehículo debe tener hasta 9 caracteres'
+                                },
                                 pattern: {
                                     value: /^[A-Za-z0-9]+$/,
                                     message: 'La placa del vehículo debe contener solo letras y números'
-                                },
-                                maxLength: {
-                                    value: 8,
-                                    message: 'La placa del vehículo no puede exceder los 9 caracteres'
                                 }
                             }}
                             render={({ field, fieldState }) => (
@@ -419,7 +380,6 @@ export const Formulario = ({ conductor }) => {
                         />
                     </div>
 
-
                     <div>
                         <label htmlFor='marcaVehiculo' className='text-gray-700 font-bold text-lg'>Marca del vehículo: </label>
                         <Controller
@@ -428,9 +388,17 @@ export const Formulario = ({ conductor }) => {
                             defaultValue=''
                             rules={{
                                 required: 'Campo Obligatorio',
+                                minLength: {
+                                    value: 3,
+                                    message: 'El campo "Marca del vehículo" debe tener al menos 3 caracteres'
+                                },
+                                maxLength: {
+                                    value: 20,
+                                    message: 'El campo "Marca del vehículo" debe tener máximo 20 caracteres'
+                                },
                                 pattern: {
-                                    value: /^[a-zA-Z\s]+$/,
-                                    message: 'La marca del vehículo debe contener solo letras'
+                                    value: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/,
+                                    message: 'El campo "Marca del vehículo" debe contener solo letras'
                                 }
                             }}
                             render={({ field, fieldState }) => (
@@ -447,6 +415,27 @@ export const Formulario = ({ conductor }) => {
                         />
                     </div>
 
+                    <div className="flex justify-center mt-6">
+                        <button
+                            type="button"
+                            className='bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-lg mr-3'
+                            onClick={prevStep}
+                        >
+                            Anterior
+                        </button>
+                        <button
+                            type="button"
+                            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg'
+                            onClick={nextStep}
+                        >
+                            Siguiente
+                        </button>
+                    </div>
+                </div>
+            )}
+
+            {step === 4 && (
+                <div>
                     <div>
                         <label htmlFor='modeloVehiculo' className='text-gray-700 font-bold text-lg'>Modelo del vehículo: </label>
                         <Controller
@@ -455,9 +444,13 @@ export const Formulario = ({ conductor }) => {
                             defaultValue=''
                             rules={{
                                 required: 'Campo Obligatorio',
-                                pattern: {
-                                    value: /^[a-zA-Z0-9\s]+$/,
-                                    message: 'El modelo del vehículo debe contener solo letras y números'
+                                minLength: {
+                                    value: 2,
+                                    message: 'El campo "Modelo del vehículo" debe tener al menos 2 caracteres'
+                                },
+                                maxLength: {
+                                    value: 20,
+                                    message: 'El campo "Modelo del vehículo" debe tener máximo 20 caracteres'
                                 }
                             }}
                             render={({ field, fieldState }) => (
@@ -483,16 +476,16 @@ export const Formulario = ({ conductor }) => {
                             rules={{
                                 required: 'Campo Obligatorio',
                                 min: {
-                                    value: 1900,
-                                    message: 'Ingrese un año válido'
+                                    value: 2014,
+                                    message: 'Ingrese un año válido, no puede ingresar mayor a los 10 años anteriores'
                                 },
                                 max: {
-                                    value: new Date().getFullYear() - 15,
-                                    message: `El año no puede ser mayor a ${new Date().getFullYear() - 15}`
+                                    value: new Date().getFullYear() - 10,
+                                    message: `El año no puede ser menor a ${new Date().getFullYear() - 10} o mayor a 2025`
                                 },
                                 pattern: {
                                     value: /^\d+$/,
-                                    message: 'Ingrese un año válido'
+                                    message: 'Ingrese un año válido, no puede ingresar mayor a los 10 años anteriores'
                                 }
                             }}
                             render={({ field, fieldState }) => (
@@ -509,6 +502,7 @@ export const Formulario = ({ conductor }) => {
                         />
                     </div>
 
+
                     <div>
                         <label htmlFor='colorVehiculo' className='text-gray-700 font-bold text-lg'>Color del vehículo: </label>
                         <Controller
@@ -517,9 +511,17 @@ export const Formulario = ({ conductor }) => {
                             defaultValue=''
                             rules={{
                                 required: 'Campo Obligatorio',
+                                minLength: {
+                                    value: 3,
+                                    message: 'El campo "Color del vehículo" debe tener al menos 3 caracteres'
+                                },
+                                maxLength: {
+                                    value: 20,
+                                    message: 'El campo "Color del vehículo" debe tener máximo 20 caracteres'
+                                },
                                 pattern: {
-                                    value: /^[a-zA-Z\s]+$/,
-                                    message: 'El color del vehículo debe contener solo letras'
+                                    value: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/,
+                                    message: 'El campo "Color del vehículo" debe contener solo letras'
                                 }
                             }}
                             render={({ field, fieldState }) => (
@@ -535,26 +537,22 @@ export const Formulario = ({ conductor }) => {
                             )}
                         />
                     </div>
-
-                    <div className="flex justify-between mt-6">
+                    <div className="flex justify-center mt-6">
                         <button
                             type="button"
-                            className='bg-gray-500 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded text-lg'
+                            className='bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-lg mt-6 mr-3'
                             onClick={prevStep}
                         >
                             Anterior
                         </button>
-                        <button
+                        <input
                             type="submit"
-                            className='bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded text-lg'
-                        >
-                            Enviar
-                        </button>
+                            className=' bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg mt-6'
+                            value={conductor?._id ? 'Actualizar conductor' : 'Registrar conductor'}
+                        />
                     </div>
                 </div>
             )}
         </form>
     );
 };
-
-
